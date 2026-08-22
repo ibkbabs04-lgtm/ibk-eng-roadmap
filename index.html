@@ -864,6 +864,115 @@ textarea.form-input{
     }
 }
 
+
+/* =========================================================
+   30-ANIMATION PACK — ADDED WITHOUT CHANGING THE LAYOUT
+========================================================= */
+@media (prefers-reduced-motion:no-preference){
+:root{--anim-speed:1}
+
+@keyframes a1Float{50%{transform:translateY(-7px)}}
+@keyframes a2Glow{50%{box-shadow:0 0 28px color-mix(in srgb,var(--primary) 28%,transparent)}}
+@keyframes a3Shimmer{to{background-position:200% 0}}
+@keyframes a4SlideIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes a5SlideRight{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes a6Rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes a7Zoom{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes a8Rotate{to{transform:rotate(360deg)}}
+@keyframes a9Tilt{50%{transform:rotate(.8deg) translateY(-2px)}}
+@keyframes a10Bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes a11Blink{50%{opacity:.55}}
+@keyframes a12PulseBorder{50%{border-color:var(--primary);box-shadow:0 0 0 4px color-mix(in srgb,var(--primary) 8%,transparent)}}
+@keyframes a13Gradient{to{background-position:200% center}}
+@keyframes a14Drift{50%{background-position:55% 45%}}
+@keyframes a15Reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes a16Pop{0%{transform:scale(.7);opacity:0}70%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+@keyframes a17Wiggle{25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
+@keyframes a18Sweep{from{background-position:-120% 0}to{background-position:120% 0}}
+@keyframes a19Neon{50%{text-shadow:0 0 7px var(--primary),0 0 20px var(--secondary)}}
+@keyframes a20FloatSlow{50%{transform:translate3d(0,-10px,0)}}
+@keyframes a21Focus{from{filter:blur(5px);opacity:0}to{filter:blur(0);opacity:1}}
+@keyframes a22Flip{50%{transform:perspective(500px) rotateY(8deg)}}
+@keyframes a23Stretch{50%{transform:scaleX(1.025)}}
+@keyframes a24Heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.03)}28%{transform:scale(1)}}
+@keyframes a25Spark{0%,100%{box-shadow:0 0 0 transparent}50%{box-shadow:0 0 18px color-mix(in srgb,var(--accent) 25%,transparent)}}
+@keyframes a26Orbit{50%{transform:rotate(.5deg) translateY(-4px)}}
+@keyframes a27FadeScale{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:scale(1)}}
+@keyframes a28Underline{from{background-size:0% 2px}to{background-size:100% 2px}}
+@keyframes a29Glitch{0%,100%{transform:translate(0)}25%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}}
+@keyframes a30Star{50%{filter:brightness(1.35) saturate(1.15)}}
+
+.anim-float{animation:a1Float 4s ease-in-out infinite}
+.anim-glow{animation:a2Glow 3s ease-in-out infinite}
+.anim-shimmer{background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.12) 50%,transparent 65%);background-size:200% 100%;animation:a3Shimmer 4s linear infinite}
+.anim-slide{animation:a4SlideIn .65s cubic-bezier(.2,.8,.2,1) both}
+.anim-slide-right{animation:a5SlideRight .65s cubic-bezier(.2,.8,.2,1) both}
+.anim-rise{animation:a6Rise .65s cubic-bezier(.2,.8,.2,1) both}
+.anim-zoom{animation:a7Zoom .55s ease both}
+.anim-rotate{animation:a8Rotate 12s linear infinite}
+.anim-tilt{animation:a9Tilt 5s ease-in-out infinite}
+.anim-bounce{animation:a10Bounce 2.5s ease-in-out infinite}
+.anim-blink{animation:a11Blink 2.5s ease-in-out infinite}
+.anim-border{animation:a12PulseBorder 2.8s ease-in-out infinite}
+.anim-gradient{background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent),var(--primary));background-size:200% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:a13Gradient 5s linear infinite}
+.anim-drift{animation:a14Drift 9s ease-in-out infinite}
+.anim-reveal{animation:a15Reveal .8s ease both}
+.anim-pop{animation:a16Pop .6s cubic-bezier(.2,1.4,.4,1) both}
+.anim-wiggle{animation:a17Wiggle 3s ease-in-out infinite}
+.anim-sweep{background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.09) 50%,transparent 65%);background-size:240% 100%;animation:a18Sweep 4.5s linear infinite}
+.anim-neon{animation:a19Neon 2.6s ease-in-out infinite}
+.anim-float-slow{animation:a20FloatSlow 6s ease-in-out infinite}
+.anim-focus{animation:a21Focus .8s ease both}
+.anim-flip{animation:a22Flip 4s ease-in-out infinite}
+.anim-stretch{animation:a23Stretch 3.5s ease-in-out infinite}
+.anim-heartbeat{animation:a24Heartbeat 2.2s ease-in-out infinite}
+.anim-spark{animation:a25Spark 2.5s ease-in-out infinite}
+.anim-orbit{animation:a26Orbit 5s ease-in-out infinite}
+.anim-fade-scale{animation:a27FadeScale .7s ease both}
+.anim-underline{background-image:linear-gradient(var(--primary),var(--primary));background-repeat:no-repeat;background-position:left bottom;background-size:100% 2px;animation:a28Underline 1s ease both}
+.anim-glitch{animation:a29Glitch 4s steps(2,end) infinite}
+.anim-star{animation:a30Star 2.8s ease-in-out infinite}
+
+/* subtle automatic motion across existing components */
+.hero{animation:a21Focus .7s ease both}
+.section-heading{animation:a6Rise .7s ease both}
+.card{animation:a27FadeScale .55s ease both}
+.map-step{animation:a7Zoom .55s ease both}
+.nav button{transition:transform .22s ease,background .22s ease,border-color .22s ease}
+.nav button:hover{transform:translateX(4px)}
+.complete-btn{position:relative;overflow:hidden}
+.complete-btn::before{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);animation:a18Sweep 5s linear infinite;pointer-events:none}
+.gradient{animation:a13Gradient 5s linear infinite}
+}
+
+/* =========================================================
+   GLASSMORPHISM THEMES
+========================================================= */
+body[data-theme^="glass"] .sidebar,
+body[data-theme^="glass"] .card,
+body[data-theme^="glass"] .map-step,
+body[data-theme^="glass"] .day-card,
+body[data-theme^="glass"] .gpa-card,
+body[data-theme^="glass"] .theme-box,
+body[data-theme^="glass"] .phase-header,
+body[data-theme^="glass"] .stat-card,
+body[data-theme^="glass"] .mission,
+body[data-theme^="glass"] .next,
+body[data-theme^="glass"] .command-card{
+    background:linear-gradient(135deg,rgba(255,255,255,.095),rgba(255,255,255,.035)),var(--panel);
+    backdrop-filter:blur(18px) saturate(135%);
+    -webkit-backdrop-filter:blur(18px) saturate(135%);
+    border-color:rgba(255,255,255,.16);
+    box-shadow:0 18px 55px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08);
+}
+body[data-theme^="glass"] .card:hover{transform:translateY(-7px) scale(1.005);box-shadow:0 24px 70px rgba(0,0,0,.28),0 0 30px color-mix(in srgb,var(--primary) 10%,transparent)}
+body[data-theme^="glass"] .theme-box{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));}
+body[data-theme^="glass"] .search-box,
+body[data-theme^="glass"] .form-input,
+body[data-theme^="glass"] .gpa-card input,
+body[data-theme^="glass"] .gpa-card select{background:rgba(0,0,0,.22)!important;backdrop-filter:blur(10px);}
+body[data-theme^="glass"]{background-image:radial-gradient(circle at 15% 10%,color-mix(in srgb,var(--primary) 20%,transparent),transparent 30%),radial-gradient(circle at 85% 80%,color-mix(in srgb,var(--secondary) 13%,transparent),transparent 28%),linear-gradient(135deg,var(--bg),var(--bg2));background-attachment:fixed;}
+
 footer{
     padding:45px;
     text-align:center;
@@ -1023,6 +1132,12 @@ footer{
             <option value="neon">⚡ Neon Blue</option>
             <option value="copper">🟠 Copper</option>
             <option value="slate">🪨 Slate</option>
+            <option value="glassviolet">🔮 Glass Violet</option>
+            <option value="glasscyan">🧊 Glass Cyan</option>
+            <option value="glassrose">🌸 Glass Rose</option>
+            <option value="glassmint">🍃 Glass Mint</option>
+            <option value="glassgold">✨ Glass Gold</option>
+            <option value="glassspace">🌌 Glass Space</option>
             <option value="lavender">💜 Lavender</option>
             <option value="coffee">☕ Coffee</option>
             <option value="arctic">❄️ Arctic</option>
