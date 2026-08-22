@@ -1098,6 +1098,10 @@ footer{
         <button onclick="showPage('cad',this)">
             📐 CAD
         </button>
+
+        <button onclick="showPage('chipdesign',this)">
+            🧠 Chip Design & Silicon
+        </button>
     </div>
 
     <div class="sidebar-title">PROJECT + CAREER</div>
@@ -5196,6 +5200,1392 @@ This permanently clears saved roadmap progress in this browser.
 </div>
 </section>
 
+
+
+<!-- =========================================================
+     CHIP DESIGN + SILICON
+========================================================= -->
+
+<section class="page" id="chipdesign">
+
+<div class="hero">
+
+    <h1>🧠 Create Your Own <span class="gradient">Chip</span></h1>
+
+    <p>
+        A long-term semiconductor roadmap that takes you from zero knowledge
+        through electronics, digital logic, computer architecture, HDL,
+        FPGA development, ASIC design, physical design, verification and
+        eventually a real manufactured chip. This is intentionally sequenced
+        so chip design supports—not competes with—your engineering degree.
+    </p>
+
+    <div class="mission">
+        <strong>🎯 Final mission</strong>
+        <p>
+            Design a small digital circuit yourself, verify it, turn it into
+            a physical ASIC layout, submit it through an educational shuttle
+            such as Tiny Tapeout, receive the manufactured silicon, and test it.
+        </p>
+
+        <div class="quote">
+            Electronics → Digital Logic → HDL → Computer Architecture →
+            FPGA → ASIC Flow → Physical Design → Tapeout → Silicon → Test
+        </div>
+    </div>
+
+</div>
+
+<div class="content">
+
+<div class="warning-box">
+    <strong>⚠️ Important:</strong>
+    Your first goal is NOT to reproduce a modern TSMC processor.
+    Modern semiconductor manufacturing requires industrial fabrication
+    facilities. Your realistic first milestone is designing your own small
+    ASIC and having a foundry manufacture it through a shared shuttle.
+    Home semiconductor fabrication is a separate advanced laboratory topic
+    and is not required to accomplish this roadmap.
+</div>
+
+<div class="section-heading">
+    <h2>What You Are Actually Learning</h2>
+    <p>
+        Chip creation is not one skill. It is a stack of engineering disciplines
+        that gradually connect together.
+    </p>
+</div>
+
+<div class="phase-map">
+
+    <div class="map-step">
+        <div class="map-number">01</div>
+        <h3>Electronics</h3>
+        <p>Voltage, current, MOSFETs, CMOS, capacitors, measurement and circuits.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">02</div>
+        <h3>Digital Logic</h3>
+        <p>Binary, Boolean algebra, gates, adders, muxes, flip-flops, registers and FSMs.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">03</div>
+        <h3>Computer Architecture</h3>
+        <p>ALUs, registers, instruction sets, memory, buses, pipelines and CPUs.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">04</div>
+        <h3>HDL</h3>
+        <p>SystemVerilog/Verilog and the difference between describing software and hardware.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">05</div>
+        <h3>FPGA</h3>
+        <p>Put your hardware design onto programmable silicon and test it physically.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">06</div>
+        <h3>ASIC Design</h3>
+        <p>Move from programmable hardware to a design intended for fabrication.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">07</div>
+        <h3>Physical Design</h3>
+        <p>Turn logic into cells, placement, routing, timing and a physical layout.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">08</div>
+        <h3>Tapeout</h3>
+        <p>Generate the manufacturing database and submit a checked design.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">09</div>
+        <h3>Silicon</h3>
+        <p>The foundry manufactures the shared wafer and the dies are packaged.</p>
+    </div>
+
+    <div class="map-step">
+        <div class="map-number">10</div>
+        <h3>Bring-Up</h3>
+        <p>Power, clock, inputs, outputs, measurements, debugging and documentation.</p>
+    </div>
+
+</div>
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 0 — Set Up Your Chip Lab</h2>
+        <p class="phase-description">
+            Build the environment before trying to design silicon.
+        </p>
+    </div>
+    <div class="phase-time">1–2 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-lab">
+
+<span class="badge">SETUP • 4–8 HOURS</span>
+
+<h3>Software + Hardware Workspace</h3>
+
+<div class="learn">
+<strong>Install / prepare:</strong>
+<ul>
+<li>VS Code</li>
+<li>Git + GitHub</li>
+<li>Python</li>
+<li>Linux environment or WSL</li>
+<li>GitHub repository for every hardware project</li>
+<li>Digital simulation tools</li>
+<li>Verilog/SystemVerilog simulator</li>
+<li>FPGA vendor tools when you reach the FPGA phase</li>
+<li>KiCad for PCB design</li>
+<li>Oscilloscope and logic analyzer later, when budget allows</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Proof:</strong>
+You can create a repository, write a tiny HDL module, simulate it,
+commit the project and reproduce the result from a clean environment.
+</div>
+
+<div class="task-list">
+<label class="task"><input type="checkbox"><span class="task-text">Create a chip-design GitHub repository</span><span class="task-duration">20 min</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Install/configure VS Code</span><span class="task-duration">20 min</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Set up Linux/WSL</span><span class="task-duration">30–60 min</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Install a Verilog simulator</span><span class="task-duration">30 min</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Learn Git workflow for hardware projects</span><span class="task-duration">1 hr</span></label>
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-notebook">
+
+<span class="badge">DOCUMENTATION • ONGOING</span>
+
+<h3>Create a Semiconductor Engineering Notebook</h3>
+
+<div class="learn">
+<strong>Track:</strong>
+<ul>
+<li>Concepts you learned</li>
+<li>Circuit diagrams</li>
+<li>Timing diagrams</li>
+<li>Simulation results</li>
+<li>Design decisions</li>
+<li>Failed experiments</li>
+<li>Measurements</li>
+<li>Datasheets</li>
+<li>Architecture decisions</li>
+<li>Chip revisions</li>
+</ul>
+</div>
+
+<div class="role">
+<strong>Rule:</strong>
+Treat every chip project like a real engineering project. Record what you
+expected, what happened, why it happened and what you changed.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 1 — Electronics Fundamentals</h2>
+        <p class="phase-description">
+            Understand the physical behavior underneath digital logic.
+        </p>
+    </div>
+    <div class="phase-time">4–8 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-electronics">
+
+<span class="badge">FOUNDATION • 20–40 HOURS</span>
+
+<h3>Learn Circuits + MOSFET Fundamentals</h3>
+
+<div class="learn">
+<strong>Learn:</strong>
+<ul>
+<li>Voltage, current and resistance</li>
+<li>Ohm's law</li>
+<li>Power</li>
+<li>Kirchhoff's laws</li>
+<li>Capacitors and inductors</li>
+<li>Diodes</li>
+<li>PN junction basics</li>
+<li>BJT vs MOSFET</li>
+<li>N-channel and P-channel MOSFETs</li>
+<li>CMOS logic</li>
+<li>Pull-up and pull-down behavior</li>
+<li>Propagation delay</li>
+<li>Noise margins</li>
+<li>Power consumption</li>
+</ul>
+</div>
+
+<div class="task-list">
+<label class="task"><input type="checkbox"><span class="task-text">Build basic resistor/LED circuits</span><span class="task-duration">2 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Learn MOSFET operation conceptually</span><span class="task-duration">3 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Study CMOS inverter behavior</span><span class="task-duration">2 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Simulate a CMOS inverter</span><span class="task-duration">2–4 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Measure a simple circuit with a multimeter</span><span class="task-duration">1–2 hr</span></label>
+</div>
+
+<div class="proof">
+<strong>Build:</strong>
+A small transistor/CMOS demonstration circuit and a written explanation
+of why each transistor changes the output.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-electronics-tools">
+
+<span class="badge">TOOLS • 4–10 HOURS</span>
+
+<h3>Learn Your Measurement Tools</h3>
+
+<div class="learn">
+<strong>Eventually become comfortable with:</strong>
+<ul>
+<li>Digital multimeter</li>
+<li>Bench power supply</li>
+<li>Oscilloscope</li>
+<li>Logic analyzer</li>
+<li>Function generator</li>
+<li>Datasheets and pinouts</li>
+<li>Basic soldering</li>
+<li>Breadboards and jumper wiring</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<strong>Safety:</strong>
+Keep early projects low-voltage and follow the equipment and component
+ratings. Semiconductor fabrication chemistry is not a beginner electronics
+project.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 2 — Digital Logic</h2>
+        <p class="phase-description">
+            Build the mathematical and logical building blocks used inside processors.
+        </p>
+    </div>
+    <div class="phase-time">4–8 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-digital-logic">
+
+<span class="badge">CORE SKILL • 25–50 HOURS</span>
+
+<h3>Master Digital Logic</h3>
+
+<div class="learn">
+<strong>Learn:</strong>
+<ul>
+<li>Binary and hexadecimal</li>
+<li>Signed and unsigned numbers</li>
+<li>Boolean algebra</li>
+<li>Truth tables</li>
+<li>AND / OR / NOT / XOR / NAND / NOR</li>
+<li>De Morgan's laws</li>
+<li>Combinational vs sequential logic</li>
+<li>Multiplexers and demultiplexers</li>
+<li>Encoders and decoders</li>
+<li>Half adders and full adders</li>
+<li>Ripple-carry and faster adders</li>
+<li>Latches and flip-flops</li>
+<li>Registers</li>
+<li>Counters</li>
+<li>Finite-state machines</li>
+<li>Clocking and timing</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Build:</strong>
+A complete 4-bit ALU from smaller logic blocks. Do not simply copy a finished
+design—be able to explain every input, output and control signal.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-logic-projects">
+
+<span class="badge">PROJECTS • 15–30 HOURS</span>
+
+<h3>Digital Logic Project Ladder</h3>
+
+<div class="task-list">
+<label class="task"><input type="checkbox"><span class="task-text">Build an XOR from simpler gates</span><span class="task-duration">1 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a half adder</span><span class="task-duration">1 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a full adder</span><span class="task-duration">1–2 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a 4-bit adder</span><span class="task-duration">2 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a multiplexer</span><span class="task-duration">1 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build registers</span><span class="task-duration">2–4 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a counter</span><span class="task-duration">2–3 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a small finite-state machine</span><span class="task-duration">3–5 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a 4-bit ALU</span><span class="task-duration">5–10 hr</span></label>
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 3 — Computer Architecture</h2>
+        <p class="phase-description">
+            Understand how individual circuits become a working computer.
+        </p>
+    </div>
+    <div class="phase-time">6–12 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-architecture">
+
+<span class="badge">COMPUTER ENGINEERING • 30–60 HOURS</span>
+
+<h3>Learn How a CPU Works</h3>
+
+<div class="learn">
+<strong>Understand:</strong>
+<ul>
+<li>Instruction sets</li>
+<li>Registers</li>
+<li>ALU</li>
+<li>Control unit</li>
+<li>Program counter</li>
+<li>Instruction decoder</li>
+<li>Memory</li>
+<li>Stack and heap concepts</li>
+<li>Buses</li>
+<li>Interrupts</li>
+<li>Cache</li>
+<li>Pipelining</li>
+<li>Branching</li>
+<li>Memory hierarchy</li>
+<li>RISC vs CISC concepts</li>
+<li>RISC-V fundamentals</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Goal:</strong>
+Be able to draw a CPU datapath and explain how a single instruction travels
+through fetch, decode, execute and write-back.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-cpu-project">
+
+<span class="badge">MAJOR PROJECT • 30–80 HOURS</span>
+
+<h3>Build an 8-bit CPU in Simulation</h3>
+
+<div class="learn">
+<strong>Suggested progression:</strong>
+<ol>
+<li>Define your instruction set</li>
+<li>Design the register file</li>
+<li>Design the ALU</li>
+<li>Design instruction decoding</li>
+<li>Design the program counter</li>
+<li>Connect the datapath</li>
+<li>Add memory</li>
+<li>Write a tiny assembler or instruction encoder</li>
+<li>Write test programs</li>
+<li>Document the architecture</li>
+</ol>
+</div>
+
+<div class="proof">
+<strong>Proof:</strong>
+Your CPU executes a small program in simulation without you manually changing
+internal registers every cycle.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 4 — Verilog / SystemVerilog</h2>
+        <p class="phase-description">
+            Learn to describe hardware rather than merely program a computer.
+        </p>
+    </div>
+    <div class="phase-time">6–10 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-hdl">
+
+<span class="badge">HDL • 30–60 HOURS</span>
+
+<h3>Learn Verilog / SystemVerilog</h3>
+
+<div class="learn">
+<strong>Learn:</strong>
+<ul>
+<li>Modules and ports</li>
+<li>Wires and logic</li>
+<li>Continuous assignments</li>
+<li>always_comb</li>
+<li>always_ff</li>
+<li>Blocking vs non-blocking assignments</li>
+<li>Parameters</li>
+<li>Generate constructs</li>
+<li>Clocked logic</li>
+<li>Reset design</li>
+<li>Testbenches</li>
+<li>Assertions</li>
+<li>Simulation waveforms</li>
+<li>Synthesis-aware coding</li>
+<li>Finite-state machines</li>
+</ul>
+</div>
+
+<div class="role">
+<strong>Mindset shift:</strong>
+Python tells a processor what to calculate. HDL describes hardware that can
+perform the calculation. Learn to think in signals, parallelism, clocks and state.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-verification">
+
+<span class="badge">VERIFICATION • 20–50 HOURS</span>
+
+<h3>Learn Hardware Verification</h3>
+
+<div class="learn">
+<strong>Practice:</strong>
+<ul>
+<li>Write testbenches before trusting the design</li>
+<li>Test normal cases</li>
+<li>Test edge cases</li>
+<li>Test reset behavior</li>
+<li>Test invalid inputs</li>
+<li>Inspect waveforms</li>
+<li>Use assertions where appropriate</li>
+<li>Compare expected vs actual outputs</li>
+<li>Keep regression tests</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Rule:</strong>
+Never call a hardware design "working" because one simulation worked.
+Build repeatable tests.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 5 — FPGA</h2>
+        <p class="phase-description">
+            Take your HDL design from simulation into real programmable hardware.
+        </p>
+    </div>
+    <div class="phase-time">6–12 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-fpga">
+
+<span class="badge">HARDWARE • 30–80 HOURS</span>
+
+<h3>Get an FPGA Working</h3>
+
+<div class="learn">
+<strong>Learn:</strong>
+<ul>
+<li>FPGA architecture</li>
+<li>LUTs</li>
+<li>Flip-flops</li>
+<li>Block RAM</li>
+<li>Clock resources</li>
+<li>Constraints</li>
+<li>Pin assignments</li>
+<li>Synthesis</li>
+<li>Place and route</li>
+<li>Timing reports</li>
+<li>Bitstreams</li>
+<li>On-board debugging</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Build:</strong>
+Put your 8-bit CPU or a smaller CPU-like design onto an FPGA and make it
+perform a visible task such as driving LEDs, a display or serial output.
+</div>
+
+<div class="task-list">
+<label class="task"><input type="checkbox"><span class="task-text">Buy/borrow a beginner FPGA board</span><span class="task-duration">Budget dependent</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Blink an LED from HDL</span><span class="task-duration">1–2 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Build a counter</span><span class="task-duration">1–2 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Drive a seven-segment display</span><span class="task-duration">2–4 hr</span></label>
+<label class="task"><input type="checkbox"><span class="task-text">Implement your CPU</span><span class="task-duration">10–30 hr</span></label>
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 6 — ASIC Design Flow</h2>
+        <p class="phase-description">
+            Learn how an HDL design becomes a physical chip layout.
+        </p>
+    </div>
+    <div class="phase-time">8–16 WEEKS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-asic-flow">
+
+<span class="badge">ASIC • 40–100 HOURS</span>
+
+<h3>Learn RTL → GDSII</h3>
+
+<div class="learn">
+<strong>Understand:</strong>
+<ol>
+<li>RTL design</li>
+<li>Simulation</li>
+<li>Linting</li>
+<li>Synthesis</li>
+<li>Standard-cell libraries</li>
+<li>Netlists</li>
+<li>Floorplanning</li>
+<li>Power planning</li>
+<li>Placement</li>
+<li>Clock-tree concepts</li>
+<li>Routing</li>
+<li>Static timing analysis</li>
+<li>Design-rule checking</li>
+<li>Layout-vs-schematic checking</li>
+<li>GDSII generation</li>
+<li>Tapeout</li>
+</ol>
+</div>
+
+<div class="role">
+<strong>Tools to study:</strong>
+Open-source flows such as Yosys, OpenROAD/LibreLane/OpenLane ecosystems,
+Magic and KLayout, plus a process design kit such as SKY130 when appropriate.
+Tool versions and supported flows change, so always follow the current
+documentation for the shuttle you are using.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-pdk">
+
+<span class="badge">PDK • 15–40 HOURS</span>
+
+<h3>Understand a Process Design Kit</h3>
+
+<div class="learn">
+<strong>Learn what a PDK provides:</strong>
+<ul>
+<li>Process information</li>
+<li>Design rules</li>
+<li>Device models</li>
+<li>Standard-cell information</li>
+<li>Technology layers</li>
+<li>Parasitic information</li>
+<li>Verification rules</li>
+<li>Documentation required by the process</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Goal:</strong>
+Understand why an ASIC layout is not simply an image of your circuit.
+It must obey the physical manufacturing rules of a specific process.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 7 — Your First ASIC</h2>
+        <p class="phase-description">
+            Start small. Your first manufactured chip should be a learning project.
+        </p>
+    </div>
+    <div class="phase-time">2–6 MONTHS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-first-asic">
+
+<span class="badge">FIRST SILICON • 40–120 HOURS</span>
+
+<h3>Choose Your First Chip</h3>
+
+<div class="learn">
+<strong>Good first projects:</strong>
+<ul>
+<li>LED pattern generator</li>
+<li>Counter</li>
+<li>Frequency divider</li>
+<li>UART transmitter</li>
+<li>Traffic-light controller</li>
+<li>Reaction timer</li>
+<li>Small ALU</li>
+<li>Simple game logic</li>
+<li>Very small CPU</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<strong>Do not start with:</strong>
+A modern CPU, GPU, neural accelerator or complex SoC. Your first chip should
+be small enough that you can understand the entire design.
+</div>
+
+<div class="proof">
+<strong>Recommended first milestone:</strong>
+A simple digital design that passes simulation, passes the target shuttle's
+automated checks and can be demonstrated on the resulting hardware.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-tinytapeout">
+
+<span class="badge">TAPEOUT • REAL SILICON</span>
+
+<h3>Use an Educational Shuttle</h3>
+
+<div class="learn">
+<strong>Learn the actual submission pipeline:</strong>
+<ol>
+<li>Create the project repository</li>
+<li>Choose the current shuttle/process</li>
+<li>Use the current submission template</li>
+<li>Develop and verify the RTL</li>
+<li>Run the automated build</li>
+<li>Inspect the generated layout</li>
+<li>Fix failed checks</li>
+<li>Complete documentation</li>
+<li>Submit before the shuttle deadline</li>
+<li>Wait for fabrication and packaging</li>
+<li>Bring up the returned chip</li>
+</ol>
+</div>
+
+<div class="success-box">
+<strong>Realistic milestone:</strong>
+Tiny Tapeout currently provides beginner-oriented material for taking a simple
+digital design through GDS generation and submission to a real manufactured
+chip. Its current guides and shuttle requirements should be treated as the
+source of truth when you reach this stage.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="phase">
+
+<div class="phase-header">
+    <div>
+        <h2 class="phase-title">Phase 8 — Bring Up Your Silicon</h2>
+        <p class="phase-description">
+            The project is not finished when the chip arrives.
+        </p>
+    </div>
+    <div class="phase-time">10–30 HOURS</div>
+</div>
+
+<div class="grid">
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-bringup">
+
+<span class="badge">POST-SILICON • 10–30 HOURS</span>
+
+<h3>Test the Physical Chip</h3>
+
+<div class="learn">
+<strong>Prepare:</strong>
+<ul>
+<li>Power connections</li>
+<li>Clock source</li>
+<li>Input signals</li>
+<li>Output measurement</li>
+<li>Test firmware or controller</li>
+<li>Logic analyzer/oscilloscope where appropriate</li>
+<li>Expected-vs-actual test table</li>
+<li>Failure log</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Final proof:</strong>
+You can demonstrate the physical chip performing the function you designed
+and explain the complete path from RTL to silicon.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+
+<div class="card roadmap-card" data-category="chipdesign" data-id="chip-postmortem">
+
+<span class="badge">ENGINEERING REPORT • 3–6 HOURS</span>
+
+<h3>Write the First Silicon Report</h3>
+
+<div class="learn">
+<strong>Document:</strong>
+<ul>
+<li>Project requirements</li>
+<li>Architecture</li>
+<li>RTL</li>
+<li>Verification strategy</li>
+<li>Physical design flow</li>
+<li>Manufacturing process/shuttle used</li>
+<li>Expected behavior</li>
+<li>Measured behavior</li>
+<li>Failures</li>
+<li>Root causes</li>
+<li>Next revision</li>
+</ul>
+</div>
+
+<div class="proof">
+<strong>Portfolio value:</strong>
+A well-documented first ASIC is more valuable than simply writing
+"I made a chip." Show the engineering process.
+</div>
+
+<button class="complete-btn" onclick="completeCard(this)">✓ Complete Milestone</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="section-heading">
+    <h2>📚 Books — Use These in Order</h2>
+    <p>
+        Do not buy every book at once. Move to the next level when the previous
+        material becomes useful.
+    </p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<span class="badge">LEVEL 1 • DIGITAL LOGIC</span>
+<h3>Digital Design and Computer Architecture</h3>
+<p><strong>David Harris & Sarah Harris</strong></p>
+<div class="learn">
+<strong>Use it for:</strong>
+<ul>
+<li>Digital logic</li>
+<li>Boolean reasoning</li>
+<li>Datapaths</li>
+<li>CPU architecture</li>
+<li>HDL examples</li>
+<li>Computer architecture foundations</li>
+</ul>
+</div>
+<div class="proof"><strong>Best use:</strong> Work problems and build the circuits instead of reading passively.</div>
+</div>
+
+<div class="card">
+<span class="badge">LEVEL 2 • COMPUTER ARCHITECTURE</span>
+<h3>Computer Organization and Design: RISC-V Edition</h3>
+<p><strong>David Patterson & John Hennessy</strong></p>
+<div class="learn">
+<strong>Use it for:</strong>
+<ul>
+<li>Instruction sets</li>
+<li>Datapaths</li>
+<li>CPU organization</li>
+<li>Memory hierarchy</li>
+<li>Pipelining</li>
+<li>RISC-V</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<span class="badge">LEVEL 3 • VLSI</span>
+<h3>CMOS VLSI Design</h3>
+<p><strong>Neil Weste & David Harris</strong></p>
+<div class="learn">
+<strong>Use it for:</strong>
+<ul>
+<li>CMOS circuits</li>
+<li>VLSI architecture</li>
+<li>Physical design</li>
+<li>Timing</li>
+<li>Power</li>
+<li>Layout</li>
+</ul>
+</div>
+</div>
+
+<div class="card">
+<span class="badge">LEVEL 4 • ELECTRONICS</span>
+<h3>The Art of Electronics</h3>
+<p><strong>Paul Horowitz & Winfield Hill</strong></p>
+<div class="learn">
+<strong>Use it as:</strong>
+A reference for understanding real electronic circuits, measurement,
+transistors and practical design. You do not need to read it cover-to-cover
+before beginning digital design.
+</div>
+</div>
+
+<div class="card">
+<span class="badge">LEVEL 5 • SEMICONDUCTOR PHYSICS</span>
+<h3>Semiconductor Device Fundamentals</h3>
+<p><strong>Robert F. Pierret</strong></p>
+<div class="learn">
+<strong>Use it later for:</strong>
+Semiconductor physics, PN junctions, MOS structures, device behavior and
+the physical basis underneath transistors.
+</div>
+<div class="role"><strong>Timing:</strong> Save this for when your engineering mathematics and electronics foundation is strong.</div>
+</div>
+
+<div class="card">
+<span class="badge">REFERENCE</span>
+<h3>Digital Integrated Circuits</h3>
+<p><strong>Jan M. Rabaey, Anantha Chandrakasan & Borivoje Nikolić</strong></p>
+<div class="learn">
+<strong>Use it for:</strong>
+A deeper look at digital IC design, CMOS logic, timing, power and integrated
+circuit implementation once you are comfortable with the fundamentals.
+</div>
+</div>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>🎥 YouTube / Video Learning</h2>
+    <p>
+        Use videos for intuition, then immediately reproduce the concept yourself.
+    </p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<span class="badge">DIGITAL LOGIC</span>
+<h3>Ben Eater</h3>
+<p>
+Excellent for seeing computer architecture physically. His breadboard computer
+projects make registers, buses, clocks, ALUs and CPUs much easier to visualize.
+</p>
+<div class="proof"><strong>Watch for:</strong> Digital logic → CPU architecture → physical debugging.</div>
+</div>
+
+<div class="card">
+<span class="badge">ELECTRONICS + PCB + FPGA</span>
+<h3>Phil's Lab</h3>
+<p>
+Strong practical engineering content covering embedded electronics, PCB design,
+FPGA work, high-speed concepts and professional hardware workflows.
+</p>
+<div class="proof"><strong>Watch for:</strong> PCB → FPGA → embedded hardware → engineering workflow.</div>
+</div>
+
+<div class="card">
+<span class="badge">PCB + HARDWARE ENGINEERING</span>
+<h3>Robert Feranec / FEDEVEL</h3>
+<p>
+Useful for understanding how professional hardware engineers think about
+schematics, PCB design, high-speed interfaces and real hardware development.
+</p>
+</div>
+
+<div class="card">
+<span class="badge">DIGITAL ELECTRONICS</span>
+<h3>Neso Academy</h3>
+<p>
+Use its digital electronics material as a structured supplement for gates,
+Boolean algebra, combinational logic, sequential logic and related fundamentals.
+</p>
+</div>
+
+<div class="card">
+<span class="badge">SEMICONDUCTOR INTUITION</span>
+<h3>Branch Education</h3>
+<p>
+Use visual explanations to understand how modern processors and semiconductor
+technology fit together before diving into dense textbooks.
+</p>
+</div>
+
+<div class="card">
+<span class="badge">RULE</span>
+<h3>Do Not Become a Video Collector</h3>
+<p>
+For every 30–60 minutes of video, spend time reproducing the idea in a
+simulation, circuit, HDL project, calculation or written explanation.
+</p>
+<div class="proof"><strong>Target:</strong> Watch less. Build more.</div>
+</div>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>🛠️ Resource Stack</h2>
+    <p>
+        These are the categories of tools you will gradually add—not tools you
+        need on day one.
+    </p>
+</div>
+
+<div class="card table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Stage</th>
+<th>Tools / Resources</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Electronics</td>
+<td>Multimeter, breadboard, bench supply, basic components</td>
+<td>Learn physical circuits</td>
+</tr>
+
+<tr>
+<td>Digital logic</td>
+<td>Digital simulator / logic simulator</td>
+<td>Build and test logic before hardware</td>
+</tr>
+
+<tr>
+<td>HDL</td>
+<td>Verilog/SystemVerilog simulator, VS Code, Git</td>
+<td>Describe and verify hardware</td>
+</tr>
+
+<tr>
+<td>FPGA</td>
+<td>Beginner FPGA board + vendor toolchain</td>
+<td>Run your HDL on real programmable silicon</td>
+</tr>
+
+<tr>
+<td>ASIC</td>
+<td>Yosys + OpenROAD/LibreLane/OpenLane ecosystem</td>
+<td>Synthesis and physical implementation</td>
+</tr>
+
+<tr>
+<td>PDK</td>
+<td>SKY130 or another currently supported educational/open process</td>
+<td>Technology-specific manufacturing rules</td>
+</tr>
+
+<tr>
+<td>Layout</td>
+<td>Magic / KLayout and current verification tools</td>
+<td>Inspect and verify physical layout</td>
+</tr>
+
+<tr>
+<td>Tapeout</td>
+<td>Tiny Tapeout or another shuttle</td>
+<td>Submit a design for real fabrication</td>
+</tr>
+
+<tr>
+<td>Bring-up</td>
+<td>ASIC breakout/demo board, logic analyzer, oscilloscope</td>
+<td>Test the physical silicon</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>🌐 Websites to Bookmark</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Tiny Tapeout</h3>
+<p>
+Beginner-oriented path to real chip fabrication through shared shuttles,
+including tutorials, templates, workshops and submission documentation.
+</p>
+<p><a href="https://tinytapeout.com/" target="_blank" rel="noopener">https://tinytapeout.com/</a></p>
+</div>
+
+<div class="card">
+<h3>Tiny Tapeout Guides</h3>
+<p>
+Use the guides when you actually reach the submission stage. Requirements,
+supported processes and workflows can change between shuttles.
+</p>
+<p><a href="https://tinytapeout.com/guides/" target="_blank" rel="noopener">https://tinytapeout.com/guides/</a></p>
+</div>
+
+<div class="card">
+<h3>SkyWater SKY130 PDK Documentation</h3>
+<p>
+Reference material for the open SKY130 process. Treat the current PDK and
+target shuttle documentation as authoritative for actual designs.
+</p>
+<p><a href="https://skywater-pdk.readthedocs.io/" target="_blank" rel="noopener">https://skywater-pdk.readthedocs.io/</a></p>
+</div>
+
+<div class="card">
+<h3>OpenLane</h3>
+<p>
+Learn the open-source RTL-to-GDS flow and understand how synthesis and
+physical implementation connect.
+</p>
+<p><a href="https://openlane.readthedocs.io/" target="_blank" rel="noopener">https://openlane.readthedocs.io/</a></p>
+</div>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>🎯 Portfolio Milestones</h2>
+    <p>
+        Each milestone should leave behind evidence that another engineer can inspect.
+    </p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Milestone 01 — Electronics</h3>
+<p>Build and explain transistor/CMOS circuits.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 02 — Digital Logic</h3>
+<p>Build a 4-bit ALU and document its architecture.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 03 — CPU</h3>
+<p>Build and simulate an 8-bit CPU.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 04 — HDL</h3>
+<p>Reimplement the CPU in Verilog/SystemVerilog with automated tests.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 05 — FPGA</h3>
+<p>Run the CPU on physical programmable hardware.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 06 — ASIC</h3>
+<p>Take a small design through synthesis, physical design and verification.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 07 — Tapeout</h3>
+<p>Submit your design to a real educational semiconductor shuttle.</p>
+</div>
+
+<div class="card">
+<h3>Milestone 08 — Silicon</h3>
+<p>Receive, power, test and document the manufactured chip.</p>
+</div>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>⏱️ Suggested Long-Term Timeline</h2>
+</div>
+
+<div class="card table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Period</th>
+<th>Primary Focus</th>
+<th>Chip Goal</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Months 1–2</td>
+<td>Electronics + digital logic</td>
+<td>Understand transistors, CMOS and logic gates</td>
+</tr>
+
+<tr>
+<td>Months 3–4</td>
+<td>Digital systems</td>
+<td>Build ALU, registers and FSM projects</td>
+</tr>
+
+<tr>
+<td>Months 5–7</td>
+<td>Computer architecture + HDL</td>
+<td>Build and verify an 8-bit CPU</td>
+</tr>
+
+<tr>
+<td>Months 8–10</td>
+<td>FPGA</td>
+<td>Run your CPU on real programmable hardware</td>
+</tr>
+
+<tr>
+<td>Months 10–14</td>
+<td>ASIC flow</td>
+<td>Learn synthesis, physical design and verification</td>
+</tr>
+
+<tr>
+<td>Months 14–18+</td>
+<td>First ASIC</td>
+<td>Tape out a small design through an educational shuttle</td>
+</tr>
+
+<tr>
+<td>After first silicon</td>
+<td>Iteration</td>
+<td>Improve architecture, verification, timing and physical design</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>🧭 How This Fits Your Existing Roadmap</h2>
+</div>
+
+<div class="two-col">
+
+<div class="card">
+<h3>Programming</h3>
+<p>
+Keep your existing JavaScript/Python path. Add C later because low-level
+programming, embedded systems and computer architecture become increasingly
+important as you move toward hardware.
+</p>
+</div>
+
+<div class="card">
+<h3>Engineering School</h3>
+<p>
+Your degree remains the priority. Your mathematics, physics, circuits,
+electronics and computer engineering courses will directly support this path.
+</p>
+</div>
+
+<div class="card">
+<h3>Electronics</h3>
+<p>
+The existing Electronics page is your entry point. This chip roadmap extends
+it into digital logic, CMOS, HDL and ASIC design rather than replacing it.
+</p>
+</div>
+
+<div class="card">
+<h3>CAD</h3>
+<p>
+Keep learning CAD for mechanical engineering and hardware projects. IC layout
+is a different discipline, but the engineering habit of thinking spatially
+and respecting design constraints carries over.
+</p>
+</div>
+
+<div class="card">
+<h3>AI-Assisted Workflow</h3>
+<p>
+Use AI to explain datasheets, debug HDL, generate test ideas and help interpret
+errors—but verify every hardware claim. Your existing roadmap already emphasizes
+testing AI-generated work instead of blindly trusting it.
+</p>
+</div>
+
+<div class="card">
+<h3>Failure Log</h3>
+<p>
+Every failed simulation, FPGA bug and silicon issue becomes an engineering
+lesson. Record the expected behavior, actual behavior, root cause, fix and
+prevention rule.
+</p>
+</div>
+
+</div>
+
+
+<div class="section-heading">
+    <h2>🏁 Final Definition of "I Made My Own Chip"</h2>
+</div>
+
+<div class="success-box">
+<strong>You have completed the mission when:</strong>
+<ul>
+<li>You can explain how a MOSFET becomes a CMOS logic gate.</li>
+<li>You can design digital logic without copying a finished circuit.</li>
+<li>You can explain a CPU datapath.</li>
+<li>You can write and verify HDL.</li>
+<li>You can run your design on an FPGA.</li>
+<li>You understand RTL-to-GDS at a conceptual and practical level.</li>
+<li>You can pass the physical-design checks for your chosen process/shuttle.</li>
+<li>You have submitted your own design for fabrication.</li>
+<li>You have tested the resulting physical silicon.</li>
+<li>You can document the entire engineering process.</li>
+</ul>
+</div>
+
+<div class="quote">
+    Do not rush to silicon. The goal is not merely to receive a chip.
+    The goal is to understand enough of the stack that you can explain
+    exactly how your design went from an idea in your notebook to physical
+    transistors on silicon.
+</div>
+
+</div>
+</section>
 
 </main>
 </div>
