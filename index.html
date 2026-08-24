@@ -1072,6 +1072,72 @@ footer{
         flex-direction:column;
     }
 }
+
+/* =========================================================
+   FOUNDER STRATEGY TAB — uses existing roadmap design
+   ========================================================= */
+.founder-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:14px;
+    margin:20px 0 28px;
+}
+.founder-kpi{
+    padding:18px;
+    border-radius:16px;
+    background:linear-gradient(145deg,var(--panel),var(--panel2));
+    border:1px solid var(--border);
+}
+.founder-kpi strong{
+    display:block;
+    font-size:24px;
+    color:var(--accent);
+}
+.founder-kpi span{
+    color:var(--muted);
+    font-size:12px;
+}
+.founder-flow{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+    margin:18px 0;
+}
+.founder-flow .map-step{
+    min-height:120px;
+}
+.founder-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:760px;
+}
+.founder-table th,.founder-table td{
+    padding:11px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+}
+.founder-table th{
+    color:var(--text);
+    background:rgba(124,92,255,.08);
+}
+.founder-table td{
+    color:var(--muted);
+}
+.founder-checklist .task{
+    padding:6px 0;
+}
+.founder-note{
+    margin:14px 0;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+    color:var(--muted);
+}
+.founder-quote{
+    font-size:18px;
+}
+
 </style>
 </head>
 
@@ -1228,6 +1294,10 @@ footer{
 
         <button onclick="showPage('business',this)">
             💼 Business
+        </button>
+
+        <button onclick="showPage('founderstrategy',this)">
+            🧭 Founder Strategy
         </button>
 
         <button onclick="showPage('career',this)">
@@ -6701,6 +6771,913 @@ prevention rule.
 
 </div>
 </section>
+
+
+<!-- =========================================================
+     FOUNDER STRATEGY — ENTREPRENEURSHIP STRATEGY
+========================================================= -->
+<section class="page" id="founderstrategy">
+
+<div class="hero">
+    <h1>🧭 Founder <span class="gradient">Compounding System</span></h1>
+    <p>
+        A 4–5 year entrepreneurship strategy designed to run alongside engineering:
+        start with a service-first local business, solve a real problem, generate revenue,
+        develop technical capability, discover a larger opportunity, and scale only when
+        evidence supports it.
+    </p>
+
+    <div class="mission">
+        <strong>🎯 Core strategy</strong>
+        <p>
+            Start small → solve a real problem → generate revenue → develop technical
+            capability → discover a larger opportunity → scale.
+        </p>
+        <div class="quote founder-quote">
+            Engineering → Customer interviews → Manual service → Paid pilots →
+            Automation (Python/AI) → Better product → Referrals + reputation →
+            Industry expertise → Business advantage
+        </div>
+    </div>
+</div>
+
+<div class="content">
+
+<div class="founder-summary">
+    <div class="founder-kpi">
+        <strong>7.15–7.55</strong>
+        <span>Weighted score for trades / industrial automation</span>
+    </div>
+    <div class="founder-kpi">
+        <strong>5+</strong>
+        <span>Paying pilot customers targeted by day 90</span>
+    </div>
+    <div class="founder-kpi">
+        <strong>$100–$300/mo</strong>
+        <span>Initial paid pricing hypothesis after value is proven</span>
+    </div>
+    <div class="founder-kpi">
+        <strong>20</strong>
+        <span>Local businesses targeted for initial discovery</span>
+    </div>
+    <div class="founder-kpi">
+        <strong>4–5 years</strong>
+        <span>Compounding horizon</span>
+    </div>
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ Strategic constraint:</strong>
+    This is not a startup-from-day-one plan. The target is a side hustle with
+    startup optionality. The strategy should be continued only when real evidence
+    supports it.
+</div>
+
+<div class="section-heading">
+    <h2>Executive Summary</h2>
+    <p>The current business wedge and the assumptions behind it.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <span class="badge">BUSINESS ARENA</span>
+    <h3>Local Trades / Industrial Automation</h3>
+    <p>
+        Service-first entry into small trades or light-manufacturing businesses.
+    </p>
+    <div class="learn">
+        <strong>Target customer:</strong>
+        Owner-operator of a 5–20 employee business such as electricians, HVAC,
+        plumbers, small fabricators or machine shops, typically with roughly
+        $500K–$5M/year in revenue and an owner who personally handles quoting or scheduling.
+    </div>
+</div>
+
+<div class="card">
+    <span class="badge">CORE PROBLEM</span>
+    <h3>Manual Quoting or Scheduling</h3>
+    <p>
+        A specific, recurring manual task costs the owner real hours each week.
+        Existing alternatives are usually spreadsheets, paper, memory, or generic
+        non-trade-specific software.
+    </p>
+    <div class="proof">
+        <strong>Why this wedge:</strong>
+        It can be validated manually before meaningful software is built.
+    </div>
+</div>
+
+<div class="card">
+    <span class="badge">INITIAL OFFER</span>
+    <h3>Free → Paid Manual Service</h3>
+    <p>
+        Personally deliver the result by email or Google Sheets, initially with
+        a 24-hour turnaround. Once value is proven, test roughly $100–$300/month.
+    </p>
+    <div class="role">
+        <strong>Customer acquisition:</strong>
+        Cold outreach (calls/visits), local trade Facebook/LinkedIn groups,
+        and warm introductions for access.
+    </div>
+</div>
+
+<div class="card">
+    <span class="badge">V0</span>
+    <h3>No Software Yet</h3>
+    <p>
+        You personally perform the task by hand for 1–3 businesses. The software
+        MVP comes only after the manual workflow proves repeatable and valuable.
+    </p>
+</div>
+
+</div>
+
+<div class="section-heading">
+    <h2>How the Business Was Selected</h2>
+    <p>Five arenas were compared using customer access, validation, founder fit, scalability and skill compounding.</p>
+</div>
+
+<div class="card table-wrap">
+<table class="founder-table">
+<thead>
+<tr>
+    <th>Opportunity</th>
+    <th>Weighted score</th>
+    <th>Verdict</th>
+    <th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Trades / industrial automation (service-first)</td>
+    <td>7.15–7.55</td>
+    <td><strong>Strong candidate</strong></td>
+    <td>Real customer access, real budgets, frequent pain, cheap validation and a manual-service entry.</td>
+</tr>
+<tr>
+    <td>Workflow tools for engineering firms</td>
+    <td>5.35</td>
+    <td>Kill</td>
+    <td>Access is fatal for a first-year student without credibility with firm owners.</td>
+</tr>
+<tr>
+    <td>Vertical AI for white-collar niches</td>
+    <td>4.60</td>
+    <td>Kill</td>
+    <td>Same access problem plus regulatory sensitivity in credentialed professions.</td>
+</tr>
+<tr>
+    <td>Developer tools / infrastructure</td>
+    <td>5.45</td>
+    <td>High risk / backup</td>
+    <td>Highest technical ceiling, but hardest distribution for a solo unknown builder. Revisit around years 3–4.</td>
+</tr>
+<tr>
+    <td>Systemized local service business → software layer</td>
+    <td>—</td>
+    <td>Investigated</td>
+    <td>Part of the candidate set; the selected wedge became trades/industrial automation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="founder-note">
+    <strong>Selection logic:</strong> The winning arena has real access because owners answer their own phones
+    and control their own budgets; the pain can be frequent and expensive; validation is cheap; a manual
+    service can precede code; and the work compounds sales, building and operating skills simultaneously.
+</div>
+
+<div class="section-heading">
+    <h2>Ruthless Elimination Framework</h2>
+    <p>Every opportunity was tested against the same filters.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Decision Filters</h3>
+    <ul>
+        <li>Customer access</li>
+        <li>Capital required</li>
+        <li>Validation speed</li>
+        <li>Ability to sell manually first</li>
+        <li>Problem frequency and severity</li>
+        <li>Engineering advantage</li>
+        <li>Skill compounding</li>
+        <li>University compatibility</li>
+        <li>Scalability</li>
+        <li>Founder fit</li>
+        <li>4–5 year potential</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>Stress Test</h3>
+    <ul>
+        <li>Survives without AI hype? <strong>Yes.</strong></li>
+        <li>Survives bootstrapped for two years? <strong>Yes.</strong></li>
+        <li>Customers already have money? <strong>Yes.</strong></li>
+        <li>Can it be validated without a big product? <strong>Yes.</strong></li>
+    </ul>
+    <div class="warning-box">
+        <strong>Caveat:</strong>
+        The recommendation is “yes, but only if the 30-day sprint produces real evidence.”
+    </div>
+</div>
+
+<div class="card">
+    <h3>Final Three Comparison</h3>
+    <div class="table-wrap">
+    <table class="founder-table">
+        <thead><tr><th>Factor</th><th>Trades AI</th><th>Dev tools / infra</th><th>Credentialed niche</th></tr></thead>
+        <tbody>
+            <tr><td>Problem severity</td><td>High</td><td>Medium</td><td>Medium–High</td></tr>
+            <tr><td>Customer access</td><td>High</td><td>Low</td><td>Very low</td></tr>
+            <tr><td>Willingness to pay</td><td>High</td><td>Medium</td><td>High once accessible</td></tr>
+            <tr><td>MVP difficulty</td><td>Low</td><td>Medium</td><td>Medium</td></tr>
+            <tr><td>Capital required</td><td>$0–100</td><td>$0–500</td><td>$0–100</td></tr>
+            <tr><td>University compatibility</td><td>High</td><td>High</td><td>Low</td></tr>
+            <tr><td>Founder fit</td><td>Strong</td><td>Unknown / untested</td><td>Weak right now</td></tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Chosen Direction</h2>
+    <p>The exact wedge, offer, distribution and long-term expansion path.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Customer + Problem</h3>
+    <ul>
+        <li>Owner / office manager of a 5–20 employee trades or light-manufacturing business.</li>
+        <li>Manual quoting or scheduling done personally.</li>
+        <li>Costs real hours weekly.</li>
+        <li>Existing solutions: spreadsheets, paper, memory or generic software.</li>
+        <li>Initial niche is determined by discovery, not decided in advance.</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>Why Now</h3>
+    <p>
+        LLMs make narrow automation cheap to build solo, while incumbents can be
+        legacy, expensive or absent for micro-verticals.
+    </p>
+    <div class="proof">
+        <strong>Important:</strong>
+        AI is an implementation detail. The core value proposition is time saved for the business owner.
+    </div>
+</div>
+
+<div class="card">
+    <h3>Distribution</h3>
+    <ol>
+        <li>Cold outreach</li>
+        <li>Referrals within trade networks</li>
+        <li>Local trade association presence</li>
+    </ol>
+    <p>
+        The first 10 customers should come from cold visits/calls, trade-specific
+        Facebook/LinkedIn groups and warm introductions.
+    </p>
+</div>
+
+<div class="card">
+    <h3>Competitive Advantage</h3>
+    <p>
+        Niche-specific workflow knowledge plus early relationships competitors
+        may not bother acquiring.
+    </p>
+    <div class="learn">
+        <strong>Long-term expansion:</strong>
+        Single trade → adjacent trades → broader vertical SaaS platform.
+    </div>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>The Offer + Revenue Path</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <span class="badge">VERSION A</span>
+    <h3>Free Pilot</h3>
+    <p>Use only for the first 1–2 customers to remove friction and build trust.</p>
+</div>
+<div class="card">
+    <span class="badge">VERSION B</span>
+    <h3>Low-Cost Pilot</h3>
+    <p>$20–$50 per quote or approximately $100/month for customers 3–5 once time savings are proven.</p>
+</div>
+<div class="card">
+    <span class="badge">VERSION C</span>
+    <h3>Paid Offer</h3>
+    <p>$100–$300/month or scaled per-quote pricing once value is proven.</p>
+    <div class="proof"><strong>Rule:</strong> Use B for most of the first 90 days. Charge from customer #3 onward because payment is the real signal.</div>
+</div>
+</div>
+
+<div class="card table-wrap">
+<table class="founder-table">
+<thead><tr><th>Revenue milestone</th><th>Target path</th></tr></thead>
+<tbody>
+<tr><td>First $100</td><td>One paid pilot at $100/month or a few one-off paid quotes.</td></tr>
+<tr><td>First $1,000</td><td>5–10 paying customers on the low-cost pilot tier.</td></tr>
+<tr><td>First $5,000</td><td>15–25 customers at roughly $200–$300/month with light productization.</td></tr>
+<tr><td>$10,000/month</td><td>Approximately 30–50 customers at $200–$300/month; pure manual service begins to break and real software becomes necessary.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-heading">
+    <h2>30 / 90-Day Validation Sprint</h2>
+    <p>The business survives or dies based on evidence from real customers.</p>
+</div>
+
+<div class="founder-flow">
+<div class="map-step"><div class="map-number">WEEK 1</div><h3>Discovery</h3><p>Contact 20 local trades/industrial businesses. Run Mom Test interviews. Log pain, frequency, current solution and cost.</p></div>
+<div class="map-step"><div class="map-number">WEEK 2</div><h3>Validation</h3><p>Re-contact the 5–8 most promising leads. Confirm specificity of the pain and existing spend.</p></div>
+<div class="map-step"><div class="map-number">WEEK 3</div><h3>Manual MVP</h3><p>Personally deliver the manual service to 2–3 businesses, free or cheap.</p></div>
+<div class="map-step"><div class="map-number">WEEK 4</div><h3>Sales</h3><p>Ask businesses to pay for continued help or commit to paying when a basic tool exists. Close at least one payment or firm commitment.</p></div>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Day 30 Gate</h3>
+    <p><strong>CONTINUE</strong> if at least 5/20 owners confirm the same specific pain and at least 2 agree to a trial.</p>
+    <p><strong>PIVOT</strong> to a different task/trade or <strong>KILL</strong> if the evidence is insufficient.</p>
+</div>
+<div class="card">
+    <h3>Day 60 Gate</h3>
+    <p><strong>CONTINUE</strong> if at least 3 paying customers.</p>
+    <p><strong>PIVOT</strong> if pain is confirmed but nobody pays; test pricing/offer.</p>
+    <p><strong>KILL</strong> if fewer than 2 customers even tried it.</p>
+</div>
+<div class="card">
+    <h3>Day 90 Gate</h3>
+    <p><strong>DOUBLE DOWN</strong> with 5+ paying customers, repeat demand and referrals starting.</p>
+    <p><strong>CONTINUE VALIDATING</strong> if promising but inconsistent.</p>
+    <p><strong>PIVOT</strong> if the task/trade is wrong but access is proven.</p>
+    <p><strong>KILL</strong> if there is no real payment after genuine 90-day effort.</p>
+</div>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Objective Kill Criteria</h3>
+    <ul>
+        <li><strong>Continue:</strong> ≥5/20 owners describe the same specific pain unprompted, ≥2 agree to a manual trial, and ≥1 pays or firmly commits by day 30.</li>
+        <li><strong>Pivot:</strong> pain exists but is inconsistent, or nobody will commit to a trial.</li>
+        <li><strong>Kill:</strong> fewer than 3/20 conversations surface a specific, expensive, frequent pain, or nobody who trials it will pay/commit.</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>Idea Lock-In Rule</h3>
+    <p>
+        Any new business idea encountered during the active validation cycle goes
+        into a dated “parking lot” note. Do not evaluate, research or act on it.
+        It can only be considered after the current 30-day cycle produces a
+        CONTINUE / PIVOT / KILL decision.
+    </p>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Founder Skill Stack + Certifications</h2>
+    <p>Skills are prioritized by whether they directly create validation, revenue or technical leverage.</p>
+</div>
+
+<div class="card table-wrap">
+<table class="founder-table">
+<thead><tr><th>Capability</th><th>Priority</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Customer discovery / Mom Test interviewing</td><td>P0</td><td>Cannot validate anything without it.</td></tr>
+<tr><td>Cold outreach + sales / closing</td><td>P0</td><td>No revenue without it.</td></tr>
+<tr><td>Offer creation / Hormozi-style pricing</td><td>P0</td><td>Determines whether anyone pays.</td></tr>
+<tr><td>Google Sheets / Docs fluency</td><td>P0</td><td>This is the V0 product.</td></tr>
+<tr><td>Basic copywriting</td><td>P0</td><td>Needed for outreach and pricing conversations.</td></tr>
+<tr><td>Python scripting / automation</td><td>P1</td><td>Needed for V1, not V0.</td></tr>
+<tr><td>Simple web forms / backend</td><td>P1</td><td>Needed for V2, months away.</td></tr>
+<tr><td>LLM APIs / prompt engineering</td><td>P1</td><td>Real differentiator once the workflow is known.</td></tr>
+<tr><td>Git / GitHub</td><td>P1</td><td>Needed once real code is written.</td></tr>
+<tr><td>Basic bookkeeping / pricing math</td><td>P1</td><td>Needed when money changes hands.</td></tr>
+<tr><td>SQL / databases</td><td>P2</td><td>Needed once multiple customers' data is managed.</td></tr>
+<tr><td>Cloud / deployment</td><td>P2</td><td>Needed for V2.</td></tr>
+<tr><td>HTML / CSS / JS frontend</td><td>P2</td><td>Only if V2 needs a real interface.</td></tr>
+<tr><td>Negotiation</td><td>P2</td><td>Useful once deals get bigger.</td></tr>
+<tr><td>Hiring / delegation / leadership</td><td>P3/P4</td><td>Irrelevant until real revenue and a reason to hire.</td></tr>
+<tr><td>CAD / electronics / hardware</td><td>P4</td><td>Not needed for this software/service business.</td></tr>
+<tr><td>Advanced DevOps / cybersecurity / ML training</td><td>P4</td><td>Not needed; the plan integrates APIs rather than training models.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Personal Skill Tiers</h3>
+    <ul>
+        <li><strong>Tier 1 — must master:</strong> customer discovery, cold outreach/sales, offer creation/pricing, Python scripting, Sheets/data fluency.</li>
+        <li><strong>Tier 2 — strong working knowledge:</strong> LLM API integration, basic web forms/backend, negotiation, basic bookkeeping.</li>
+        <li><strong>Tier 3 — basic literacy:</strong> SQL, cloud deployment, legal basics, copywriting frameworks.</li>
+        <li><strong>Tier 4 — delegate later:</strong> graphic design, video, advanced DevOps, hiring/HR.</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>Certification Audit</h3>
+    <ul>
+        <li>Responsive Web Design — optional only if short; skip if it requires 100+ hours of theory.</li>
+        <li>Front-End Development — skip for now; not needed until V2.</li>
+        <li>JavaScript — skip for now; Python covers near-term needs better.</li>
+        <li><strong>Python — do now</strong>; it directly builds V1 automation ability. Favor project-based learning.</li>
+        <li>C# / Microsoft — skip; opportunity cost is too high for this business.</li>
+    </ul>
+    <div class="warning-box">
+        <strong>Rule:</strong> Credential value ≠ skill value. Customers care whether the quote arrived on time, not whether you collected a certificate.
+    </div>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Technical Stack + Project Ladder</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Default Technical Stack</h3>
+    <ul>
+        <li>Language: Python</li>
+        <li>Frontend: plain HTML/CSS/JS only when V2 needs it, or a no-code form first</li>
+        <li>Database: none until V2; then SQLite → Postgres if it grows</li>
+        <li>AI: Anthropic/OpenAI API for text-generation parts of quoting after the manual workflow is proven</li>
+        <li>Cloud: none for V0/V1; simple host such as Render/Railway for V2</li>
+        <li>Version control: Git/GitHub from the first script</li>
+        <li>Analytics: manual spreadsheet log; no dedicated tool yet</li>
+    </ul>
+</div>
+<div class="card founder-checklist">
+    <h3>Project Ladder</h3>
+    <div class="task"><input type="checkbox"><span class="task-text">Reusable quote/schedule template in Google Sheets with formulas</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">10 cold outreach message drafts, tested on 5 real business owners</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">20 Mom Test customer interviews logged in a structured document</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Python script that auto-fills the Sheet template from raw text input</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Manually deliver V0 service to the first 3 businesses</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Simple pricing/invoice tracker in Sheets</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Python + LLM API script to draft quote text from raw specs</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Simple web form replacing email intake</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Connect form → script → output automatically (V2)</span></div>
+    <div class="task"><input type="checkbox"><span class="task-text">Basic customer status dashboard once 10+ paying customers justify it</span></div>
+</div>
+</div>
+
+<div class="card">
+    <h3>Learning Order</h3>
+    <div class="founder-flow">
+        <div class="map-step"><div class="map-number">01</div><h3>Sheets</h3><p>Fluency</p></div>
+        <div class="map-step"><div class="map-number">02</div><h3>Outreach</h3><p>Copywriting + sales</p></div>
+        <div class="map-step"><div class="map-number">03</div><h3>Interviews</h3><p>Customer discovery</p></div>
+        <div class="map-step"><div class="map-number">04</div><h3>Python</h3><p>Basics</p></div>
+        <div class="map-step"><div class="map-number">05</div><h3>Automation</h3><p>V1 scripting</p></div>
+        <div class="map-step"><div class="map-number">06</div><h3>LLM APIs</h3><p>Integration</p></div>
+        <div class="map-step"><div class="map-number">07</div><h3>Frontend</h3><p>Only if V2 is justified</p></div>
+        <div class="map-step"><div class="map-number">08</div><h3>Backend / DB</h3><p>As required</p></div>
+    </div>
+    <div class="proof"><strong>Dependency rule:</strong> Sales and discovery come before most technical skills because the problem cannot be validated without them.</div>
+</div>
+
+<div class="section-heading">
+    <h2>Reading + Content Diet</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <span class="badge">READ NOW • MAX 3</span>
+    <h3>The Core Three</h3>
+    <ol>
+        <li>The Mom Test</li>
+        <li>$100M Offers</li>
+        <li>The Psychology of Money</li>
+    </ol>
+    <div class="proof">After the third book, stop reading and start building / talking to customers.</div>
+</div>
+<div class="card">
+    <h3>Read Later / Skim / Avoid for Now</h3>
+    <ul>
+        <li><strong>Read later:</strong> Zero to One; The Hard Thing About Hard Things; Good to Great.</li>
+        <li><strong>Skim:</strong> Atomic Habits; Influence.</li>
+        <li><strong>Don't bother yet:</strong> The Lean Startup; Never Split the Difference; Ray Dalio; Jim Collins-adjacent material.</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>Content Rules</h3>
+    <p>Maximum 2–3 hours/week, background listening only, never in place of building.</p>
+    <ul>
+        <li>High value: My First Million; occasional Founders episode.</li>
+        <li>Optional: Acquired; How I Built This.</li>
+        <li>Procrastination risk: Diary of a CEO; Lenny's Podcast, which is aimed at scaled operators rather than the current stage.</li>
+    </ul>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Founder Compounding System</h2>
+    <p>The strategy is designed to convert each year of work into harder-to-copy capability and assets.</p>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Founder-Market Fit</h3>
+    <div class="learn">
+        <strong>Already have:</strong> learning ability, time, direct local customer access, engineering coursework ahead, willingness to do unscalable manual work.
+    </div>
+    <div class="warning-box">
+        <strong>Currently lack:</strong> industry knowledge, credibility with business owners, technical depth, sales reps, capital and network.
+    </div>
+</div>
+<div class="card">
+    <h3>Potential Unfair Advantage</h3>
+    <p>
+        Not “knows Python.” The intended five-year advantage is specific, undocumented
+        knowledge of how small trades/industrial businesses quote and schedule work,
+        paired with dozens of real customer relationships and a working automation product.
+    </p>
+</div>
+<div class="card">
+    <h3>Why It Compounds</h3>
+    <p>
+        This combination is slow to copy because it accumulates through hundreds of real
+        conversations rather than through a course.
+    </p>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Skill → Asset → Advantage</h2>
+</div>
+
+<div class="card table-wrap">
+<table class="founder-table">
+<thead><tr><th>Skill</th><th>Immediate capability</th><th>Asset created</th><th>Compounds into</th></tr></thead>
+<tbody>
+<tr><td>Customer interviews</td><td>Understand pain</td><td>Customer intelligence</td><td>Better product decisions and faster validation</td></tr>
+<tr><td>Cold outreach / sales</td><td>Get customers</td><td>Customer relationships</td><td>Referrals and distribution</td></tr>
+<tr><td>Python / automation</td><td>Build V1/V2</td><td>Working codebase</td><td>Reusable technical leverage</td></tr>
+<tr><td>Pricing / offers</td><td>Get paid</td><td>Revenue + pricing data</td><td>Financial runway and credibility</td></tr>
+<tr><td>Industry exposure / co-op</td><td>Understand workflows</td><td>Domain expertise</td><td>Product-market fit and harder-to-copy moat</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="success-box">
+    <strong>Compounding flywheel:</strong>
+    Customer interviews → real pain data → manual service → paid pilots →
+    revenue + trust → automation (Python/AI) → better product → more referrals →
+    industry reputation → easier next customer → repeat, with more data and credibility each cycle.
+</div>
+
+<div class="warning-box">
+    <strong>Biggest break condition:</strong>
+    You stop talking to customers and retreat into pure building. Academic overload can also crowd out customer time.
+</div>
+
+<div class="section-heading">
+    <h2>University as a Startup Laboratory</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>What to Seek</h3>
+    <ul>
+        <li>Entrepreneurship program or incubator, used lightly for network.</li>
+        <li>Professor or lab touching manufacturing / industrial systems.</li>
+        <li>Engineering design or capstone project aligned to the business.</li>
+        <li>One relevant club, not several.</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>Co-op / Internship Ranking</h3>
+    <ol>
+        <li>Small industrial / manufacturing company — direct domain and customer exposure.</li>
+        <li>Early-stage startup — operating/product exposure.</li>
+        <li>Sales engineering role — sales reps.</li>
+        <li>Big tech — technical depth, lower domain relevance.</li>
+        <li>Pure research — lowest near-term value for this business.</li>
+    </ol>
+    <div class="proof">
+        <strong>Inside an industrial company:</strong> deliberately learn quoting/scheduling workflows,
+        software used, spending approval and what previous solutions were tried and abandoned. Treat this as paid market research.
+    </div>
+</div>
+<div class="card">
+    <h3>Network Strategy</h3>
+    <ul>
+        <li>Technical people through clubs/hackathons.</li>
+        <li>Industry people through customer conversations.</li>
+        <li>Professors through office hours tied to real questions.</li>
+        <li>Founders through local entrepreneurship events.</li>
+        <li>Offer value before asking for anything.</li>
+        <li>Follow up quarterly.</li>
+        <li>Track meaningful conversations and industry contacts, not LinkedIn connection counts.</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>Co-founder Strategy</h3>
+    <p>
+        Stay solo for now. A co-founder is justified only when a specific real gap blocks growth
+        after actual revenue exists.
+    </p>
+    <p>
+        If a candidate emerges, test them with a small joint project for reliability, communication
+        and ownership under real deadlines. Formalize only after vision, roles, equity and conflict
+        resolution are explicitly discussed in writing.
+    </p>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>5-Year Moat Roadmap</h2>
+</div>
+
+<div class="card table-wrap">
+<table class="founder-table">
+<thead><tr><th>Year</th><th>Moat / asset accumulated</th></tr></thead>
+<tbody>
+<tr><td>Y1</td><td>Customer relationships + specific workflow knowledge.</td></tr>
+<tr><td>Y2</td><td>Working automation tool + case studies.</td></tr>
+<tr><td>Y3</td><td>Enough customer data/patterns that a copycat starts from zero while you do not.</td></tr>
+<tr><td>Y4</td><td>Possible switching costs if customers depend operationally on the tool; some word-of-mouth network effect within a trade community.</td></tr>
+<tr><td>Y5</td><td>Accumulated domain trust + workflow-specific product + existing customer base.</td></tr>
+</tbody>
+</table>
+<div class="warning-box">
+    <strong>Honest caveat:</strong>
+    This is not a strong structural moat. There are no true network effects or proprietary technology barriers.
+    It is a relationship/execution moat that requires continuous execution.
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Financial Strategy + Founder Dashboard</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Financial Rules</h3>
+    <ul>
+        <li>Keep personal expenses minimal.</li>
+        <li>Keep emergency savings untouched.</li>
+        <li>Reinvest business revenue only up to what you can afford to lose entirely.</li>
+        <li>Spend $0 on paid ads/tools until revenue justifies it.</li>
+        <li>Avoid outside funding at this stage.</li>
+        <li>Maximum acceptable loss is whatever does not threaten tuition or living costs — likely low hundreds, not more.</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>Metrics That Matter</h3>
+    <ol>
+        <li>Customer conversations / month — leading</li>
+        <li>Paying customers — lagging</li>
+        <li>Revenue — lagging</li>
+        <li>GPA — guardrail</li>
+        <li>Meaningful relationships / month — leading</li>
+        <li>Hours building — leading</li>
+        <li>Sleep / health check — guardrail</li>
+    </ol>
+    <div class="proof"><strong>Review rhythm:</strong> Weekly focus on leading indicators. Review lagging indicators monthly/quarterly rather than obsessing daily.</div>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Role Evolution</h2>
+</div>
+
+<div class="founder-flow">
+<div class="map-step"><div class="map-number">YEAR 1</div><h3>Learner / Explorer</h3><p>Discover pain, build skills, run pilots.</p></div>
+<div class="map-step"><div class="map-number">YEAR 2</div><h3>Builder / Seller</h3><p>Build the V2 product and sell it.</p></div>
+<div class="map-step"><div class="map-number">YEAR 3</div><h3>Founder</h3><p>Only if product-market-fit signals appear.</p></div>
+<div class="map-step"><div class="map-number">YEAR 4</div><h3>Operator</h3><p>Only if real scale demands it.</p></div>
+<div class="map-step"><div class="map-number">YEAR 5</div><h3>Founder / CEO</h3><p>Or make an informed pivot carrying the portfolio, network and skills forward.</p></div>
+</div>
+
+<div class="section-heading">
+    <h2>4–5 Year Master Roadmap</h2>
+</div>
+
+<div class="card table-wrap">
+<table class="founder-table">
+<thead><tr><th>Year</th><th>Technical</th><th>Business</th><th>Network</th><th>University</th><th>Financial</th></tr></thead>
+<tbody>
+<tr>
+    <td>Y1</td><td>Python, Sheets automation</td><td>20+ interviews, first paid pilots</td>
+    <td>A few real industry/professor contacts</td><td>Pick one club/program</td><td>Near-zero spend</td>
+</tr>
+<tr>
+    <td>Y2</td><td>V2 product (form + backend)</td><td>15–30 customers, real pricing data</td>
+    <td>Co-op search begins</td><td>Align coursework where possible</td><td>Modest reinvestment</td>
+</tr>
+<tr>
+    <td>Y3</td><td>Deeper automation / AI integration</td><td>Scale within niche, formalize pricing</td>
+    <td>Co-op placement, ideally industry-relevant</td><td>Capstone alignment if possible</td><td>Recurring revenue</td>
+</tr>
+<tr>
+    <td>Y4</td><td>Maintain / extend product</td><td>Decide bootstrap-scale vs steady small business vs pivot</td>
+    <td>Delegate one non-core task</td><td>—</td><td>Reinvest based on real margins</td>
+</tr>
+<tr>
+    <td>Y5</td><td>—</td><td>Running a real small company, or transitioning into the next opportunity/job</td>
+    <td>Full founder-level network</td><td>Graduate</td><td>Evaluate based on evidence</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-heading">
+    <h2>What Success Looks Like</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <span class="badge">MINIMUM SUCCESS</span>
+    <h3>Compounding Capability</h3>
+    <p>
+        Real customer conversations, a working manual/automated product, some paying customers,
+        and strong technical and sales skills — even if the company stays small or ends.
+    </p>
+</div>
+<div class="card">
+    <span class="badge">STRONG SUCCESS</span>
+    <h3>Profitable Small Business</h3>
+    <p>
+        A genuine small profitable business at roughly $10–25K/month, real industry reputation,
+        and a transferable skill set.
+    </p>
+</div>
+<div class="card">
+    <span class="badge">EXCEPTIONAL SUCCESS</span>
+    <h3>Scaling SaaS</h3>
+    <p>
+        A real scaling small SaaS company with a small team and defensible customer base.
+    </p>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Operating System</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>Anti-Distraction List</h3>
+    <ul>
+        <li>Idea-hopping</li>
+        <li>Excessive certifications</li>
+        <li>Excessive books/content</li>
+        <li>Building without users</li>
+        <li>Chasing AI trends for their own sake</li>
+        <li>Premature fundraising</li>
+        <li>Vanity metrics</li>
+        <li>Comparing yourself to unicorn founders</li>
+        <li>Ignoring grades</li>
+        <li>Ignoring sleep/health</li>
+        <li>Building for an imagined investor instead of the real customer in front of you</li>
+    </ul>
+</div>
+<div class="card">
+    <h3>15 Operating Rules</h3>
+    <ol>
+        <li>Talk to customers before building.</li>
+        <li>Sell before scaling.</li>
+        <li>Skills must become assets — do not collect skills for their own sake.</li>
+        <li>Protect optionality over short-term excitement.</li>
+        <li>University is an asset, not an obstacle — use it deliberately.</li>
+        <li>New ideas go in the parking lot, not into action.</li>
+        <li>Revenue is the real validation signal, not interest.</li>
+        <li>Do not confuse credentials with competence.</li>
+        <li>Guard sleep and grades as non-negotiable guardrails.</li>
+        <li>Reinvest only what you can afford to lose.</li>
+        <li>Stay bootstrapped until growth genuinely outpaces cash flow.</li>
+        <li>Review quarterly, do not obsess weekly.</li>
+        <li>Compound relationships, do not just collect contacts.</li>
+        <li>If evidence contradicts the plan, follow the evidence, not the plan.</li>
+        <li>Every year, ask whether you are more capable and harder to compete with than last year.</li>
+    </ol>
+</div>
+</div>
+
+<div class="section-heading">
+    <h2>Quarterly Review</h2>
+</div>
+
+<div class="card">
+    <div class="founder-checklist">
+        <div class="task"><input type="checkbox"><span class="task-text">What did I build?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What did I sell?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What did I learn?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What did I discover?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">Who did I meet?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What became easier?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What became harder?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What assumptions were wrong?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What evidence changed my mind?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What should I stop doing?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What should I double down on?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What should I delegate?</span></div>
+        <div class="task"><input type="checkbox"><span class="task-text">What should I learn next?</span></div>
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2>Final Framework</h2>
+</div>
+
+<div class="grid">
+<div class="card">
+    <h3>My Core Skills</h3>
+    <ol>
+        <li>Customer discovery</li>
+        <li>Cold outreach / sales</li>
+        <li>Offer creation & pricing</li>
+        <li>Python / automation</li>
+        <li>Industry-specific workflow knowledge</li>
+    </ol>
+</div>
+<div class="card">
+    <h3>My Core Assets</h3>
+    <ol>
+        <li>Customer relationships</li>
+        <li>Working product / codebase</li>
+        <li>Domain expertise</li>
+        <li>Revenue / pricing data</li>
+        <li>Real network: industry + technical + university</li>
+    </ol>
+</div>
+<div class="card">
+    <h3>My Potential Unfair Advantage</h3>
+    <p>
+        Five years of specific, undocumented workflow knowledge in trades/industrial
+        quoting and scheduling, combined with real customer trust and a working automation product.
+    </p>
+</div>
+<div class="card">
+    <h3>My Domain to Understand</h3>
+    <p>
+        Small trades / light-manufacturing business operations — quoting, scheduling
+        and owner-operator decision-making.
+    </p>
+</div>
+<div class="card">
+    <h3>My Network Target</h3>
+    <p>
+        Local industry customers, a few relevant professors/labs, co-op employers in
+        industrial/manufacturing, and occasional student/founder peers — depth over breadth.
+    </p>
+</div>
+<div class="card">
+    <h3>My Ideal Internship / Co-op</h3>
+    <p>
+        Prioritize small industrial/manufacturing companies for direct domain exposure;
+        early-stage startups second; big tech only if nothing domain-relevant is available.
+    </p>
+</div>
+<div class="card">
+    <h3>My Co-founder Strategy</h3>
+    <p>
+        Stay solo until a specific gap blocks growth after real revenue exists. Test any candidate with a real small project first.
+    </p>
+</div>
+<div class="card">
+    <h3>My Financial Rule</h3>
+    <p>
+        Bootstrap only, reinvest only what you can afford to lose, and do not seek outside funding until there is something real worth protecting.
+    </p>
+</div>
+</div>
+
+<div class="success-box">
+    <strong>My 5-Year Moat:</strong>
+    Relationship + execution moat: accumulated customer trust, workflow-specific product,
+    and domain data — real, but requiring continuous execution rather than a permanent structural barrier.
+</div>
+
+<div class="quote founder-quote">
+    “Am I becoming more capable, more knowledgeable, more connected and more difficult to compete with?”
+</div>
+
+<div class="mission">
+    <strong>🚀 Most important principle</strong>
+    <p>
+        I am not trying to win immediately. I am trying to compound for 4–5 years.
+    </p>
+</div>
+
+</div>
+</section>
+
 
 </main>
 </div>
