@@ -52,14 +52,16 @@ header{
     top:0;
     z-index:100;
     backdrop-filter:blur(18px);
-    background:rgba(11,16,32,.82);
+    background:rgba(11,16,32,.86);
     border-bottom:1px solid var(--border);
 }
 
-.light header{background:rgba(243,246,251,.85)}
+.light header{
+    background:rgba(243,246,251,.88)
+}
 
 .topbar{
-    max-width:1450px;
+    max-width:1500px;
     margin:auto;
     padding:14px 20px;
     display:flex;
@@ -101,7 +103,7 @@ button:hover{
 }
 
 nav{
-    max-width:1450px;
+    max-width:1500px;
     margin:auto;
     padding:0 20px 12px;
     display:flex;
@@ -122,7 +124,7 @@ nav button.active{
 }
 
 main{
-    max-width:1450px;
+    max-width:1500px;
     margin:auto;
     padding:35px 20px 80px;
 }
@@ -132,16 +134,28 @@ main{
     animation:fadeUp .45s ease;
 }
 
-.page.active{display:block}
+.page.active{
+    display:block;
+}
 
 @keyframes fadeUp{
-    from{opacity:0;transform:translateY(12px)}
-    to{opacity:1;transform:translateY(0)}
+    from{
+        opacity:0;
+        transform:translateY(12px)
+    }
+    to{
+        opacity:1;
+        transform:translateY(0)
+    }
 }
 
 @keyframes pulse{
-    0%,100%{box-shadow:0 0 0 0 rgba(110,168,254,0)}
-    50%{box-shadow:0 0 0 9px rgba(110,168,254,.07)}
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(110,168,254,0)
+    }
+    50%{
+        box-shadow:0 0 0 9px rgba(110,168,254,.07)
+    }
 }
 
 .hero{
@@ -164,7 +178,7 @@ main{
 
 .hero p{
     color:var(--muted);
-    max-width:850px;
+    max-width:950px;
     line-height:1.7;
 }
 
@@ -186,7 +200,7 @@ main{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:16px;
 }
 
@@ -197,7 +211,9 @@ main{
 }
 
 @media(max-width:850px){
-    .grid2{grid-template-columns:1fr}
+    .grid2{
+        grid-template-columns:1fr
+    }
 }
 
 .card{
@@ -216,7 +232,8 @@ main{
     margin-top:0;
 }
 
-.card p,.card li{
+.card p,
+.card li{
     color:var(--muted);
     line-height:1.65;
 }
@@ -268,9 +285,13 @@ main{
     border-bottom:1px solid var(--border);
 }
 
-.task:last-child{border-bottom:0}
+.task:last-child{
+    border-bottom:0;
+}
 
-.task input{margin-top:5px}
+.task input{
+    margin-top:5px;
+}
 
 .task.done label{
     text-decoration:line-through;
@@ -309,6 +330,63 @@ main{
     border-left-color:var(--accent2);
 }
 
+.phase{
+    position:relative;
+    margin:20px 0;
+    padding:24px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:var(--panel);
+    overflow:hidden;
+}
+
+.phase:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:var(--accent);
+}
+
+.phase h3{
+    margin-top:0;
+}
+
+.phase-number{
+    color:var(--accent);
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.project{
+    background:var(--panel2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:17px;
+    margin-top:12px;
+}
+
+.project h4{
+    margin:0 0 8px;
+}
+
+.project p{
+    margin:5px 0;
+}
+
+.difficulty{
+    display:inline-block;
+    font-size:10px;
+    font-weight:800;
+    padding:4px 7px;
+    border-radius:5px;
+    background:var(--panel);
+    color:var(--accent2);
+}
+
 table{
     width:100%;
     border-collapse:collapse;
@@ -320,7 +398,11 @@ th,td{
     border-bottom:1px solid var(--border);
 }
 
-th{color:var(--muted);font-size:12px;text-transform:uppercase}
+th{
+    color:var(--muted);
+    font-size:12px;
+    text-transform:uppercase;
+}
 
 input[type=text],
 input[type=number],
@@ -334,7 +416,10 @@ textarea{
     outline:none;
 }
 
-textarea{min-height:110px;resize:vertical}
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
 
 .timeline{
     position:relative;
@@ -368,11 +453,6 @@ textarea{min-height:110px;resize:vertical}
     animation:pulse 2.5s infinite;
 }
 
-.checklist{
-    display:grid;
-    gap:7px;
-}
-
 .small{
     font-size:12px;
     color:var(--muted);
@@ -403,7 +483,7 @@ textarea{min-height:110px;resize:vertical}
 }
 
 footer{
-    max-width:1450px;
+    max-width:1500px;
     margin:auto;
     padding:30px 20px 60px;
     color:var(--muted);
@@ -415,377 +495,1358 @@ footer{
 <body>
 
 <header>
-    <div class="topbar">
-        <div class="logo">ENGINEER <span>×</span> FOUNDER</div>
 
-        <div class="controls">
-            <select id="themeSelect" onchange="changeTheme(this.value)">
-                <option value="midnight">Midnight</option>
-                <option value="light">Light</option>
-                <option value="ocean">Ocean</option>
-                <option value="forest">Forest</option>
-                <option value="sunset">Sunset</option>
-                <option value="cyber">Cyber</option>
-                <option value="terminal">Terminal</option>
-                <option value="mono">Monochrome</option>
-                <option value="purple">Purple</option>
-                <option value="red">Red</option>
-                <option value="gold">Gold</option>
-                <option value="ice">Ice</option>
-                <option value="rose">Rose</option>
-                <option value="lime">Lime</option>
-                <option value="coffee">Coffee</option>
-                <option value="slate">Slate</option>
-                <option value="matrix">Matrix</option>
-                <option value="space">Space</option>
-                <option value="minimal">Minimal</option>
-                <option value="highcontrast">High Contrast</option>
-            </select>
+<div class="topbar">
 
-            <button onclick="resetData()">Reset</button>
-        </div>
-    </div>
+<div class="logo">
+ENGINEER <span>×</span> FOUNDER
+</div>
 
-    <nav id="nav">
-        <button class="active" onclick="showPage('dashboard',this)">Dashboard</button>
-        <button onclick="showPage('engineering',this)">Engineering</button>
-        <button onclick="showPage('business',this)">Business</button>
-        <button onclick="showPage('experiments',this)">Experiments</button>
-        <button onclick="showPage('ai',this)">AI-Native</button>
-        <button onclick="showPage('cyber',this)">Cybersecurity</button>
-        <button onclick="showPage('chips',this)">Semiconductors</button>
-        <button onclick="showPage('certs',this)">Certifications</button>
-        <button onclick="showPage('proof',this)">Proof of Work</button>
-        <button onclick="showPage('yearplan',this)">4-Year Plan</button>
-        <button onclick="showPage('review',this)">Quarterly Review</button>
-        <button onclick="showPage('themes',this)">Themes</button>
-    </nav>
+<div class="controls">
+
+<select id="themeSelect" onchange="changeTheme(this.value)">
+<option value="midnight">Midnight</option>
+<option value="light">Light</option>
+<option value="ocean">Ocean</option>
+<option value="forest">Forest</option>
+<option value="sunset">Sunset</option>
+<option value="cyber">Cyber</option>
+<option value="terminal">Terminal</option>
+<option value="mono">Monochrome</option>
+<option value="purple">Purple</option>
+<option value="red">Red</option>
+<option value="gold">Gold</option>
+<option value="ice">Ice</option>
+<option value="rose">Rose</option>
+<option value="lime">Lime</option>
+<option value="coffee">Coffee</option>
+<option value="slate">Slate</option>
+<option value="matrix">Matrix</option>
+<option value="space">Space</option>
+<option value="minimal">Minimal</option>
+<option value="highcontrast">High Contrast</option>
+</select>
+
+<button onclick="resetData()">Reset</button>
+
+</div>
+</div>
+
+<nav>
+
+<button class="active" onclick="showPage('dashboard',this)">Dashboard</button>
+
+<button onclick="showPage('engineering',this)">Engineering</button>
+
+<button onclick="showPage('programming',this)">Programming + Projects</button>
+
+<button onclick="showPage('business',this)">Business</button>
+
+<button onclick="showPage('experiments',this)">Experiments</button>
+
+<button onclick="showPage('ai',this)">AI-Native</button>
+
+<button onclick="showPage('cyber',this)">Cybersecurity</button>
+
+<button onclick="showPage('chips',this)">Semiconductors</button>
+
+<button onclick="showPage('certs',this)">Certifications</button>
+
+<button onclick="showPage('proof',this)">Proof of Work</button>
+
+<button onclick="showPage('yearplan',this)">4-Year Plan</button>
+
+<button onclick="showPage('review',this)">Quarterly Review</button>
+
+<button onclick="showPage('themes',this)">Themes</button>
+
+</nav>
+
 </header>
+
 
 <main>
 
-<!-- DASHBOARD -->
+
+<!-- =====================================================
+DASHBOARD
+===================================================== -->
 
 <section id="dashboard" class="page active">
 
 <div class="hero">
-    <span class="tag">THE OPERATING SYSTEM</span>
-    <h1>Build the engineer.<br>Build the founder.</h1>
-    <p>
-        University is not just four years of classes. It is a controlled environment
-        to build technical ability, test businesses, develop judgment, collect proof,
-        fail cheaply and create optionality for the future.
-    </p>
 
-    <div class="badges">
-        <span class="badge">Engineering First</span>
-        <span class="badge">One Active Business</span>
-        <span class="badge">AI-Native</span>
-        <span class="badge">Cyber Optionality</span>
-        <span class="badge">Semiconductors Parked</span>
-        <span class="badge">Proof > Certificates</span>
-    </div>
+<span class="tag">OPERATING SYSTEM</span>
+
+<h1>
+Build the engineer.<br>
+Build the founder.
+</h1>
+
+<p>
+University is a controlled environment to develop technical ability,
+business judgment, AI leverage, industry credibility and long-term
+technical optionality.
+</p>
+
+<div class="badges">
+
+<span class="badge">Engineering First</span>
+<span class="badge">One Active Business</span>
+<span class="badge">AI-Native</span>
+<span class="badge">Cyber Optionality</span>
+<span class="badge">Semiconductors Parked</span>
+<span class="badge">Proof > Certificates</span>
+
 </div>
+
+</div>
+
 
 <div class="section-title">
-    <div>
-        <h2>🎯 This Week</h2>
-        <p>The roadmap should tell you what to do next.</p>
-    </div>
+
+<div>
+
+<h2>🎯 This Week</h2>
+
+<p>
+The roadmap should tell you what to do now.
+</p>
+
 </div>
+
+</div>
+
 
 <div class="grid">
-    <div class="card">
-        <span class="tag">Engineering</span>
-        <h3>Academic Priority</h3>
-        <input type="text" id="weeklyEngineering"
-               placeholder="What is the most important academic task?">
-    </div>
 
-    <div class="card">
-        <span class="tag">Business</span>
-        <h3>Founder Priority</h3>
-        <input type="text" id="weeklyBusiness"
-               placeholder="Customer conversation / offer / build">
-    </div>
+<div class="card">
 
-    <div class="card">
-        <span class="tag">Technical</span>
-        <h3>Skill Priority</h3>
-        <input type="text" id="weeklyTechnical"
-               placeholder="What skill are you improving?">
-    </div>
+<span class="tag">ENGINEERING</span>
 
-    <div class="card">
-        <span class="tag">Uncomfortable</span>
-        <h3>One Brave Action</h3>
-        <input type="text" id="weeklyBrave"
-               placeholder="What are you avoiding?">
-    </div>
+<h3>Academic Priority</h3>
+
+<input
+type="text"
+id="weeklyEngineering"
+placeholder="Most important academic task?"
+>
+
 </div>
+
+
+<div class="card">
+
+<span class="tag">BUSINESS</span>
+
+<h3>Founder Priority</h3>
+
+<input
+type="text"
+id="weeklyBusiness"
+placeholder="Customer / offer / build?"
+>
+
+</div>
+
+
+<div class="card">
+
+<span class="tag">TECHNICAL</span>
+
+<h3>Skill Priority</h3>
+
+<input
+type="text"
+id="weeklyTechnical"
+placeholder="What skill are you improving?"
+>
+
+</div>
+
+
+<div class="card">
+
+<span class="tag">UNCOMFORTABLE</span>
+
+<h3>One Brave Action</h3>
+
+<input
+type="text"
+id="weeklyBrave"
+placeholder="What are you avoiding?"
+>
+
+</div>
+
+</div>
+
 
 <div class="section-title">
-    <h2>📊 Founder Scoreboard</h2>
+
+<h2>📊 Founder Scoreboard</h2>
+
 </div>
+
 
 <div class="grid">
-    <div class="card">
-        <h3>Customer Conversations</h3>
-        <div class="big-number" id="interviews">0</div>
-        <button onclick="increment('interviews')">+1 Conversation</button>
-    </div>
 
-    <div class="card">
-        <h3>Offers Made</h3>
-        <div class="big-number" id="offers">0</div>
-        <button onclick="increment('offers')">+1 Offer</button>
-    </div>
+<div class="card">
 
-    <div class="card">
-        <h3>Paying Customers</h3>
-        <div class="big-number" id="customers">0</div>
-        <button onclick="increment('customers')">+1 Customer</button>
-    </div>
+<h3>Customer Conversations</h3>
 
-    <div class="card">
-        <h3>Experiments</h3>
-        <div class="big-number" id="experimentsCount">0</div>
-        <button onclick="increment('experimentsCount')">+1 Experiment</button>
-    </div>
+<div class="big-number" id="interviews">
+0
 </div>
+
+<button onclick="increment('interviews')">
++1 Conversation
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Offers Made</h3>
+
+<div class="big-number" id="offers">
+0
+</div>
+
+<button onclick="increment('offers')">
++1 Offer
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Paying Customers</h3>
+
+<div class="big-number" id="customers">
+0
+</div>
+
+<button onclick="increment('customers')">
++1 Customer
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Experiments</h3>
+
+<div class="big-number" id="experimentsCount">
+0
+</div>
+
+<button onclick="increment('experimentsCount')">
++1 Experiment
+</button>
+
+</div>
+
+</div>
+
 
 <div class="section-title">
-    <h2>⚖️ Current Priority Stack</h2>
+
+<h2>⚖️ Priority Stack</h2>
+
 </div>
+
 
 <div class="grid">
-    <div class="card">
-        <h3>01 — Engineering</h3>
-        <p>Pass your courses. Build fundamentals. Protect your academic foundation.</p>
-    </div>
 
-    <div class="card">
-        <h3>02 — One Business</h3>
-        <p>Talk to customers, test offers, sell manually and learn.</p>
-    </div>
+<div class="card">
 
-    <div class="card">
-        <h3>03 — AI Leverage</h3>
-        <p>Learn to use modern AI systems to multiply your output.</p>
-    </div>
+<h3>01 — Engineering</h3>
 
-    <div class="card">
-        <h3>04 — Technical Optionality</h3>
-        <p>Develop cybersecurity depth without pretending it is your current business.</p>
-    </div>
+<p>
+Pass your courses. Build fundamentals. Protect your academic foundation.
+</p>
+
 </div>
+
+
+<div class="card">
+
+<h3>02 — One Business</h3>
+
+<p>
+Talk to customers, test offers, sell manually and learn.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>03 — AI Leverage</h3>
+
+<p>
+Use AI and automation to multiply your technical and business output.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>04 — Technical Optionality</h3>
+
+<p>
+Develop cybersecurity and semiconductor knowledge without making
+them competing businesses.
+</p>
+
+</div>
+
+</div>
+
 
 <div class="callout warning">
-    <strong>Anti-distraction rule:</strong>
-    If you are redesigning this roadmap instead of talking to customers,
-    the roadmap has become procrastination.
+
+<strong>Anti-distraction rule:</strong>
+
+If you are redesigning the roadmap instead of talking to customers,
+the roadmap has become procrastination.
+
 </div>
 
 </section>
 
 
-<!-- ENGINEERING -->
+
+<!-- =====================================================
+ENGINEERING
+===================================================== -->
 
 <section id="engineering" class="page">
 
 <div class="hero">
-    <span class="tag">FOUNDATION</span>
-    <h1>Engineering</h1>
-    <p>
-        Your degree is the foundation. The objective is not to know everything.
-        It is to become exceptionally good at learning difficult technical things.
-    </p>
+
+<span class="tag">FOUNDATION</span>
+
+<h1>Engineering</h1>
+
+<p>
+The degree is the foundation. Your goal is to become exceptionally good
+at learning difficult technical concepts and turning them into working systems.
+</p>
+
 </div>
 
-<div class="grid">
-    <div class="card">
-        <h3>Mathematics</h3>
-        <div class="checklist">
-            <label class="task"><input type="checkbox">Calculus</label>
-            <label class="task"><input type="checkbox">Linear algebra</label>
-            <label class="task"><input type="checkbox">Differential equations</label>
-            <label class="task"><input type="checkbox">Probability & statistics</label>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Programming</h3>
-        <div class="checklist">
-            <label class="task"><input type="checkbox">Python</label>
-            <label class="task"><input type="checkbox">C / C++ fundamentals</label>
-            <label class="task"><input type="checkbox">Git</label>
-            <label class="task"><input type="checkbox">Data structures</label>
-            <label class="task"><input type="checkbox">Debugging</label>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Systems</h3>
-        <div class="checklist">
-            <label class="task"><input type="checkbox">Linux</label>
-            <label class="task"><input type="checkbox">Networking</label>
-            <label class="task"><input type="checkbox">Operating systems</label>
-            <label class="task"><input type="checkbox">Computer architecture</label>
-        </div>
-    </div>
-</div>
 
 <div class="section-title">
-    <h2>Learn → Build → Apply → Teach</h2>
+
+<h2>Engineering Development Phases</h2>
+
 </div>
 
-<div class="card">
-    <p>
-        Never let "I watched a course" count as mastery. Every important skill
-        should eventually produce something observable.
-    </p>
 
-    <table>
-        <tr>
-            <th>Skill</th>
-            <th>Learn</th>
-            <th>Build</th>
-            <th>Apply</th>
-            <th>Teach</th>
-        </tr>
-        <tr>
-            <td>Python</td>
-            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
-        </tr>
-        <tr>
-            <td>Linux</td>
-            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
-        </tr>
-        <tr>
-            <td>Networking</td>
-            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
-        </tr>
-        <tr>
-            <td>Programming in C</td>
-            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
-        </tr>
-    </table>
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — Academic Foundation
+</div>
+
+<h3>Build the fundamentals.</h3>
+
+<ul>
+
+<li>Calculus</li>
+<li>Linear algebra</li>
+<li>Differential equations</li>
+<li>Physics</li>
+<li>Engineering mechanics</li>
+<li>Probability and statistics</li>
+
+</ul>
+
+<p>
+<strong>Output:</strong>
+strong grades + organized notes + solved problem sets + understanding rather
+than memorization.
+</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Computing Foundation
+</div>
+
+<h3>Become technically fluent.</h3>
+
+<ul>
+
+<li>Programming fundamentals</li>
+<li>Data structures</li>
+<li>Git</li>
+<li>Linux</li>
+<li>Debugging</li>
+<li>Command line</li>
+
+</ul>
+
+<p>
+<strong>Output:</strong>
+multiple small programs and at least one meaningful engineering project.
+</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — Systems Thinking
+</div>
+
+<h3>Understand how components interact.</h3>
+
+<ul>
+
+<li>Computer architecture</li>
+<li>Operating systems</li>
+<li>Networking</li>
+<li>Databases</li>
+<li>APIs</li>
+<li>Embedded systems</li>
+
+</ul>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 4 — Engineering Depth
+</div>
+
+<h3>Choose technical areas worth going deep on.</h3>
+
+<ul>
+
+<li>Cybersecurity</li>
+<li>AI engineering</li>
+<li>Embedded systems</li>
+<li>Semiconductor design</li>
+<li>Software systems</li>
+
+</ul>
+
 </div>
 
 </section>
 
 
-<!-- BUSINESS -->
+
+<!-- =====================================================
+PROGRAMMING
+===================================================== -->
+
+<section id="programming" class="page">
+
+<div class="hero">
+
+<span class="tag">PROJECT-DRIVEN PROGRAMMING</span>
+
+<h1>Programming + Projects</h1>
+
+<p>
+Do not learn programming languages just to collect languages.
+Every language has a purpose. Progress through phases:
+<strong>syntax → fundamentals → systems → projects → real-world application.</strong>
+</p>
+
+</div>
+
+
+<!-- PYTHON -->
+
+<div class="section-title">
+
+<h2>🐍 Python</h2>
+
+<p>Automation, AI, data, backend and business tools.</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — Python Fundamentals
+</div>
+
+<h3>Learn to think programmatically.</h3>
+
+<ul>
+
+<li>Variables</li>
+<li>Conditionals</li>
+<li>Loops</li>
+<li>Functions</li>
+<li>Lists / dictionaries / sets</li>
+<li>File handling</li>
+<li>Exceptions</li>
+<li>Modules</li>
+
+</ul>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER
+</span>
+
+<h4>Project 1 — CLI Expense Tracker</h4>
+
+<p>
+Build a command-line application that lets a user add expenses,
+categorize them, search them and calculate totals.
+</p>
+
+<p>
+<strong>Stretch:</strong> save data to JSON or CSV.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER+
+</span>
+
+<h4>Project 2 — Engineering Unit Converter</h4>
+
+<p>
+Create a tool that converts engineering units such as temperature,
+pressure, length, energy and power.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Practical Python
+</div>
+
+<h3>Build useful automation.</h3>
+
+<ul>
+
+<li>APIs</li>
+<li>HTTP requests</li>
+<li>JSON</li>
+<li>Web scraping concepts</li>
+<li>Regular expressions</li>
+<li>Automation</li>
+<li>Databases</li>
+
+</ul>
+
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 3 — Job Application Tracker</h4>
+
+<p>
+Create a local application that tracks companies, applications,
+deadlines, interviews and follow-ups.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 4 — API Data Dashboard</h4>
+
+<p>
+Connect to a public API, retrieve data, clean it and display useful
+statistics.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — Engineering Python
+</div>
+
+<h3>Use Python to solve technical problems.</h3>
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE+
+</span>
+
+<h4>Project 5 — Engineering Simulation Tool</h4>
+
+<p>
+Create a simulation involving physical or engineering variables.
+Allow users to change parameters and visualize the output.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 6 — Automated Engineering Report Generator</h4>
+
+<p>
+Input measurements or simulation results and automatically generate
+charts, statistics and a formatted engineering report.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 4 — AI + Python
+</div>
+
+<h3>Combine programming with modern AI.</h3>
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 7 — AI Engineering Assistant</h4>
+
+<p>
+Build a tool that can ingest technical documents and help retrieve,
+summarize and organize engineering information.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 8 — AI Business Automation</h4>
+
+<p>
+Build an automated workflow that receives a business input,
+processes it with AI and produces a useful output.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- C / C++ -->
+
+<div class="section-title">
+
+<h2>⚙️ C / C++</h2>
+
+<p>Systems, performance, embedded systems and hardware.</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — C Fundamentals
+</div>
+
+<h3>Understand what the computer is actually doing.</h3>
+
+<ul>
+
+<li>Variables and types</li>
+<li>Pointers</li>
+<li>Arrays</li>
+<li>Structs</li>
+<li>Functions</li>
+<li>Memory</li>
+<li>Compilation</li>
+
+</ul>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER
+</span>
+
+<h4>Project 1 — Memory-Based Data Structure Library</h4>
+
+<p>
+Implement arrays, linked lists, stacks and queues manually.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER+
+</span>
+
+<h4>Project 2 — Command-Line Shell</h4>
+
+<p>
+Build a small shell that accepts commands and executes programs.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Systems
+</div>
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 3 — File Compression Utility</h4>
+
+<p>
+Create a simple compression/decompression program and learn how
+binary files and data representation work.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE+
+</span>
+
+<h4>Project 4 — Multithreaded Program</h4>
+
+<p>
+Build a program using threads and synchronization.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — C++</div>
+
+<h3>Move toward larger software systems.</h3>
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 5 — Physics / Engineering Simulation</h4>
+
+<p>
+Build an object-oriented simulation with reusable components.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 6 — High-Performance Data Processor</h4>
+
+<p>
+Process a large dataset and optimize memory usage and runtime.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<div class="section-title">
+
+<h2>🌐 JavaScript / TypeScript</h2>
+
+<p>Web applications, interfaces and SaaS products.</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — Web Fundamentals
+</div>
+
+<ul>
+
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>DOM</li>
+<li>Events</li>
+<li>Browser storage</li>
+
+</ul>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER
+</span>
+
+<h4>Project 1 — Interactive Engineering Dashboard</h4>
+
+<p>
+Build your own dashboard with tasks, progress tracking and local storage.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Applications
+</div>
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 2 — Full CRUD Application</h4>
+
+<p>
+Create an application where users can create, read, update and delete records.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE+
+</span>
+
+<h4>Project 3 — Business Management Dashboard</h4>
+
+<p>
+Create a dashboard for leads, customers, tasks and revenue.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — Full-Stack
+</div>
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 4 — SaaS MVP</h4>
+
+<p>
+Build authentication, database storage, user accounts, payments or
+subscription logic and a real deployment.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- SQL -->
+
+<div class="section-title">
+
+<h2>🗄️ SQL</h2>
+
+<p>Data is foundational to software, AI and business systems.</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — Database Fundamentals
+</div>
+
+<ul>
+
+<li>Tables</li>
+<li>Relationships</li>
+<li>SELECT</li>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+<li>JOINs</li>
+<li>Indexes</li>
+
+</ul>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER
+</span>
+
+<h4>Project 1 — Personal Knowledge Database</h4>
+
+<p>
+Create a structured database for courses, projects, skills and notes.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Real Systems
+</div>
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 2 — CRM Database</h4>
+
+<p>
+Create tables and queries for leads, customers, interactions,
+offers and revenue.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 3 — Analytics System</h4>
+
+<p>
+Create a database and analytics layer for a business application.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- VERILOG -->
+
+<div class="section-title">
+
+<h2>🔌 Verilog / SystemVerilog</h2>
+
+<p>Hardware description, FPGA and eventual chip design.</p>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — Digital Logic
+</div>
+
+<ul>
+
+<li>Boolean logic</li>
+<li>Combinational circuits</li>
+<li>Sequential logic</li>
+<li>Flip-flops</li>
+<li>Registers</li>
+<li>Finite-state machines</li>
+
+</ul>
+
+
+<div class="project">
+
+<span class="difficulty">
+BEGINNER
+</span>
+
+<h4>Project 1 — Digital Logic Library</h4>
+
+<p>
+Implement basic gates and progressively combine them into larger systems.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — HDL</div>
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE
+</span>
+
+<h4>Project 2 — ALU</h4>
+
+<p>
+Design a simple arithmetic logic unit in Verilog/SystemVerilog.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<span class="difficulty">
+INTERMEDIATE+
+</span>
+
+<h4>Project 3 — CPU Core</h4>
+
+<p>
+Design a simple educational CPU with registers, ALU,
+control logic and memory interface.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — FPGA
+</div>
+
+<div class="project">
+
+<span class="difficulty">
+ADVANCED
+</span>
+
+<h4>Project 4 — FPGA Hardware Accelerator</h4>
+
+<p>
+Implement a computational workload on an FPGA and compare
+its performance against a software implementation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+BUSINESS
+===================================================== -->
 
 <section id="business" class="page">
 
 <div class="hero">
-    <span class="tag">ONE ACTIVE BUSINESS</span>
-    <h1>Business Lab</h1>
-    <p>
-        Do not try to build a billion-dollar company immediately.
-        Learn how to find pain, sell a solution, deliver value and repeat.
-    </p>
+
+<span class="tag">ONE ACTIVE BUSINESS</span>
+
+<h1>Business Lab</h1>
+
+<p>
+Your objective during university is not to prove you can build a billion-dollar
+company immediately. It is to accumulate founder reps.
+</p>
+
 </div>
 
-<div class="callout success">
-    <strong>The university advantage:</strong>
-    You have relatively low downside, access to thousands of potential users,
-    time to experiment and permission to fail.
-</div>
 
 <div class="section-title">
-    <h2>🚦 Business Validation Gates</h2>
+
+<h2>🚦 Business Validation Gates</h2>
+
 </div>
 
+
 <div class="grid">
-    <div class="card"><h3>Gate 1</h3><p>Talk to 10 potential customers.</p></div>
-    <div class="card"><h3>Gate 2</h3><p>Confirm a painful, repeated problem.</p></div>
-    <div class="card"><h3>Gate 3</h3><p>Deliver a manual solution.</p></div>
-    <div class="card"><h3>Gate 4</h3><p>Get the first dollar.</p></div>
-    <div class="card"><h3>Gate 5</h3><p>Reach 5 paying customers.</p></div>
-    <div class="card"><h3>Gate 6</h3><p>Find repeatable acquisition.</p></div>
-    <div class="card"><h3>Gate 7</h3><p>Scale, pivot or kill.</p></div>
+
+<div class="card">
+<h3>Gate 1</h3>
+<p>10 customer conversations.</p>
 </div>
+
+<div class="card">
+<h3>Gate 2</h3>
+<p>Confirm painful repeated problem.</p>
+</div>
+
+<div class="card">
+<h3>Gate 3</h3>
+<p>Deliver manually.</p>
+</div>
+
+<div class="card">
+<h3>Gate 4</h3>
+<p>Get first dollar.</p>
+</div>
+
+<div class="card">
+<h3>Gate 5</h3>
+<p>Reach five paying customers.</p>
+</div>
+
+<div class="card">
+<h3>Gate 6</h3>
+<p>Find repeatable acquisition.</p>
+</div>
+
+<div class="card">
+<h3>Gate 7</h3>
+<p>Scale, pivot or kill.</p>
+</div>
+
+</div>
+
 
 <div class="section-title">
-    <h2>Founder Rules</h2>
+
+<h2>Founder Rules</h2>
+
 </div>
 
+
 <div class="grid">
-    <div class="card">
-        <h3>Sell before scaling</h3>
-        <p>Manually deliver the result before spending months building software.</p>
-    </div>
 
-    <div class="card">
-        <h3>Market > Idea</h3>
-        <p>Look for existing spending, painful problems and reachable customers.</p>
-    </div>
+<div class="card">
 
-    <div class="card">
-        <h3>One offer</h3>
-        <p>One customer, one problem, one offer before expanding.</p>
-    </div>
+<h3>Sell before scaling</h3>
 
-    <div class="card">
-        <h3>Proof > Complexity</h3>
-        <p>A simple product with five customers beats a sophisticated product with zero.</p>
-    </div>
+<p>
+Manually deliver the result before spending months building software.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Market > Idea</h3>
+
+<p>
+Look for existing spending, painful problems and reachable customers.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>One offer</h3>
+
+<p>
+One customer, one problem, one offer before expanding.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Proof > Complexity</h3>
+
+<p>
+Five paying customers beats an impressive product with zero users.
+</p>
+
+</div>
+
 </div>
 
 </section>
 
 
-<!-- EXPERIMENTS -->
+
+<!-- =====================================================
+EXPERIMENTS
+===================================================== -->
 
 <section id="experiments" class="page">
 
 <div class="hero">
-    <span class="tag">FAIL CHEAPLY</span>
-    <h1>Experiment Lab</h1>
-    <p>
-        Your university years should generate business judgment.
-        Treat businesses as experiments rather than identities.
-    </p>
+
+<span class="tag">FAIL CHEAPLY</span>
+
+<h1>Experiment Lab</h1>
+
+<p>
+Treat businesses as experiments. Your goal is to develop judgment,
+not protect an idea.
+</p>
+
 </div>
+
 
 <div class="grid2">
 
 <div class="card">
-    <h3>Experiment</h3>
 
-    <label class="small">Hypothesis</label>
-    <textarea id="hypothesis" placeholder="I believe [customer] has [problem] and would pay for [solution]."></textarea>
+<h3>Experiment</h3>
 
-    <label class="small">Test</label>
-    <textarea id="test" placeholder="What is the smallest test I can run?"></textarea>
+<label class="small">Hypothesis</label>
 
-    <label class="small">Result</label>
-    <textarea id="result" placeholder="What actually happened?"></textarea>
+<textarea
+id="hypothesis"
+placeholder="I believe [customer] has [problem] and would pay for [solution]."
+></textarea>
 
-    <label class="small">Decision</label>
-    <select id="decision" style="width:100%;margin-top:6px">
-        <option>Continue</option>
-        <option>Pivot</option>
-        <option>Kill</option>
-        <option>Need more evidence</option>
-    </select>
 
-    <br><br>
-    <button onclick="saveExperiment()">Save Experiment</button>
+<label class="small">Test</label>
+
+<textarea
+id="test"
+placeholder="What is the smallest test I can run?"
+></textarea>
+
+
+<label class="small">Result</label>
+
+<textarea
+id="result"
+placeholder="What actually happened?"
+></textarea>
+
+
+<label class="small">Decision</label>
+
+<select id="decision" style="width:100%;margin-top:6px">
+
+<option>Continue</option>
+<option>Pivot</option>
+<option>Kill</option>
+<option>Need more evidence</option>
+
+</select>
+
+<br><br>
+
+<button onclick="saveExperiment()">
+Save Experiment
+</button>
+
 </div>
 
+
 <div class="card">
-    <h3>Experiment Philosophy</h3>
-    <ul>
-        <li>Small test before large build.</li>
-        <li>Evidence before opinion.</li>
-        <li>Revenue is stronger evidence than compliments.</li>
-        <li>Rejection is information.</li>
-        <li>Kill weak ideas quickly.</li>
-        <li>Double down on demonstrated demand.</li>
-    </ul>
+
+<h3>Experiment Philosophy</h3>
+
+<ul>
+
+<li>Small test before large build.</li>
+
+<li>Evidence before opinion.</li>
+
+<li>Revenue is stronger evidence than compliments.</li>
+
+<li>Rejection is information.</li>
+
+<li>Kill weak ideas quickly.</li>
+
+<li>Double down on demonstrated demand.</li>
+
+</ul>
+
 </div>
 
 </div>
@@ -793,200 +1854,363 @@ footer{
 </section>
 
 
-<!-- AI -->
+
+<!-- =====================================================
+AI
+===================================================== -->
 
 <section id="ai" class="page">
 
 <div class="hero">
-    <span class="tag">AI-NATIVE ENGINEER</span>
-    <h1>AI Leverage</h1>
-    <p>
-        The goal is not simply to "learn AI." The goal is to become an engineer
-        who can use AI, automation and modern development tools to produce
-        dramatically more output.
-    </p>
-</div>
 
-<div class="grid">
+<span class="tag">AI-NATIVE ENGINEER</span>
 
-<div class="card">
-    <h3>🤖 AI-Assisted Coding</h3>
-    <div class="checklist">
-        <label class="task"><input type="checkbox">AI IDE / coding assistant</label>
-        <label class="task"><input type="checkbox">Debugging with AI</label>
-        <label class="task"><input type="checkbox">Code review</label>
-        <label class="task"><input type="checkbox">Testing generation</label>
-        <label class="task"><input type="checkbox">Refactoring</label>
-        <label class="task"><input type="checkbox">Documentation</label>
-    </div>
-</div>
+<h1>AI Leverage</h1>
 
-<div class="card">
-    <h3>⚙️ Automation</h3>
-    <div class="checklist">
-        <label class="task"><input type="checkbox">APIs</label>
-        <label class="task"><input type="checkbox">Webhooks</label>
-        <label class="task"><input type="checkbox">Workflow automation</label>
-        <label class="task"><input type="checkbox">Data pipelines</label>
-        <label class="task"><input type="checkbox">Agents</label>
-        <label class="task"><input type="checkbox">Browser automation</label>
-    </div>
-</div>
-
-<div class="card">
-    <h3>🧠 AI Engineering</h3>
-    <div class="checklist">
-        <label class="task"><input type="checkbox">LLM APIs</label>
-        <label class="task"><input type="checkbox">Prompt engineering</label>
-        <label class="task"><input type="checkbox">RAG</label>
-        <label class="task"><input type="checkbox">Embeddings</label>
-        <label class="task"><input type="checkbox">Evaluation</label>
-        <label class="task"><input type="checkbox">Agent architecture</label>
-    </div>
-</div>
-
-<div class="card">
-    <h3>🏢 AI + Business</h3>
-    <div class="checklist">
-        <label class="task"><input type="checkbox">Lead research</label>
-        <label class="task"><input type="checkbox">CRM automation</label>
-        <label class="task"><input type="checkbox">Customer support</label>
-        <label class="task"><input type="checkbox">Proposal generation</label>
-        <label class="task"><input type="checkbox">Internal tools</label>
-        <label class="task"><input type="checkbox">Reporting automation</label>
-    </div>
-</div>
+<p>
+The goal is not to chase every new AI product.
+The goal is to become an engineer who can use AI and automation
+to dramatically increase output.
+</p>
 
 </div>
 
-<div class="section-title">
-    <h2>AI Learning Rule</h2>
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — AI-Assisted Work
 </div>
+
+<ul>
+
+<li>AI coding assistants</li>
+<li>Prompting</li>
+<li>Debugging</li>
+<li>Code review</li>
+<li>Research</li>
+<li>Documentation</li>
+
+</ul>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Automation
+</div>
+
+<ul>
+
+<li>APIs</li>
+<li>Webhooks</li>
+<li>Workflow automation</li>
+<li>Data pipelines</li>
+<li>Browser automation</li>
+<li>Agents</li>
+
+</ul>
+
+
+<div class="project">
+
+<h4>Project — Automated Business Workflow</h4>
+
+<p>
+Take a repetitive business process and automate as much of it as possible.
+Measure time saved.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — AI Engineering
+</div>
+
+<ul>
+
+<li>LLM APIs</li>
+<li>RAG</li>
+<li>Embeddings</li>
+<li>Vector databases</li>
+<li>Evaluation</li>
+<li>Agent architecture</li>
+
+</ul>
+
+
+<div class="project">
+
+<h4>Project — Engineering Knowledge Assistant</h4>
+
+<p>
+Build a system that can retrieve information from a technical knowledge
+base and provide grounded answers.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 4 — AI + Business
+</div>
+
+<div class="project">
+
+<h4>Project — AI-Powered Internal Tool</h4>
+
+<p>
+Build a real tool that eliminates a repetitive business process.
+Ideally use it in your own business.
+</p>
+
+</div>
+
+</div>
+
 
 <div class="callout success">
-    <strong>Don't chase every AI tool.</strong>
-    Learn concepts that survive tool changes: APIs, automation, evaluation,
-    software fundamentals, data, agents and systems thinking.
+
+<strong>AI rule:</strong>
+
+Learn concepts that survive tool changes:
+APIs, automation, software fundamentals, data, evaluation,
+agents and systems thinking.
+
 </div>
 
 </section>
 
 
-<!-- CYBER -->
+
+<!-- =====================================================
+CYBER
+===================================================== -->
 
 <section id="cyber" class="page">
 
 <div class="hero">
-    <span class="tag">OPTIONALITY</span>
-    <h1>Cybersecurity</h1>
-    <p>
-        Cybersecurity is a technical specialization and future optionality.
-        It is not automatically the active business.
-    </p>
+
+<span class="tag">TECHNICAL OPTIONALITY</span>
+
+<h1>Cybersecurity</h1>
+
+<p>
+Cybersecurity is a specialization and future optionality.
+It is not automatically the business you need to build today.
+</p>
+
 </div>
 
-<div class="grid">
 
-<div class="card">
-    <h3>Years 1–2 — Foundation</h3>
-    <ul>
-        <li>Linux</li>
-        <li>Networking</li>
-        <li>Python</li>
-        <li>Git</li>
-        <li>Operating systems</li>
-        <li>Security fundamentals</li>
-        <li>Hands-on labs</li>
-    </ul>
+<div class="phase">
+
+<div class="phase-number">
+Phase 1 — Years 1–2 — Foundation
 </div>
 
-<div class="card">
-    <h3>Years 2–3 — Security Engineering</h3>
-    <ul>
-        <li>Authentication</li>
-        <li>Web security</li>
-        <li>Cloud security</li>
-        <li>Secure software</li>
-        <li>Threat modeling</li>
-        <li>Logging & monitoring</li>
-    </ul>
-</div>
+<ul>
 
-<div class="card">
-    <h3>Years 3–4 — Choose One</h3>
-    <ul>
-        <li>Cloud security</li>
-        <li>Application security</li>
-        <li>Offensive security</li>
-        <li>Security engineering</li>
-        <li>Embedded / IoT security</li>
-    </ul>
+<li>Linux</li>
+<li>Networking</li>
+<li>Python</li>
+<li>Git</li>
+<li>Operating systems</li>
+<li>Security fundamentals</li>
+
+</ul>
+
+
+<div class="project">
+
+<h4>Project — Secure Linux Server Lab</h4>
+
+<p>
+Create a Linux environment, configure services, users and permissions,
+then document how you hardened it.
+</p>
+
 </div>
 
 </div>
 
-<div class="callout warning">
-    <strong>Scope rule:</strong>
-    Do not simultaneously become an expert in cloud security, penetration testing,
-    malware analysis, application security and embedded security.
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 2 — Years 2–3 — Security Engineering
+</div>
+
+<ul>
+
+<li>Authentication</li>
+<li>Web security</li>
+<li>Cloud security</li>
+<li>Secure software</li>
+<li>Threat modeling</li>
+<li>Logging</li>
+</ul>
+
+
+<div class="project">
+
+<h4>Project — Security Assessment Lab</h4>
+
+<p>
+Build a deliberately vulnerable educational application,
+identify weaknesses and then fix them.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Phase 3 — Years 3–4 — Specialize
+</div>
+
+<p>
+Choose one major area rather than attempting to master everything.
+</p>
+
+<ul>
+
+<li>Cloud security</li>
+<li>Application security</li>
+<li>Offensive security</li>
+<li>Security engineering</li>
+<li>Embedded / IoT security</li>
+
+</ul>
+
 </div>
 
 </section>
 
 
-<!-- CHIPS -->
+
+<!-- =====================================================
+SEMICONDUCTORS
+===================================================== -->
 
 <section id="chips" class="page">
 
 <div class="hero">
-    <span class="tag">PARKED — LONG-TERM BET</span>
-    <h1>Semiconductors</h1>
-    <p>
-        Keep the deep-tech ambition alive without pretending it needs to compete
-        with your first business and engineering fundamentals today.
-    </p>
+
+<span class="tag">PARKED — LONG-TERM BET</span>
+
+<h1>Semiconductors</h1>
+
+<p>
+Keep the deep-tech ambition alive without allowing it to compete with
+your first business and engineering foundation.
+</p>
+
 </div>
+
 
 <div class="timeline">
 
-<div class="timeline-item">
-    <h3>01 — Electrical Fundamentals</h3>
-    <p>Circuits, electronics and signals.</p>
-</div>
 
 <div class="timeline-item">
-    <h3>02 — Digital Logic</h3>
-    <p>Boolean logic, combinational and sequential systems.</p>
+
+<h3>01 — Electrical Fundamentals</h3>
+
+<p>
+Circuits, electronics, signals and basic semiconductor concepts.
+</p>
+
 </div>
 
-<div class="timeline-item">
-    <h3>03 — Computer Architecture</h3>
-    <p>Processors, memory, buses and instruction sets.</p>
-</div>
 
 <div class="timeline-item">
-    <h3>04 — Verilog / SystemVerilog</h3>
-    <p>Learn hardware description and digital design.</p>
+
+<h3>02 — Digital Logic</h3>
+
+<p>
+Boolean logic, combinational logic, sequential logic and FSMs.
+</p>
+
 </div>
 
-<div class="timeline-item">
-    <h3>05 — FPGA</h3>
-    <p>Build real hardware designs and accelerators.</p>
-</div>
 
 <div class="timeline-item">
-    <h3>06 — ASIC Design</h3>
-    <p>Move toward professional chip design flows.</p>
+
+<h3>03 — Computer Architecture</h3>
+
+<p>
+Processors, memory, instruction sets and hardware/software interaction.
+</p>
+
 </div>
 
-<div class="timeline-item">
-    <h3>07 — Physical Design</h3>
-    <p>Understand synthesis, place & route and timing.</p>
-</div>
 
 <div class="timeline-item">
-    <h3>08 — Tapeout</h3>
-    <p>Long-term objective, not a Year 1 requirement.</p>
+
+<h3>04 — Verilog / SystemVerilog</h3>
+
+<p>
+Describe and simulate digital hardware.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<h3>05 — FPGA</h3>
+
+<p>
+Implement real hardware systems and accelerators.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<h3>06 — ASIC Design</h3>
+
+<p>
+Learn professional chip design concepts and flows.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<h3>07 — Physical Design</h3>
+
+<p>
+Synthesis, timing, place and route.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<h3>08 — Tapeout</h3>
+
+<p>
+Long-term objective. Not a Year 1 requirement.
+</p>
+
 </div>
 
 </div>
@@ -994,456 +2218,1190 @@ footer{
 </section>
 
 
-<!-- CERTS -->
+
+<!-- =====================================================
+CERTIFICATIONS
+===================================================== -->
 
 <section id="certs" class="page">
 
 <div class="hero">
-    <span class="tag">CREDENTIALS</span>
-    <h1>Certifications</h1>
-    <p>
-        Certifications are supporting assets. They should never become the main
-        definition of progress.
-    </p>
+
+<span class="tag">CREDENTIALS</span>
+
+<h1>Certifications</h1>
+
+<p>
+Certifications support the roadmap. They do not define the roadmap.
+</p>
+
 </div>
+
 
 <div class="callout warning">
-    <strong>Certification decision system:</strong>
-    Never ask "What certification should I collect next?"
-    Ask "What specific opportunity makes this certification worth the time?"
+
+<strong>Decision rule:</strong>
+
+Do not ask "What certification can I get?"
+
+Ask:
+
+<strong>
+"What opportunity makes this certification worth my time?"
+</strong>
+
 </div>
 
-<div class="card">
-<table>
-<tr>
-<th>Question</th>
-<th>Yes / No</th>
-</tr>
-<tr>
-<td>Does an internship/job I want require it?</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Does it teach something I actually need?</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Will it materially improve credibility?</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Can I demonstrate the knowledge through projects instead?</td>
-<td>☐</td>
-</tr>
-<tr>
-<td>Is the opportunity cost worth it?</td>
-<td>☐</td>
-</tr>
-</table>
+
+<div class="phase">
+
+<div class="phase-number">
+Year 1
 </div>
 
-<div class="section-title">
-<h2>Suggested Certification Strategy</h2>
+<h3>Minimal credentialing</h3>
+
+<p>
+Focus primarily on engineering and projects.
+Only pursue a foundational certification if it supports a specific goal.
+</p>
+
 </div>
 
-<div class="grid">
 
-<div class="card">
-<h3>Year 1</h3>
-<p><strong>Optional:</strong> one foundational credential only if it supports an immediate goal.</p>
+<div class="phase">
+
+<div class="phase-number">
+Year 2
 </div>
 
-<div class="card">
-<h3>Year 2</h3>
-<p><strong>Security+ or equivalent</strong> if cybersecurity becomes a serious specialization.</p>
+<h3>Cybersecurity credential</h3>
+
+<p>
+If cybersecurity is becoming a serious specialization,
+a foundational security certification can make sense.
+</p>
+
 </div>
 
-<div class="card">
-<h3>Year 3</h3>
-<p>Only add a cloud/security certification if an internship or specialization justifies it.</p>
+
+<div class="phase">
+
+<div class="phase-number">
+Year 3
 </div>
 
-<div class="card">
-<h3>Year 4</h3>
-<p>No certification collecting. Prioritize engineering proof, internships and business results.</p>
+<h3>Specialization credential</h3>
+
+<p>
+Only pursue cloud/security credentials if an internship,
+job or specialization makes them valuable.
+</p>
+
 </div>
+
+
+<div class="phase">
+
+<div class="phase-number">
+Year 4
+</div>
+
+<h3>Stop collecting</h3>
+
+<p>
+Prioritize technical proof, internships, research, engineering work
+and business results.
+</p>
 
 </div>
 
 </section>
 
 
-<!-- PROOF -->
+
+<!-- =====================================================
+PROOF OF WORK
+===================================================== -->
 
 <section id="proof" class="page">
 
 <div class="hero">
-    <span class="tag">PROOF > CLAIMS</span>
-    <h1>Proof of Work</h1>
-    <p>
-        Your resume says what you know. Your portfolio demonstrates it.
-    </p>
+
+<span class="tag">PROOF > CLAIMS</span>
+
+<h1>Proof of Work</h1>
+
+<p>
+Your resume tells people what you know.
+Your projects demonstrate what you can actually do.
+</p>
+
 </div>
+
 
 <div class="grid">
 
-<div class="card">
-<h3>💻 Software</h3>
-<ul>
-<li>GitHub projects</li>
-<li>Useful applications</li>
-<li>Automation systems</li>
-<li>Technical documentation</li>
-</ul>
-</div>
 
 <div class="card">
-<h3>🔐 Cybersecurity</h3>
+
+<h3>💻 Software</h3>
+
 <ul>
+
+<li>GitHub repositories</li>
+<li>Applications</li>
+<li>Automation systems</li>
+<li>Technical documentation</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>🔐 Cybersecurity</h3>
+
+<ul>
+
 <li>Security labs</li>
 <li>CTF write-ups</li>
 <li>Secure applications</li>
 <li>Threat models</li>
+
 </ul>
+
 </div>
 
+
 <div class="card">
+
 <h3>⚡ Engineering</h3>
+
 <ul>
+
 <li>Design projects</li>
 <li>Lab work</li>
-<li>CAD / simulation</li>
+<li>CAD</li>
+<li>Simulation</li>
 <li>Technical reports</li>
+
 </ul>
+
 </div>
 
+
 <div class="card">
+
 <h3>🚀 Business</h3>
+
 <ul>
+
 <li>Customer results</li>
 <li>Revenue</li>
 <li>Case studies</li>
 <li>Product iterations</li>
+
 </ul>
-</div>
 
 </div>
+
+
+</div>
+
 
 <div class="section-title">
+
 <h2>My Best Proof</h2>
+
 </div>
 
+
 <div class="card">
-<textarea id="bestProof"
-placeholder="Write the strongest thing you can currently show an employer, customer or investor..."></textarea>
+
+<textarea
+id="bestProof"
+placeholder="Write the strongest thing you can currently show an employer, customer or investor..."
+></textarea>
+
 </div>
 
 </section>
 
 
-<!-- FOUR YEAR PLAN -->
+
+<!-- =====================================================
+FOUR YEAR PLAN
+===================================================== -->
 
 <section id="yearplan" class="page">
 
 <div class="hero">
-    <span class="tag">NORTH STAR</span>
-    <h1>Four-Year Plan</h1>
-    <p>
-        The objective changes every year. Do not try to graduate with everything mastered.
-    </p>
+
+<span class="tag">NORTH STAR</span>
+
+<h1>Four-Year Plan</h1>
+
+<p>
+Each year has a dominant objective.
+The goal is not to master everything simultaneously.
+The goal is to compound.
+</p>
+
 </div>
 
-<div class="grid">
 
-<div class="card">
-<h3>YEAR 1 — Foundation + First Business</h3>
+<!-- YEAR 1 -->
+
+<div class="phase">
+
+<div class="phase-number">
+YEAR 1 — FOUNDATION + FIRST BUSINESS
+</div>
+
+<h3>Become competent and get your first real market feedback.</h3>
+
+
+<h4>🎓 Engineering</h4>
+
 <ul>
-<li>Survive and learn university fundamentals.</li>
-<li>Build programming foundations.</li>
-<li>Learn AI-assisted workflows.</li>
-<li>Talk to customers.</li>
-<li>Run business experiments.</li>
-<li>Try to get the first dollar.</li>
-</ul>
-</div>
 
-<div class="card">
-<h3>YEAR 2 — Repeatability</h3>
+<li>Build strong academic habits.</li>
+<li>Learn calculus, physics and engineering fundamentals.</li>
+<li>Learn programming fundamentals.</li>
+<li>Learn Git and basic Linux.</li>
+<li>Build your first engineering projects.</li>
+
+</ul>
+
+
+<h4>💻 Programming</h4>
+
 <ul>
-<li>Become technically stronger.</li>
-<li>Develop Linux/networking/security foundations.</li>
-<li>Determine whether one business has traction.</li>
-<li>Build stronger portfolio projects.</li>
-</ul>
-</div>
 
-<div class="card">
-<h3>YEAR 3 — Leverage</h3>
+<li>Python fundamentals</li>
+<li>C fundamentals</li>
+<li>HTML/CSS/JavaScript basics</li>
+<li>SQL fundamentals</li>
+</ul>
+
+
+<h4>🚀 Business</h4>
+
 <ul>
-<li>Technical specialization.</li>
-<li>Internship/research.</li>
-<li>Automate business operations.</li>
-<li>Scale, pivot or replace the business.</li>
-</ul>
-</div>
 
-<div class="card">
-<h3>YEAR 4 — Launch</h3>
+<li>Talk to potential customers.</li>
+<li>Complete at least 20 customer conversations per quarter.</li>
+<li>Identify painful recurring problems.</li>
+<li>Run small experiments.</li>
+<li>Attempt to get the first dollar.</li>
+
+</ul>
+
+
+<h4>🤖 AI</h4>
+
 <ul>
-<li>Graduate with strong engineering credibility.</li>
-<li>Have serious technical proof.</li>
-<li>Have industry experience.</li>
-<li>Have a business capable of continuing beyond university.</li>
-</ul>
-</div>
 
-</div>
+<li>AI-assisted coding</li>
+<li>AI research</li>
+<li>Prompting</li>
+<li>Basic automation</li>
+<li>APIs</li>
+
+</ul>
+
+
+<h4>🔐 Cybersecurity</h4>
+
+<ul>
+
+<li>Linux</li>
+<li>Networking basics</li>
+<li>Security fundamentals</li>
+<li>Basic security labs</li>
+
+</ul>
+
+
+<h4>⚡ Semiconductors</h4>
+
+<ul>
+
+<li>Keep the track parked.</li>
+<li>Study digital logic only if academic workload allows.</li>
+</ul>
+
+
+<h4>📜 Certifications</h4>
+
+<p>
+No certification collecting. Only pursue one if it has a clear purpose.
+</p>
+
+
+<h4>🏆 Proof of Work</h4>
+
+<ul>
+
+<li>3–5 meaningful programming projects.</li>
+<li>At least one engineering project.</li>
+<li>Business experiment documentation.</li>
+<li>GitHub portfolio.</li>
+
+</ul>
+
 
 <div class="callout success">
-<strong>Ultimate objective:</strong>
-Leave university with multiple forms of leverage:
-technical skill + industry credibility + AI leverage + founder judgment + optionality.
+
+<strong>Year 1 win:</strong>
+
+You do not need a successful startup.
+
+You need:
+<strong>technical foundations + first customers + first serious projects + better judgment.</strong>
+
+</div>
+
+</div>
+
+
+
+<!-- YEAR 2 -->
+
+<div class="phase">
+
+<div class="phase-number">
+YEAR 2 — REPEATABILITY
+</div>
+
+<h3>Become more technically capable and determine whether the business deserves more attention.</h3>
+
+
+<h4>🎓 Engineering</h4>
+
+<ul>
+
+<li>More advanced engineering coursework.</li>
+<li>Systems thinking.</li>
+<li>Data structures.</li>
+<li>Computer architecture.</li>
+<li>Operating systems.</li>
+
+</ul>
+
+
+<h4>💻 Programming</h4>
+
+<ul>
+
+<li>Intermediate Python</li>
+<li>C/C++ systems programming</li>
+<li>JavaScript/TypeScript applications</li>
+<li>SQL/database systems</li>
+</ul>
+
+
+<h4>🚀 Business</h4>
+
+<ul>
+
+<li>Try to reach multiple paying customers.</li>
+<li>Measure retention.</li>
+<li>Improve the offer.</li>
+<li>Automate repetitive business tasks.</li>
+<li>Decide whether to scale, pivot or kill.</li>
+
+</ul>
+
+
+<h4>🤖 AI</h4>
+
+<ul>
+
+<li>Workflow automation.</li>
+<li>LLM APIs.</li>
+<li>RAG fundamentals.</li>
+<li>AI-powered internal tools.</li>
+
+</ul>
+
+
+<h4>🔐 Cybersecurity</h4>
+
+<ul>
+
+<li>Networking deeper.</li>
+<li>Web security.</li>
+<li>Authentication.</li>
+<li>Security engineering.</li>
+<li>Security projects.</li>
+
+</ul>
+
+
+<h4>⚡ Semiconductors</h4>
+
+<ul>
+
+<li>Digital logic.</li>
+<li>Computer architecture.</li>
+<li>Optional Verilog introduction.</li>
+
+</ul>
+
+
+<h4>📜 Certifications</h4>
+
+<p>
+Consider a foundational security certification if cybersecurity has become
+a serious specialization.
+</p>
+
+
+<h4>🏆 Proof</h4>
+
+<ul>
+
+<li>More advanced software project.</li>
+<li>Cybersecurity lab.</li>
+<li>Business case study.</li>
+<li>Technical portfolio improvement.</li>
+
+</ul>
+
+
+<div class="callout success">
+
+<strong>Year 2 win:</strong>
+
+You can build real systems, understand technical fundamentals,
+and have evidence that people will pay for something you provide.
+
+</div>
+
+</div>
+
+
+
+<!-- YEAR 3 -->
+
+<div class="phase">
+
+<div class="phase-number">
+YEAR 3 — LEVERAGE + SPECIALIZATION
+</div>
+
+<h3>Choose where your technical depth becomes valuable.</h3>
+
+
+<h4>🎓 Engineering</h4>
+
+<ul>
+
+<li>Advanced technical courses.</li>
+<li>Internship or research.</li>
+<li>Specialized engineering knowledge.</li>
+<li>Major technical project.</li>
+
+</ul>
+
+
+<h4>💻 Programming</h4>
+
+<ul>
+
+<li>Advanced systems programming.</li>
+<li>Full-stack systems.</li>
+<li>Performance optimization.</li>
+<li>Hardware/software integration.</li>
+
+</ul>
+
+
+<h4>🚀 Business</h4>
+
+<ul>
+
+<li>Scale if there is evidence.</li>
+<li>Otherwise kill or pivot.</li>
+<li>Develop repeatable acquisition.</li>
+<li>Automate operations.</li>
+<li>Improve economics.</li>
+
+</ul>
+
+
+<h4>🤖 AI</h4>
+
+<ul>
+
+<li>Agent systems.</li>
+<li>Evaluation.</li>
+<li>Production AI systems.</li>
+<li>AI automation inside the business.</li>
+
+</ul>
+
+
+<h4>🔐 Cybersecurity</h4>
+
+<p>
+Choose ONE:
+
+</p>
+
+<ul>
+
+<li>Cloud security</li>
+<li>Application security</li>
+<li>Offensive security</li>
+<li>Security engineering</li>
+<li>Embedded security</li>
+
+</ul>
+
+
+<h4>⚡ Semiconductors</h4>
+
+<ul>
+
+<li>Verilog/SystemVerilog.</li>
+<li>FPGA projects.</li>
+<li>Digital design.</li>
+<li>Hardware acceleration.</li>
+
+</ul>
+
+
+<h4>📜 Certifications</h4>
+
+<p>
+Only pursue specialization certifications if they support an internship,
+job or clearly defined technical objective.
+</p>
+
+
+<h4>🏆 Proof</h4>
+
+<ul>
+
+<li>Internship experience.</li>
+<li>Major engineering project.</li>
+<li>Cybersecurity specialization project.</li>
+<li>FPGA/hardware project if pursuing chips.</li>
+<li>Business results.</li>
+
+</ul>
+
+
+<div class="callout success">
+
+<strong>Year 3 win:</strong>
+
+You are no longer simply "learning engineering."
+
+You have a recognizable technical direction and real evidence.
+
+</div>
+
+</div>
+
+
+
+<!-- YEAR 4 -->
+
+<div class="phase">
+
+<div class="phase-number">
+YEAR 4 — LAUNCH
+</div>
+
+<h3>Graduate with leverage rather than simply a degree.</h3>
+
+
+<h4>🎓 Engineering</h4>
+
+<ul>
+
+<li>Finish degree strongly.</li>
+<li>Complete capstone.</li>
+<li>Develop professional engineering communication.</li>
+<li>Prepare for industry.</li>
+
+</ul>
+
+
+<h4>💻 Programming</h4>
+
+<ul>
+
+<li>Use whichever languages are relevant to your specialization.</li>
+<li>Focus on architecture and production-quality systems.</li>
+<li>Build one exceptional portfolio project rather than ten mediocre ones.</li>
+
+</ul>
+
+
+<h4>🚀 Business</h4>
+
+<ul>
+
+<li>Continue a proven business.</li>
+<li>Or launch a better second experiment using accumulated judgment.</li>
+<li>Determine whether it can continue after graduation.</li>
+
+</ul>
+
+
+<h4>🤖 AI</h4>
+
+<ul>
+
+<li>Use AI as a force multiplier across engineering and business.</li>
+<li>Build production-grade AI systems where useful.</li>
+
+</ul>
+
+
+<h4>🔐 Cybersecurity</h4>
+
+<ul>
+
+<li>Deepen your chosen specialization.</li>
+<li>Prepare for professional security roles if desired.</li>
+<li>Build serious security proof.</li>
+
+</ul>
+
+
+<h4>⚡ Semiconductors</h4>
+
+<ul>
+
+<li>FPGA/ASIC design.</li>
+<li>Hardware architecture.</li>
+<li>Potential tapeout path if this becomes the primary deep-tech direction.</li>
+
+</ul>
+
+
+<h4>📜 Certifications</h4>
+
+<p>
+No certification collecting.
+
+Prioritize:
+<strong>experience + portfolio + references + technical ability.</strong>
+</p>
+
+
+<h4>🏆 Proof</h4>
+
+<ul>
+
+<li>Strong engineering portfolio.</li>
+<li>Internship/work experience.</li>
+<li>Major technical project.</li>
+<li>Business results.</li>
+<li>Cybersecurity specialization proof.</li>
+<li>Potential hardware project.</li>
+
+</ul>
+
+
+<div class="callout success">
+
+<strong>Year 4 win:</strong>
+
+Graduate with:
+
+<br><br>
+
+<strong>
+Engineering degree
++
+Technical portfolio
++
+Industry experience
++
+AI leverage
++
+Founder judgment
++
+Cybersecurity optionality
++
+Long-term semiconductor path
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="callout warning">
+
+<strong>The sequencing matters.</strong>
+
+You are NOT trying to become:
+
+<br><br>
+
+Engineer + cybersecurity expert + semiconductor engineer +
+AI researcher + CEO
+
+<strong>simultaneously.</strong>
+
+<br><br>
+
+You are building them in layers.
+
+<strong>
+Foundation → Business reps → Technical depth → Leverage → Specialization.
+</strong>
+
 </div>
 
 </section>
 
 
-<!-- REVIEW -->
+
+<!-- =====================================================
+QUARTERLY REVIEW
+===================================================== -->
 
 <section id="review" class="page">
 
 <div class="hero">
-    <span class="tag">EVERY 12 WEEKS</span>
-    <h1>Quarterly Review</h1>
-    <p>
-        The roadmap is allowed to change. But it should change because of evidence,
-        not because you got excited about a new idea.
-    </p>
+
+<span class="tag">EVERY 12 WEEKS</span>
+
+<h1>Quarterly Review</h1>
+
+<p>
+Change the roadmap because of evidence, not because you discovered
+another exciting technology.
+</p>
+
 </div>
+
 
 <div class="grid2">
 
+
 <div class="card">
+
 <h3>🎓 Engineering</h3>
+
 <textarea placeholder="What did I actually learn? What can I now demonstrate?"></textarea>
+
 </div>
 
+
 <div class="card">
+
 <h3>💰 Business</h3>
+
 <textarea placeholder="Conversations, offers, customers, revenue, lessons..."></textarea>
+
 </div>
 
+
 <div class="card">
+
 <h3>🤖 AI</h3>
+
 <textarea placeholder="What workflow became significantly faster?"></textarea>
+
 </div>
 
+
 <div class="card">
+
 <h3>🔐 Cybersecurity</h3>
+
 <textarea placeholder="What can I now do that I couldn't before?"></textarea>
+
 </div>
 
+
 <div class="card">
+
 <h3>🏗️ Proof</h3>
+
 <textarea placeholder="What did I build that is worth showing someone?"></textarea>
+
 </div>
+
 
 <div class="card">
+
 <h3>🧠 Personal</h3>
+
 <textarea placeholder="Am I learning effectively? Am I burning out?"></textarea>
+
 </div>
 
 </div>
+
 
 <div class="section-title">
+
 <h2>Decision</h2>
+
 </div>
+
 
 <div class="grid">
+
+
 <div class="card">
+
 <h3>DOUBLE DOWN</h3>
+
 <p>What is clearly working?</p>
+
 <textarea></textarea>
+
 </div>
 
+
 <div class="card">
+
 <h3>STOP</h3>
+
 <p>What is wasting time?</p>
+
 <textarea></textarea>
+
 </div>
 
+
 <div class="card">
+
 <h3>START</h3>
+
 <p>What evidence suggests a new experiment?</p>
+
 <textarea></textarea>
+
 </div>
+
+
 </div>
 
 </section>
 
 
-<!-- THEMES -->
+
+<!-- =====================================================
+THEMES
+===================================================== -->
 
 <section id="themes" class="page">
 
 <div class="hero">
-    <span class="tag">PERSONALIZATION</span>
-    <h1>20 Themes</h1>
-    <p>
-        Change the visual environment without changing the strategy.
-    </p>
+
+<span class="tag">PERSONALIZATION</span>
+
+<h1>20 Themes</h1>
+
+<p>
+Change the environment without changing the strategy.
+</p>
+
 </div>
 
+
 <div class="theme-panel">
+
 <div class="theme" onclick="changeTheme('midnight')">🌑 Midnight</div>
+
 <div class="theme" onclick="changeTheme('light')">☀️ Light</div>
+
 <div class="theme" onclick="changeTheme('ocean')">🌊 Ocean</div>
+
 <div class="theme" onclick="changeTheme('forest')">🌲 Forest</div>
+
 <div class="theme" onclick="changeTheme('sunset')">🌅 Sunset</div>
+
 <div class="theme" onclick="changeTheme('cyber')">⚡ Cyber</div>
+
 <div class="theme" onclick="changeTheme('terminal')">💻 Terminal</div>
+
 <div class="theme" onclick="changeTheme('mono')">◼ Mono</div>
+
 <div class="theme" onclick="changeTheme('purple')">🔮 Purple</div>
+
 <div class="theme" onclick="changeTheme('red')">🔥 Red</div>
+
 <div class="theme" onclick="changeTheme('gold')">🏆 Gold</div>
+
 <div class="theme" onclick="changeTheme('ice')">❄️ Ice</div>
+
 <div class="theme" onclick="changeTheme('rose')">🌹 Rose</div>
+
 <div class="theme" onclick="changeTheme('lime')">🍋 Lime</div>
+
 <div class="theme" onclick="changeTheme('coffee')">☕ Coffee</div>
+
 <div class="theme" onclick="changeTheme('slate')">🪨 Slate</div>
+
 <div class="theme" onclick="changeTheme('matrix')">🟢 Matrix</div>
+
 <div class="theme" onclick="changeTheme('space')">🚀 Space</div>
+
 <div class="theme" onclick="changeTheme('minimal')">▫️ Minimal</div>
+
 <div class="theme" onclick="changeTheme('highcontrast')">◐ High Contrast</div>
+
 </div>
 
 </section>
 
+
 </main>
 
+
 <footer>
-    Engineering × Founder Roadmap · Build → Test → Learn → Repeat
+
+Engineering × Founder Roadmap
+
+<br>
+
+Build → Test → Learn → Prove → Repeat
+
 </footer>
+
 
 <script>
 
-/* =========================
-   PAGE NAVIGATION
-========================= */
+/* =====================================================
+PAGE NAVIGATION
+===================================================== */
 
 function showPage(id,button){
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
 
-    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.page')
+.forEach(page=>page.classList.remove('active'));
 
-    if(button) button.classList.add('active');
+document.getElementById(id)
+.classList.add('active');
 
-    window.scrollTo({top:0,behavior:'smooth'});
+document.querySelectorAll('nav button')
+.forEach(btn=>btn.classList.remove('active'));
+
+if(button){
+button.classList.add('active');
+}
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
 }
 
 
-/* =========================
-   LOCAL STORAGE
-========================= */
+/* =====================================================
+LOCAL DATA
+===================================================== */
 
-const data = JSON.parse(localStorage.getItem("engineeringRoadmap") || "{}");
+const data =
+JSON.parse(
+localStorage.getItem("engineeringRoadmap") || "{}"
+);
+
 
 function save(){
-    localStorage.setItem("engineeringRoadmap",JSON.stringify(data));
+
+localStorage.setItem(
+"engineeringRoadmap",
+JSON.stringify(data)
+);
+
 }
+
 
 function increment(key){
-    data[key]=(data[key]||0)+1;
-    save();
-    renderStats();
+
+data[key]=(data[key]||0)+1;
+
+save();
+
+renderStats();
+
 }
+
 
 function renderStats(){
-    ["interviews","offers","customers","experimentsCount"].forEach(key=>{
-        const el=document.getElementById(key);
-        if(el) el.textContent=data[key]||0;
-    });
-}
-
-function resetData(){
-    if(confirm("Reset all saved roadmap data?")){
-        localStorage.removeItem("engineeringRoadmap");
-        location.reload();
-    }
-}
-
-
-/* =========================
-   WEEKLY INPUTS
-========================= */
 
 [
-    "weeklyEngineering",
-    "weeklyBusiness",
-    "weeklyTechnical",
-    "weeklyBrave",
-    "bestProof"
-].forEach(id=>{
-    const el=document.getElementById(id);
+"interviews",
+"offers",
+"customers",
+"experimentsCount"
+]
+.forEach(key=>{
 
-    if(data[id]) el.value=data[id];
+const element=
+document.getElementById(key);
 
-    el.addEventListener("input",()=>{
-        data[id]=el.value;
-        save();
-    });
+if(element){
+
+element.textContent=
+data[key]||0;
+
+}
+
+});
+
+}
+
+
+function resetData(){
+
+if(
+confirm(
+"Reset all saved roadmap data?"
+)
+){
+
+localStorage.removeItem(
+"engineeringRoadmap"
+);
+
+location.reload();
+
+}
+
+}
+
+
+/* =====================================================
+WEEKLY INPUTS
+===================================================== */
+
+[
+"weeklyEngineering",
+"weeklyBusiness",
+"weeklyTechnical",
+"weeklyBrave",
+"bestProof"
+]
+.forEach(id=>{
+
+const element=
+document.getElementById(id);
+
+if(data[id]){
+element.value=data[id];
+}
+
+element.addEventListener(
+"input",
+()=>{
+
+data[id]=element.value;
+
+save();
+
+}
+);
+
 });
 
 
-/* =========================
-   EXPERIMENT
-========================= */
+/* =====================================================
+EXPERIMENT
+===================================================== */
 
 function saveExperiment(){
 
-    data.experiment={
-        hypothesis:document.getElementById("hypothesis").value,
-        test:document.getElementById("test").value,
-        result:document.getElementById("result").value,
-        decision:document.getElementById("decision").value
-    };
+data.experiment={
 
-    save();
+hypothesis:
+document.getElementById("hypothesis").value,
 
-    alert("Experiment saved.");
+test:
+document.getElementById("test").value,
+
+result:
+document.getElementById("result").value,
+
+decision:
+document.getElementById("decision").value
+
+};
+
+save();
+
+alert("Experiment saved.");
+
 }
+
 
 if(data.experiment){
-    document.getElementById("hypothesis").value=data.experiment.hypothesis||"";
-    document.getElementById("test").value=data.experiment.test||"";
-    document.getElementById("result").value=data.experiment.result||"";
-    document.getElementById("decision").value=data.experiment.decision||"";
+
+document.getElementById("hypothesis").value=
+data.experiment.hypothesis||"";
+
+document.getElementById("test").value=
+data.experiment.test||"";
+
+document.getElementById("result").value=
+data.experiment.result||"";
+
+document.getElementById("decision").value=
+data.experiment.decision||"";
+
 }
 
 
-/* =========================
-   CHECKBOX PERSISTENCE
-========================= */
+/* =====================================================
+CHECKBOX PERSISTENCE
+===================================================== */
 
-document.querySelectorAll('input[type="checkbox"]').forEach((box,index)=>{
+document
+.querySelectorAll('input[type="checkbox"]')
+.forEach((box,index)=>{
 
-    const key="check_"+index;
+const key="check_"+index;
 
-    box.checked=localStorage.getItem(key)==="true";
+box.checked=
+localStorage.getItem(key)==="true";
 
-    box.addEventListener("change",()=>{
-        localStorage.setItem(key,box.checked);
-        box.parentElement.classList.toggle("done",box.checked);
-    });
+box.addEventListener(
+"change",
+()=>{
 
-    box.parentElement.classList.toggle("done",box.checked);
+localStorage.setItem(
+key,
+box.checked
+);
+
+box.parentElement
+.classList.toggle(
+"done",
+box.checked
+);
+
+}
+);
+
+box.parentElement
+.classList.toggle(
+"done",
+box.checked
+);
+
 });
 
 
-/* =========================
-   THEMES
-========================= */
+/* =====================================================
+THEMES
+===================================================== */
 
 const themes={
 
@@ -1649,34 +3607,62 @@ accent2:"#00ffff"
 
 };
 
+
 function changeTheme(name){
 
-    const t=themes[name];
+const theme=themes[name];
 
-    if(!t)return;
+if(!theme)return;
 
-    const root=document.documentElement;
+const root=
+document.documentElement;
 
-    Object.entries(t).forEach(([key,value])=>{
-        root.style.setProperty("--"+key,value);
-    });
+Object.entries(theme)
+.forEach(
+([key,value])=>{
 
-    document.body.classList.toggle("light",name==="light"||name==="minimal");
+root.style.setProperty(
+"--"+key,
+value
+);
 
-    localStorage.setItem("roadmapTheme",name);
+}
+);
 
-    const select=document.getElementById("themeSelect");
-    if(select) select.value=name;
+document.body.classList.toggle(
+"light",
+name==="light"||
+name==="minimal"
+);
+
+localStorage.setItem(
+"roadmapTheme",
+name
+);
+
+const select=
+document.getElementById(
+"themeSelect"
+);
+
+if(select){
+select.value=name;
+}
+
 }
 
 
-/* =========================
-   INIT
-========================= */
+/* =====================================================
+INITIALIZE
+===================================================== */
 
 renderStats();
 
-const savedTheme=localStorage.getItem("roadmapTheme")||"midnight";
+const savedTheme=
+localStorage.getItem(
+"roadmapTheme"
+)||"midnight";
+
 changeTheme(savedTheme);
 
 </script>
