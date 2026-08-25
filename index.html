@@ -3,3357 +3,1681 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Engineering + Founder Roadmap</title>
+<title>Engineering × Founder Roadmap</title>
 
 <style>
-
-/* =========================================================
-   THEME SYSTEM
-========================================================= */
-
-:root {
-    --bg: #0b0f14;
-    --bg2: #101720;
-    --card: #111821;
-    --card2: #151e29;
-    --border: #263342;
-    --text: #edf2f7;
-    --muted: #9aa8b7;
-    --accent: #3ddc97;
-    --accent2: #61a8ff;
-    --warning: #f4c95d;
-    --danger: #ff6b6b;
-    --purple: #a78bfa;
-    --shadow: 0 15px 45px rgba(0,0,0,.25);
+:root{
+    --bg:#0b1020;
+    --panel:#121a2e;
+    --panel2:#18233d;
+    --text:#eef3ff;
+    --muted:#9eabc7;
+    --accent:#6ea8fe;
+    --accent2:#7ef0c2;
+    --danger:#ff6b7a;
+    --warning:#ffd166;
+    --border:rgba(255,255,255,.09);
+    --shadow:0 15px 45px rgba(0,0,0,.25);
 }
 
-/* =========================================================
-   20 THEMES
-========================================================= */
+*{box-sizing:border-box}
 
-body.theme-1 {
-    --bg:#0b0f14; --bg2:#101720; --card:#111821; --card2:#151e29;
-    --border:#263342; --text:#edf2f7; --muted:#9aa8b7;
-    --accent:#3ddc97; --accent2:#61a8ff; --warning:#f4c95d;
-    --danger:#ff6b6b; --purple:#a78bfa;
-}
+html{scroll-behavior:smooth}
 
-body.theme-2 {
-    --bg:#07111f; --bg2:#0c1b30; --card:#0d2138; --card2:#102a46;
-    --border:#214564; --text:#eaf6ff; --muted:#8fb0c9;
-    --accent:#38bdf8; --accent2:#60a5fa; --warning:#facc15;
-    --danger:#fb7185; --purple:#818cf8;
-}
-
-body.theme-3 {
-    --bg:#110b16; --bg2:#1b1024; --card:#21142c; --card2:#291936;
-    --border:#49305b; --text:#faf2ff; --muted:#bdaac8;
-    --accent:#d946ef; --accent2:#a78bfa; --warning:#fbbf24;
-    --danger:#fb7185; --purple:#c084fc;
-}
-
-body.theme-4 {
-    --bg:#07140f; --bg2:#0c2018; --card:#0f281e; --card2:#133322;
-    --border:#24523b; --text:#ecfff4; --muted:#91b7a1;
-    --accent:#22c55e; --accent2:#34d399; --warning:#eab308;
-    --danger:#ef4444; --purple:#86efac;
-}
-
-body.theme-5 {
-    --bg:#160d08; --bg2:#21140d; --card:#2a180f; --card2:#351e12;
-    --border:#5a321d; --text:#fff7ed; --muted:#c9a88f;
-    --accent:#fb923c; --accent2:#f97316; --warning:#facc15;
-    --danger:#ef4444; --purple:#c084fc;
-}
-
-body.theme-6 {
-    --bg:#111111; --bg2:#181818; --card:#202020; --card2:#292929;
-    --border:#3b3b3b; --text:#fafafa; --muted:#a3a3a3;
-    --accent:#ffffff; --accent2:#d4d4d4; --warning:#facc15;
-    --danger:#f87171; --purple:#c4b5fd;
-}
-
-body.theme-7 {
-    --bg:#001b1b; --bg2:#002727; --card:#003333; --card2:#004040;
-    --border:#176666; --text:#ecffff; --muted:#8bc4c4;
-    --accent:#2dd4bf; --accent2:#22d3ee; --warning:#facc15;
-    --danger:#fb7185; --purple:#5eead4;
-}
-
-body.theme-8 {
-    --bg:#17120a; --bg2:#211a0c; --card:#2a220f; --card2:#342a12;
-    --border:#5c4b20; --text:#fffbea; --muted:#c5b98d;
-    --accent:#facc15; --accent2:#f59e0b; --warning:#fde047;
-    --danger:#ef4444; --purple:#d8b4fe;
-}
-
-body.theme-9 {
-    --bg:#090d1a; --bg2:#10162b; --card:#141d36; --card2:#1b2645;
-    --border:#344574; --text:#eef2ff; --muted:#9ba9cf;
-    --accent:#818cf8; --accent2:#6366f1; --warning:#fbbf24;
-    --danger:#fb7185; --purple:#a78bfa;
-}
-
-body.theme-10 {
-    --bg:#130a0a; --bg2:#200e0e; --card:#2b1111; --card2:#361515;
-    --border:#5c2424; --text:#fff1f2; --muted:#c99b9f;
-    --accent:#f43f5e; --accent2:#fb7185; --warning:#facc15;
-    --danger:#ef4444; --purple:#c084fc;
-}
-
-body.theme-11 {
-    --bg:#06100e; --bg2:#0b1916; --card:#0e211c; --card2:#123027;
-    --border:#225244; --text:#effff9; --muted:#91b6aa;
-    --accent:#10b981; --accent2:#14b8a6; --warning:#fbbf24;
-    --danger:#f87171; --purple:#6ee7b7;
-}
-
-body.theme-12 {
-    --bg:#0c0b16; --bg2:#151327; --card:#1d1a35; --card2:#242042;
-    --border:#40386c; --text:#f5f3ff; --muted:#aaa4c7;
-    --accent:#8b5cf6; --accent2:#c084fc; --warning:#facc15;
-    --danger:#fb7185; --purple:#a78bfa;
-}
-
-body.theme-13 {
-    --bg:#06151c; --bg2:#0a202a; --card:#0d2b36; --card2:#113642;
-    --border:#225865; --text:#effcff; --muted:#91b8c1;
-    --accent:#06b6d4; --accent2:#22d3ee; --warning:#facc15;
-    --danger:#fb7185; --purple:#67e8f9;
-}
-
-body.theme-14 {
-    --bg:#120e08; --bg2:#1d160b; --card:#291e0d; --card2:#332610;
-    --border:#5b431d; --text:#fffaf0; --muted:#c7b48f;
-    --accent:#eab308; --accent2:#f59e0b; --warning:#fde047;
-    --danger:#ef4444; --purple:#d8b4fe;
-}
-
-body.theme-15 {
-    --bg:#080c0a; --bg2:#101713; --card:#152019; --card2:#1b2921;
-    --border:#304438; --text:#f1fff6; --muted:#9ab1a2;
-    --accent:#84cc16; --accent2:#22c55e; --warning:#facc15;
-    --danger:#f87171; --purple:#bef264;
-}
-
-body.theme-16 {
-    --bg:#0d0914; --bg2:#180e21; --card:#21132d; --card2:#2a1939;
-    --border:#4b2e60; --text:#fdf4ff; --muted:#c1a9ca;
-    --accent:#ec4899; --accent2:#d946ef; --warning:#facc15;
-    --danger:#fb7185; --purple:#e879f9;
-}
-
-body.theme-17 {
-    --bg:#070e18; --bg2:#0b1726; --card:#0f2033; --card2:#132941;
-    --border:#274966; --text:#eff8ff; --muted:#96afc4;
-    --accent:#0ea5e9; --accent2:#38bdf8; --warning:#facc15;
-    --danger:#fb7185; --purple:#818cf8;
-}
-
-body.theme-18 {
-    --bg:#10110a; --bg2:#191b0c; --card:#22240e; --card2:#2b2d12;
-    --border:#4e5122; --text:#fbffe9; --muted:#b7bc8b;
-    --accent:#a3e635; --accent2:#84cc16; --warning:#facc15;
-    --danger:#ef4444; --purple:#bef264;
-}
-
-body.theme-19 {
-    --bg:#090909; --bg2:#151515; --card:#1c1c1c; --card2:#252525;
-    --border:#3d3d3d; --text:#fafafa; --muted:#a1a1a1;
-    --accent:#f97316; --accent2:#fb923c; --warning:#facc15;
-    --danger:#ef4444; --purple:#c084fc;
-}
-
-body.theme-20 {
-    --bg:#030712; --bg2:#07111f; --card:#0b1728; --card2:#101f34;
-    --border:#1d4265; --text:#eff6ff; --muted:#8da8c2;
-    --accent:#00f5d4; --accent2:#00bbf9; --warning:#fee440;
-    --danger:#f15bb5; --purple:#9b5de5;
-}
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Inter, Arial, Helvetica, sans-serif;
+body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     background:
-        radial-gradient(circle at 10% 10%, rgba(97,168,255,.06), transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(61,220,151,.05), transparent 30%),
+        radial-gradient(circle at 10% 10%,rgba(110,168,254,.10),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(126,240,194,.08),transparent 25%),
         var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-    transition:
-        background .5s ease,
-        color .5s ease;
+    color:var(--text);
+    transition:.35s ease;
 }
 
-button,
-.card,
-.hero,
-.callout,
-.progress-bar {
-    transition:
-        background .35s ease,
-        border-color .35s ease,
-        color .35s ease,
-        transform .25s ease,
-        box-shadow .25s ease;
+body.light{
+    --bg:#f3f6fb;
+    --panel:#ffffff;
+    --panel2:#eef3fa;
+    --text:#172033;
+    --muted:#59657c;
+    --border:rgba(0,0,0,.09);
+    --shadow:0 15px 40px rgba(40,60,100,.12);
 }
 
+body *{transition:background .25s,color .25s,border .25s}
 
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(18px);
+    background:rgba(11,16,32,.82);
+    border-bottom:1px solid var(--border);
 }
 
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 rgba(61,220,151,0);
-    }
-    50% {
-        box-shadow: 0 0 25px rgba(61,220,151,.12);
-    }
+.light header{background:rgba(243,246,251,.85)}
+
+.topbar{
+    max-width:1450px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-@keyframes float {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
+.logo{
+    font-weight:900;
+    letter-spacing:-.5px;
+    white-space:nowrap;
 }
 
-@keyframes shimmer {
-    0% {
-        background-position: -500px 0;
-    }
-    100% {
-        background-position: 500px 0;
-    }
+.logo span{color:var(--accent)}
+
+.controls{
+    display:flex;
+    gap:8px;
+    align-items:center;
 }
 
-@keyframes progressGlow {
-    0%,100% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(1.25);
-    }
+button,select,input,textarea{
+    font:inherit;
 }
 
-.animate {
-    animation: fadeUp .55s ease both;
+button,select{
+    background:var(--panel2);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:9px 12px;
+    cursor:pointer;
 }
 
-.float {
-    animation: float 4s ease-in-out infinite;
+button:hover{
+    transform:translateY(-1px);
+    border-color:var(--accent);
 }
 
+nav{
+    max-width:1450px;
+    margin:auto;
+    padding:0 20px 12px;
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+}
 
-/* =========================================================
-   HEADER
-========================================================= */
+nav button{
+    white-space:nowrap;
+    font-size:13px;
+}
 
-header {
-    padding: 55px 8%;
-    border-bottom: 1px solid var(--border);
+nav button.active{
+    background:var(--accent);
+    color:#07101f;
+    border-color:transparent;
+    font-weight:800;
+}
+
+main{
+    max-width:1450px;
+    margin:auto;
+    padding:35px 20px 80px;
+}
+
+.page{
+    display:none;
+    animation:fadeUp .45s ease;
+}
+
+.page.active{display:block}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(110,168,254,0)}
+    50%{box-shadow:0 0 0 9px rgba(110,168,254,.07)}
+}
+
+.hero{
+    padding:35px;
+    border:1px solid var(--border);
+    border-radius:24px;
     background:
-        linear-gradient(135deg,
-            rgba(61,220,151,.05),
-            rgba(97,168,255,.05)),
-        var(--bg2);
-    position: relative;
-    overflow: hidden;
+        linear-gradient(135deg,rgba(110,168,254,.12),transparent 50%),
+        var(--panel);
+    box-shadow:var(--shadow);
+    margin-bottom:25px;
 }
 
-header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            110deg,
-            transparent 30%,
-            rgba(255,255,255,.025) 50%,
-            transparent 70%
-        );
-    background-size: 700px 100%;
-    animation: shimmer 8s linear infinite;
-    pointer-events: none;
+.hero h1{
+    font-size:clamp(32px,5vw,64px);
+    line-height:1;
+    letter-spacing:-3px;
+    margin:0 0 15px;
 }
 
-header h1 {
-    font-size: clamp(2rem, 5vw, 4.2rem);
-    margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
+.hero p{
+    color:var(--muted);
+    max-width:850px;
+    line-height:1.7;
 }
 
-header p {
-    max-width: 900px;
-    color: var(--muted);
-    font-size: 1.05rem;
-    position: relative;
-    z-index: 1;
+.badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:20px;
 }
 
-.container {
-    width: min(1200px, 92%);
-    margin: auto;
+.badge{
+    padding:7px 10px;
+    border-radius:999px;
+    background:var(--panel2);
+    border:1px solid var(--border);
+    color:var(--muted);
+    font-size:12px;
 }
 
-
-/* =========================================================
-   NAV
-========================================================= */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(8,12,17,.94);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-}
-
-.nav-inner {
-    display: flex;
-    gap: 8px;
-    width: min(1200px, 92%);
-    margin: auto;
-    padding: 10px 0;
-}
-
-nav button {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 9px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-nav button:hover {
-    color: var(--text);
-    border-color: var(--accent2);
-    transform: translateY(-2px);
-}
-
-nav button.active {
-    background: var(--card2);
-    color: var(--text);
-    border-color: var(--accent);
-    box-shadow: 0 0 16px rgba(61,220,151,.08);
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-main {
-    padding: 45px 0 90px;
-}
-
-section {
-    display: none;
-}
-
-section.active {
-    display: block;
-    animation: fadeUp .45s ease both;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 32px;
-    margin-bottom: 28px;
-    box-shadow: var(--shadow);
-}
-
-.hero:hover {
-    transform: translateY(-2px);
-}
-
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: var(--muted);
-}
-
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.grid {
-    display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
-    margin: 20px 0;
-}
-
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 22px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.12);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent2);
-    box-shadow: var(--shadow);
-}
-
-.card h3 {
-    margin-bottom: 8px;
-}
-
-.card p,
-.card li {
-    color: var(--muted);
-}
-
-.card ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-
-/* =========================================================
-   PRIORITY LABELS
-========================================================= */
-
-.priority {
-    display: inline-block;
-    font-size: .72rem;
-    font-weight: bold;
-    padding: 4px 9px;
-    border-radius: 999px;
-    margin-bottom: 12px;
-}
-
-.high {
-    color: #06130d;
-    background: var(--accent);
-}
-
-.medium {
-    color: #1b1504;
-    background: var(--warning);
-}
-
-.optional {
-    color: #081321;
-    background: var(--accent2);
-}
-
-.parked {
-    color: #150d25;
-    background: var(--purple);
-}
-
-.danger {
-    color: #220808;
-    background: var(--danger);
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:16px;
 }
 
-
-/* =========================================================
-   CALLOUTS
-========================================================= */
-
-.callout {
-    border-left: 4px solid var(--accent);
-    background: var(--card2);
-    padding: 20px;
-    margin: 22px 0;
-    border-radius: 9px;
-}
-
-.callout.warning {
-    border-left-color: var(--warning);
-}
-
-.callout.danger-box {
-    border-left-color: var(--danger);
+.grid2{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
 }
 
-.callout strong {
-    display: block;
-    margin-bottom: 5px;
+@media(max-width:850px){
+    .grid2{grid-template-columns:1fr}
 }
 
-
-/* =========================================================
-   QUOTE
-========================================================= */
-
-.quote {
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 27px;
-    text-align: center;
-    background: var(--card2);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    margin: 25px 0;
-    animation: pulse 4s ease-in-out infinite;
+.card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:var(--shadow);
 }
-
 
-/* =========================================================
-   TIMELINE
-========================================================= */
-
-.timeline {
-    border-left: 2px solid var(--border);
-    margin: 25px 0;
-    padding-left: 25px;
+.card:hover{
+    transform:translateY(-3px);
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
+.card h3{
+    margin-top:0;
 }
 
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -34px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 3px solid var(--bg);
-    box-shadow: 0 0 14px rgba(61,220,151,.25);
+.card p,.card li{
+    color:var(--muted);
+    line-height:1.65;
 }
 
-.timeline-item h3 {
-    margin-bottom: 5px;
+.section-title{
+    margin:40px 0 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:15px;
 }
 
-.timeline-item p {
-    color: var(--muted);
+.section-title h2{
+    margin:0;
+    font-size:27px;
 }
-
-
-/* =========================================================
-   CHECKLIST
-========================================================= */
 
-.checklist {
-    list-style: none;
-    padding: 0 !important;
+.section-title p{
+    margin:0;
+    color:var(--muted);
 }
 
-.checklist li {
-    margin: 9px 0;
-    padding: 10px;
-    background: var(--bg2);
-    border: 1px solid transparent;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all .2s ease;
+.stat{
+    font-size:34px;
+    font-weight:900;
+    margin:8px 0;
 }
 
-.checklist li:hover {
-    border-color: var(--border);
-    transform: translateX(3px);
+.progress{
+    height:9px;
+    background:var(--panel2);
+    border-radius:99px;
+    overflow:hidden;
 }
 
-.checklist li:has(input:checked) {
-    opacity: .55;
-    text-decoration: line-through;
+.progress div{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    border-radius:99px;
+    transition:width 1s ease;
 }
 
-.checklist input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--accent);
+.task{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:11px 0;
+    border-bottom:1px solid var(--border);
 }
 
+.task:last-child{border-bottom:0}
 
-/* =========================================================
-   TABLE
-========================================================= */
+.task input{margin-top:5px}
 
-.table-wrapper {
-    overflow-x: auto;
+.task.done label{
+    text-decoration:line-through;
+    opacity:.5;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background: var(--card);
-    border-radius: 12px;
-    overflow: hidden;
+.tag{
+    display:inline-block;
+    padding:4px 7px;
+    border-radius:6px;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    background:var(--panel2);
+    color:var(--accent);
 }
 
-th,
-td {
-    padding: 14px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
+.callout{
+    padding:18px;
+    border-left:4px solid var(--accent);
+    background:var(--panel2);
+    border-radius:12px;
+    margin:15px 0;
 }
 
-th {
-    background: var(--card2);
+.warning{
+    border-left-color:var(--warning);
 }
 
-td {
-    color: var(--muted);
+.danger{
+    border-left-color:var(--danger);
 }
 
-
-/* =========================================================
-   AI SECTION
-========================================================= */
-
-.ai-roadmap {
-    border: 1px solid var(--accent2);
-    box-shadow:
-        0 0 35px rgba(97,168,255,.07),
-        var(--shadow);
-}
-
-.ai-stage {
-    position: relative;
-    overflow: hidden;
-}
-
-.ai-stage::after {
-    content: "AI";
-    position: absolute;
-    right: 18px;
-    bottom: -25px;
-    font-size: 100px;
-    font-weight: bold;
-    opacity: .025;
+.success{
+    border-left-color:var(--accent2);
 }
 
-.ai-skill {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-.ai-level {
-    font-size: .75rem;
-    color: var(--accent2);
-    border: 1px solid var(--accent2);
-    border-radius: 999px;
-    padding: 3px 8px;
-    white-space: nowrap;
+th,td{
+    text-align:left;
+    padding:12px;
+    border-bottom:1px solid var(--border);
 }
-
-
-/* =========================================================
-   PROGRESS
-========================================================= */
 
-.progress-wrap {
-    margin: 20px 0;
-}
+th{color:var(--muted);font-size:12px;text-transform:uppercase}
 
-.progress-bar {
-    height: 12px;
-    background: #080c11;
-    border-radius: 99px;
-    overflow: hidden;
-    border: 1px solid var(--border);
+input[type=text],
+input[type=number],
+textarea{
+    width:100%;
+    padding:11px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:var(--panel2);
+    color:var(--text);
+    outline:none;
 }
 
-.progress-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(
-        90deg,
-        var(--accent),
-        var(--accent2)
-    );
-    transition: width .5s ease;
-}
+textarea{min-height:110px;resize:vertical}
 
-.progress-text {
-    color: var(--muted);
-    margin-top: 7px;
-    font-size: .9rem;
+.timeline{
+    position:relative;
+    padding-left:30px;
 }
-
 
-/* =========================================================
-   THEME PANEL
-========================================================= */
-
-.theme-panel {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 200;
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:8px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--border);
 }
 
-.theme-toggle {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
-    cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: var(--shadow);
+.timeline-item{
+    position:relative;
+    margin-bottom:25px;
 }
 
-.theme-menu {
-    position: absolute;
-    right: 0;
-    bottom: 60px;
-    width: 260px;
-    padding: 15px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    display: none;
-    box-shadow: var(--shadow);
+.timeline-item:before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:5px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--accent);
+    animation:pulse 2.5s infinite;
 }
 
-.theme-menu.open {
-    display: block;
-    animation: fadeUp .25s ease;
+.checklist{
+    display:grid;
+    gap:7px;
 }
 
-.theme-menu h3 {
-    margin-bottom: 12px;
+.small{
+    font-size:12px;
+    color:var(--muted);
 }
 
-.theme-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 7px;
+.big-number{
+    font-size:42px;
+    font-weight:900;
 }
 
-.theme-button {
-    height: 30px;
-    border-radius: 7px;
-    border: 1px solid var(--border);
-    cursor: pointer;
+.theme-panel{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+    gap:10px;
 }
-
-.t1 { background:#3ddc97; }
-.t2 { background:#38bdf8; }
-.t3 { background:#d946ef; }
-.t4 { background:#22c55e; }
-.t5 { background:#fb923c; }
-.t6 { background:#fff; }
-.t7 { background:#2dd4bf; }
-.t8 { background:#facc15; }
-.t9 { background:#818cf8; }
-.t10 { background:#f43f5e; }
-.t11 { background:#10b981; }
-.t12 { background:#8b5cf6; }
-.t13 { background:#06b6d4; }
-.t14 { background:#eab308; }
-.t15 { background:#84cc16; }
-.t16 { background:#ec4899; }
-.t17 { background:#0ea5e9; }
-.t18 { background:#a3e635; }
-.t19 { background:#f97316; }
-.t20 { background:#00f5d4; }
-
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    text-align: center;
-    padding: 45px;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
+.theme{
+    min-height:70px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:10px;
+    font-size:12px;
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
-@media(max-width:700px) {
-
-    header {
-        padding: 35px 5%;
-    }
-
-    .container {
-        width: 94%;
-    }
-
-    .hero {
-        padding: 23px;
-    }
-
-    th,
-    td {
-        font-size: .85rem;
-        padding: 9px;
-    }
-
-    .theme-panel {
-        right: 10px;
-        bottom: 10px;
-    }
+footer{
+    max-width:1450px;
+    margin:auto;
+    padding:30px 20px 60px;
+    color:var(--muted);
+    text-align:center;
 }
-
 </style>
 </head>
 
-
-<body class="theme-1">
-
-
-<!-- =======================================================
-     HEADER
-======================================================= -->
+<body>
 
 <header>
+    <div class="topbar">
+        <div class="logo">ENGINEER <span>×</span> FOUNDER</div>
 
-<div class="container">
+        <div class="controls">
+            <select id="themeSelect" onchange="changeTheme(this.value)">
+                <option value="midnight">Midnight</option>
+                <option value="light">Light</option>
+                <option value="ocean">Ocean</option>
+                <option value="forest">Forest</option>
+                <option value="sunset">Sunset</option>
+                <option value="cyber">Cyber</option>
+                <option value="terminal">Terminal</option>
+                <option value="mono">Monochrome</option>
+                <option value="purple">Purple</option>
+                <option value="red">Red</option>
+                <option value="gold">Gold</option>
+                <option value="ice">Ice</option>
+                <option value="rose">Rose</option>
+                <option value="lime">Lime</option>
+                <option value="coffee">Coffee</option>
+                <option value="slate">Slate</option>
+                <option value="matrix">Matrix</option>
+                <option value="space">Space</option>
+                <option value="minimal">Minimal</option>
+                <option value="highcontrast">High Contrast</option>
+            </select>
 
-<h1>Engineering + Founder Roadmap</h1>
+            <button onclick="resetData()">Reset</button>
+        </div>
+    </div>
 
-<p>
-A four-year operating system for becoming an engineer,
-building businesses, developing cybersecurity capability,
-using AI as leverage, and keeping semiconductor ambitions
-alive without trying to pursue five careers simultaneously.
-</p>
-
-</div>
-
+    <nav id="nav">
+        <button class="active" onclick="showPage('dashboard',this)">Dashboard</button>
+        <button onclick="showPage('engineering',this)">Engineering</button>
+        <button onclick="showPage('business',this)">Business</button>
+        <button onclick="showPage('experiments',this)">Experiments</button>
+        <button onclick="showPage('ai',this)">AI-Native</button>
+        <button onclick="showPage('cyber',this)">Cybersecurity</button>
+        <button onclick="showPage('chips',this)">Semiconductors</button>
+        <button onclick="showPage('certs',this)">Certifications</button>
+        <button onclick="showPage('proof',this)">Proof of Work</button>
+        <button onclick="showPage('yearplan',this)">4-Year Plan</button>
+        <button onclick="showPage('review',this)">Quarterly Review</button>
+        <button onclick="showPage('themes',this)">Themes</button>
+    </nav>
 </header>
 
+<main>
 
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
+<!-- DASHBOARD -->
 
-<nav>
-
-<div class="nav-inner">
-
-<button class="active" onclick="showSection('overview',this)">
-Overview
-</button>
-
-<button onclick="showSection('business',this)">
-🚀 Business
-</button>
-
-<button onclick="showSection('engineering',this)">
-🎓 Engineering
-</button>
-
-<button onclick="showSection('cyber',this)">
-🔐 Cybersecurity
-</button>
-
-<button onclick="showSection('ai',this)">
-🤖 AI Leverage
-</button>
-
-<button onclick="showSection('semiconductor',this)">
-🧠 Semiconductors
-</button>
-
-<button onclick="showSection('certs',this)">
-🏅 Certifications
-</button>
-
-<button onclick="showSection('years',this)">
-📅 Years 1–4
-</button>
-
-<button onclick="showSection('scoreboard',this)">
-📊 Scoreboard
-</button>
-
-<button onclick="showSection('rules',this)">
-🚨 Rules
-</button>
-
-</div>
-
-</nav>
-
-
-<main class="container">
-
-
-<!-- =======================================================
-     OVERVIEW
-======================================================= -->
-
-<section id="overview" class="active">
+<section id="dashboard" class="page active">
 
 <div class="hero">
+    <span class="tag">THE OPERATING SYSTEM</span>
+    <h1>Build the engineer.<br>Build the founder.</h1>
+    <p>
+        University is not just four years of classes. It is a controlled environment
+        to build technical ability, test businesses, develop judgment, collect proof,
+        fail cheaply and create optionality for the future.
+    </p>
 
-<h2>The Strategy</h2>
+    <div class="badges">
+        <span class="badge">Engineering First</span>
+        <span class="badge">One Active Business</span>
+        <span class="badge">AI-Native</span>
+        <span class="badge">Cyber Optionality</span>
+        <span class="badge">Semiconductors Parked</span>
+        <span class="badge">Proof > Certificates</span>
+    </div>
+</div>
 
-<p>
-Do not try to become everything at once.
-Engineering is the foundation.
-One business is the active founder experiment.
-Cybersecurity is a secondary technical specialization.
-AI is leverage.
-Semiconductors are a long-term deep-tech option.
-Certifications support the plan rather than becoming the plan.
-</p>
+<div class="section-title">
+    <div>
+        <h2>🎯 This Week</h2>
+        <p>The roadmap should tell you what to do next.</p>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <span class="tag">Engineering</span>
+        <h3>Academic Priority</h3>
+        <input type="text" id="weeklyEngineering"
+               placeholder="What is the most important academic task?">
+    </div>
+
+    <div class="card">
+        <span class="tag">Business</span>
+        <h3>Founder Priority</h3>
+        <input type="text" id="weeklyBusiness"
+               placeholder="Customer conversation / offer / build">
+    </div>
+
+    <div class="card">
+        <span class="tag">Technical</span>
+        <h3>Skill Priority</h3>
+        <input type="text" id="weeklyTechnical"
+               placeholder="What skill are you improving?">
+    </div>
+
+    <div class="card">
+        <span class="tag">Uncomfortable</span>
+        <h3>One Brave Action</h3>
+        <input type="text" id="weeklyBrave"
+               placeholder="What are you avoiding?">
+    </div>
+</div>
+
+<div class="section-title">
+    <h2>📊 Founder Scoreboard</h2>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>Customer Conversations</h3>
+        <div class="big-number" id="interviews">0</div>
+        <button onclick="increment('interviews')">+1 Conversation</button>
+    </div>
+
+    <div class="card">
+        <h3>Offers Made</h3>
+        <div class="big-number" id="offers">0</div>
+        <button onclick="increment('offers')">+1 Offer</button>
+    </div>
+
+    <div class="card">
+        <h3>Paying Customers</h3>
+        <div class="big-number" id="customers">0</div>
+        <button onclick="increment('customers')">+1 Customer</button>
+    </div>
+
+    <div class="card">
+        <h3>Experiments</h3>
+        <div class="big-number" id="experimentsCount">0</div>
+        <button onclick="increment('experimentsCount')">+1 Experiment</button>
+    </div>
+</div>
+
+<div class="section-title">
+    <h2>⚖️ Current Priority Stack</h2>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>01 — Engineering</h3>
+        <p>Pass your courses. Build fundamentals. Protect your academic foundation.</p>
+    </div>
+
+    <div class="card">
+        <h3>02 — One Business</h3>
+        <p>Talk to customers, test offers, sell manually and learn.</p>
+    </div>
+
+    <div class="card">
+        <h3>03 — AI Leverage</h3>
+        <p>Learn to use modern AI systems to multiply your output.</p>
+    </div>
+
+    <div class="card">
+        <h3>04 — Technical Optionality</h3>
+        <p>Develop cybersecurity depth without pretending it is your current business.</p>
+    </div>
+</div>
+
+<div class="callout warning">
+    <strong>Anti-distraction rule:</strong>
+    If you are redesigning this roadmap instead of talking to customers,
+    the roadmap has become procrastination.
+</div>
+
+</section>
+
+
+<!-- ENGINEERING -->
+
+<section id="engineering" class="page">
+
+<div class="hero">
+    <span class="tag">FOUNDATION</span>
+    <h1>Engineering</h1>
+    <p>
+        Your degree is the foundation. The objective is not to know everything.
+        It is to become exceptionally good at learning difficult technical things.
+    </p>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>Mathematics</h3>
+        <div class="checklist">
+            <label class="task"><input type="checkbox">Calculus</label>
+            <label class="task"><input type="checkbox">Linear algebra</label>
+            <label class="task"><input type="checkbox">Differential equations</label>
+            <label class="task"><input type="checkbox">Probability & statistics</label>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Programming</h3>
+        <div class="checklist">
+            <label class="task"><input type="checkbox">Python</label>
+            <label class="task"><input type="checkbox">C / C++ fundamentals</label>
+            <label class="task"><input type="checkbox">Git</label>
+            <label class="task"><input type="checkbox">Data structures</label>
+            <label class="task"><input type="checkbox">Debugging</label>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Systems</h3>
+        <div class="checklist">
+            <label class="task"><input type="checkbox">Linux</label>
+            <label class="task"><input type="checkbox">Networking</label>
+            <label class="task"><input type="checkbox">Operating systems</label>
+            <label class="task"><input type="checkbox">Computer architecture</label>
+        </div>
+    </div>
+</div>
+
+<div class="section-title">
+    <h2>Learn → Build → Apply → Teach</h2>
+</div>
+
+<div class="card">
+    <p>
+        Never let "I watched a course" count as mastery. Every important skill
+        should eventually produce something observable.
+    </p>
+
+    <table>
+        <tr>
+            <th>Skill</th>
+            <th>Learn</th>
+            <th>Build</th>
+            <th>Apply</th>
+            <th>Teach</th>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+        <tr>
+            <td>Linux</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+        <tr>
+            <td>Networking</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+        <tr>
+            <td>Programming in C</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+</div>
+
+</section>
+
+
+<!-- BUSINESS -->
+
+<section id="business" class="page">
+
+<div class="hero">
+    <span class="tag">ONE ACTIVE BUSINESS</span>
+    <h1>Business Lab</h1>
+    <p>
+        Do not try to build a billion-dollar company immediately.
+        Learn how to find pain, sell a solution, deliver value and repeat.
+    </p>
+</div>
+
+<div class="callout success">
+    <strong>The university advantage:</strong>
+    You have relatively low downside, access to thousands of potential users,
+    time to experiment and permission to fail.
+</div>
+
+<div class="section-title">
+    <h2>🚦 Business Validation Gates</h2>
+</div>
+
+<div class="grid">
+    <div class="card"><h3>Gate 1</h3><p>Talk to 10 potential customers.</p></div>
+    <div class="card"><h3>Gate 2</h3><p>Confirm a painful, repeated problem.</p></div>
+    <div class="card"><h3>Gate 3</h3><p>Deliver a manual solution.</p></div>
+    <div class="card"><h3>Gate 4</h3><p>Get the first dollar.</p></div>
+    <div class="card"><h3>Gate 5</h3><p>Reach 5 paying customers.</p></div>
+    <div class="card"><h3>Gate 6</h3><p>Find repeatable acquisition.</p></div>
+    <div class="card"><h3>Gate 7</h3><p>Scale, pivot or kill.</p></div>
+</div>
+
+<div class="section-title">
+    <h2>Founder Rules</h2>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>Sell before scaling</h3>
+        <p>Manually deliver the result before spending months building software.</p>
+    </div>
+
+    <div class="card">
+        <h3>Market > Idea</h3>
+        <p>Look for existing spending, painful problems and reachable customers.</p>
+    </div>
+
+    <div class="card">
+        <h3>One offer</h3>
+        <p>One customer, one problem, one offer before expanding.</p>
+    </div>
+
+    <div class="card">
+        <h3>Proof > Complexity</h3>
+        <p>A simple product with five customers beats a sophisticated product with zero.</p>
+    </div>
+</div>
+
+</section>
+
+
+<!-- EXPERIMENTS -->
+
+<section id="experiments" class="page">
+
+<div class="hero">
+    <span class="tag">FAIL CHEAPLY</span>
+    <h1>Experiment Lab</h1>
+    <p>
+        Your university years should generate business judgment.
+        Treat businesses as experiments rather than identities.
+    </p>
+</div>
+
+<div class="grid2">
+
+<div class="card">
+    <h3>Experiment</h3>
+
+    <label class="small">Hypothesis</label>
+    <textarea id="hypothesis" placeholder="I believe [customer] has [problem] and would pay for [solution]."></textarea>
+
+    <label class="small">Test</label>
+    <textarea id="test" placeholder="What is the smallest test I can run?"></textarea>
+
+    <label class="small">Result</label>
+    <textarea id="result" placeholder="What actually happened?"></textarea>
+
+    <label class="small">Decision</label>
+    <select id="decision" style="width:100%;margin-top:6px">
+        <option>Continue</option>
+        <option>Pivot</option>
+        <option>Kill</option>
+        <option>Need more evidence</option>
+    </select>
+
+    <br><br>
+    <button onclick="saveExperiment()">Save Experiment</button>
+</div>
+
+<div class="card">
+    <h3>Experiment Philosophy</h3>
+    <ul>
+        <li>Small test before large build.</li>
+        <li>Evidence before opinion.</li>
+        <li>Revenue is stronger evidence than compliments.</li>
+        <li>Rejection is information.</li>
+        <li>Kill weak ideas quickly.</li>
+        <li>Double down on demonstrated demand.</li>
+    </ul>
+</div>
 
 </div>
 
+</section>
 
-<div class="quote">
 
-Build the next thing that creates evidence —
-not the next thing that makes the roadmap look impressive.
+<!-- AI -->
 
+<section id="ai" class="page">
+
+<div class="hero">
+    <span class="tag">AI-NATIVE ENGINEER</span>
+    <h1>AI Leverage</h1>
+    <p>
+        The goal is not simply to "learn AI." The goal is to become an engineer
+        who can use AI, automation and modern development tools to produce
+        dramatically more output.
+    </p>
 </div>
-
 
 <div class="grid">
 
+<div class="card">
+    <h3>🤖 AI-Assisted Coding</h3>
+    <div class="checklist">
+        <label class="task"><input type="checkbox">AI IDE / coding assistant</label>
+        <label class="task"><input type="checkbox">Debugging with AI</label>
+        <label class="task"><input type="checkbox">Code review</label>
+        <label class="task"><input type="checkbox">Testing generation</label>
+        <label class="task"><input type="checkbox">Refactoring</label>
+        <label class="task"><input type="checkbox">Documentation</label>
+    </div>
+</div>
 
 <div class="card">
+    <h3>⚙️ Automation</h3>
+    <div class="checklist">
+        <label class="task"><input type="checkbox">APIs</label>
+        <label class="task"><input type="checkbox">Webhooks</label>
+        <label class="task"><input type="checkbox">Workflow automation</label>
+        <label class="task"><input type="checkbox">Data pipelines</label>
+        <label class="task"><input type="checkbox">Agents</label>
+        <label class="task"><input type="checkbox">Browser automation</label>
+    </div>
+</div>
 
-<span class="priority high">
-PRIMARY
-</span>
+<div class="card">
+    <h3>🧠 AI Engineering</h3>
+    <div class="checklist">
+        <label class="task"><input type="checkbox">LLM APIs</label>
+        <label class="task"><input type="checkbox">Prompt engineering</label>
+        <label class="task"><input type="checkbox">RAG</label>
+        <label class="task"><input type="checkbox">Embeddings</label>
+        <label class="task"><input type="checkbox">Evaluation</label>
+        <label class="task"><input type="checkbox">Agent architecture</label>
+    </div>
+</div>
 
-<h3>🎓 Engineering</h3>
-
-<p>
-Your degree and technical fundamentals are the foundation
-everything else can build upon.
-</p>
+<div class="card">
+    <h3>🏢 AI + Business</h3>
+    <div class="checklist">
+        <label class="task"><input type="checkbox">Lead research</label>
+        <label class="task"><input type="checkbox">CRM automation</label>
+        <label class="task"><input type="checkbox">Customer support</label>
+        <label class="task"><input type="checkbox">Proposal generation</label>
+        <label class="task"><input type="checkbox">Internal tools</label>
+        <label class="task"><input type="checkbox">Reporting automation</label>
+    </div>
+</div>
 
 </div>
 
+<div class="section-title">
+    <h2>AI Learning Rule</h2>
+</div>
+
+<div class="callout success">
+    <strong>Don't chase every AI tool.</strong>
+    Learn concepts that survive tool changes: APIs, automation, evaluation,
+    software fundamentals, data, agents and systems thinking.
+</div>
+
+</section>
+
+
+<!-- CYBER -->
+
+<section id="cyber" class="page">
+
+<div class="hero">
+    <span class="tag">OPTIONALITY</span>
+    <h1>Cybersecurity</h1>
+    <p>
+        Cybersecurity is a technical specialization and future optionality.
+        It is not automatically the active business.
+    </p>
+</div>
+
+<div class="grid">
 
 <div class="card">
+    <h3>Years 1–2 — Foundation</h3>
+    <ul>
+        <li>Linux</li>
+        <li>Networking</li>
+        <li>Python</li>
+        <li>Git</li>
+        <li>Operating systems</li>
+        <li>Security fundamentals</li>
+        <li>Hands-on labs</li>
+    </ul>
+</div>
 
-<span class="priority high">
-ACTIVE BUSINESS
-</span>
+<div class="card">
+    <h3>Years 2–3 — Security Engineering</h3>
+    <ul>
+        <li>Authentication</li>
+        <li>Web security</li>
+        <li>Cloud security</li>
+        <li>Secure software</li>
+        <li>Threat modeling</li>
+        <li>Logging & monitoring</li>
+    </ul>
+</div>
 
-<h3>🚀 One Business</h3>
-
-<p>
-Test one market and one problem at a time.
-Current hypothesis: trades / industrial automation.
-</p>
+<div class="card">
+    <h3>Years 3–4 — Choose One</h3>
+    <ul>
+        <li>Cloud security</li>
+        <li>Application security</li>
+        <li>Offensive security</li>
+        <li>Security engineering</li>
+        <li>Embedded / IoT security</li>
+    </ul>
+</div>
 
 </div>
 
+<div class="callout warning">
+    <strong>Scope rule:</strong>
+    Do not simultaneously become an expert in cloud security, penetration testing,
+    malware analysis, application security and embedded security.
+</div>
+
+</section>
+
+
+<!-- CHIPS -->
+
+<section id="chips" class="page">
+
+<div class="hero">
+    <span class="tag">PARKED — LONG-TERM BET</span>
+    <h1>Semiconductors</h1>
+    <p>
+        Keep the deep-tech ambition alive without pretending it needs to compete
+        with your first business and engineering fundamentals today.
+    </p>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+    <h3>01 — Electrical Fundamentals</h3>
+    <p>Circuits, electronics and signals.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>02 — Digital Logic</h3>
+    <p>Boolean logic, combinational and sequential systems.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>03 — Computer Architecture</h3>
+    <p>Processors, memory, buses and instruction sets.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>04 — Verilog / SystemVerilog</h3>
+    <p>Learn hardware description and digital design.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>05 — FPGA</h3>
+    <p>Build real hardware designs and accelerators.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>06 — ASIC Design</h3>
+    <p>Move toward professional chip design flows.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>07 — Physical Design</h3>
+    <p>Understand synthesis, place & route and timing.</p>
+</div>
+
+<div class="timeline-item">
+    <h3>08 — Tapeout</h3>
+    <p>Long-term objective, not a Year 1 requirement.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CERTS -->
+
+<section id="certs" class="page">
+
+<div class="hero">
+    <span class="tag">CREDENTIALS</span>
+    <h1>Certifications</h1>
+    <p>
+        Certifications are supporting assets. They should never become the main
+        definition of progress.
+    </p>
+</div>
+
+<div class="callout warning">
+    <strong>Certification decision system:</strong>
+    Never ask "What certification should I collect next?"
+    Ask "What specific opportunity makes this certification worth the time?"
+</div>
 
 <div class="card">
+<table>
+<tr>
+<th>Question</th>
+<th>Yes / No</th>
+</tr>
+<tr>
+<td>Does an internship/job I want require it?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Does it teach something I actually need?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Will it materially improve credibility?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Can I demonstrate the knowledge through projects instead?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>Is the opportunity cost worth it?</td>
+<td>☐</td>
+</tr>
+</table>
+</div>
 
-<span class="priority medium">
-SECONDARY
-</span>
+<div class="section-title">
+<h2>Suggested Certification Strategy</h2>
+</div>
 
+<div class="grid">
+
+<div class="card">
+<h3>Year 1</h3>
+<p><strong>Optional:</strong> one foundational credential only if it supports an immediate goal.</p>
+</div>
+
+<div class="card">
+<h3>Year 2</h3>
+<p><strong>Security+ or equivalent</strong> if cybersecurity becomes a serious specialization.</p>
+</div>
+
+<div class="card">
+<h3>Year 3</h3>
+<p>Only add a cloud/security certification if an internship or specialization justifies it.</p>
+</div>
+
+<div class="card">
+<h3>Year 4</h3>
+<p>No certification collecting. Prioritize engineering proof, internships and business results.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROOF -->
+
+<section id="proof" class="page">
+
+<div class="hero">
+    <span class="tag">PROOF > CLAIMS</span>
+    <h1>Proof of Work</h1>
+    <p>
+        Your resume says what you know. Your portfolio demonstrates it.
+    </p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>💻 Software</h3>
+<ul>
+<li>GitHub projects</li>
+<li>Useful applications</li>
+<li>Automation systems</li>
+<li>Technical documentation</li>
+</ul>
+</div>
+
+<div class="card">
 <h3>🔐 Cybersecurity</h3>
+<ul>
+<li>Security labs</li>
+<li>CTF write-ups</li>
+<li>Secure applications</li>
+<li>Threat models</li>
+</ul>
+</div>
 
-<p>
-Develop cybersecurity capability for future optionality.
-Do not turn it into a second startup right now.
-</p>
+<div class="card">
+<h3>⚡ Engineering</h3>
+<ul>
+<li>Design projects</li>
+<li>Lab work</li>
+<li>CAD / simulation</li>
+<li>Technical reports</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🚀 Business</h3>
+<ul>
+<li>Customer results</li>
+<li>Revenue</li>
+<li>Case studies</li>
+<li>Product iterations</li>
+</ul>
+</div>
 
 </div>
 
+<div class="section-title">
+<h2>My Best Proof</h2>
+</div>
 
 <div class="card">
+<textarea id="bestProof"
+placeholder="Write the strongest thing you can currently show an employer, customer or investor..."></textarea>
+</div>
 
-<span class="priority medium">
-LEVERAGE
-</span>
+</section>
 
+
+<!-- FOUR YEAR PLAN -->
+
+<section id="yearplan" class="page">
+
+<div class="hero">
+    <span class="tag">NORTH STAR</span>
+    <h1>Four-Year Plan</h1>
+    <p>
+        The objective changes every year. Do not try to graduate with everything mastered.
+    </p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>YEAR 1 — Foundation + First Business</h3>
+<ul>
+<li>Survive and learn university fundamentals.</li>
+<li>Build programming foundations.</li>
+<li>Learn AI-assisted workflows.</li>
+<li>Talk to customers.</li>
+<li>Run business experiments.</li>
+<li>Try to get the first dollar.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>YEAR 2 — Repeatability</h3>
+<ul>
+<li>Become technically stronger.</li>
+<li>Develop Linux/networking/security foundations.</li>
+<li>Determine whether one business has traction.</li>
+<li>Build stronger portfolio projects.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>YEAR 3 — Leverage</h3>
+<ul>
+<li>Technical specialization.</li>
+<li>Internship/research.</li>
+<li>Automate business operations.</li>
+<li>Scale, pivot or replace the business.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>YEAR 4 — Launch</h3>
+<ul>
+<li>Graduate with strong engineering credibility.</li>
+<li>Have serious technical proof.</li>
+<li>Have industry experience.</li>
+<li>Have a business capable of continuing beyond university.</li>
+</ul>
+</div>
+
+</div>
+
+<div class="callout success">
+<strong>Ultimate objective:</strong>
+Leave university with multiple forms of leverage:
+technical skill + industry credibility + AI leverage + founder judgment + optionality.
+</div>
+
+</section>
+
+
+<!-- REVIEW -->
+
+<section id="review" class="page">
+
+<div class="hero">
+    <span class="tag">EVERY 12 WEEKS</span>
+    <h1>Quarterly Review</h1>
+    <p>
+        The roadmap is allowed to change. But it should change because of evidence,
+        not because you got excited about a new idea.
+    </p>
+</div>
+
+<div class="grid2">
+
+<div class="card">
+<h3>🎓 Engineering</h3>
+<textarea placeholder="What did I actually learn? What can I now demonstrate?"></textarea>
+</div>
+
+<div class="card">
+<h3>💰 Business</h3>
+<textarea placeholder="Conversations, offers, customers, revenue, lessons..."></textarea>
+</div>
+
+<div class="card">
 <h3>🤖 AI</h3>
-
-<p>
-Use AI to dramatically increase your engineering,
-research, automation and founder output.
-</p>
-
+<textarea placeholder="What workflow became significantly faster?"></textarea>
 </div>
-
 
 <div class="card">
-
-<span class="priority parked">
-PARKED
-</span>
-
-<h3>🧠 Semiconductors</h3>
-
-<p>
-Keep the long-term ambition alive without running
-a complete chip-design curriculum immediately.
-</p>
-
+<h3>🔐 Cybersecurity</h3>
+<textarea placeholder="What can I now do that I couldn't before?"></textarea>
 </div>
-
 
 <div class="card">
+<h3>🏗️ Proof</h3>
+<textarea placeholder="What did I build that is worth showing someone?"></textarea>
+</div>
 
-<span class="priority optional">
-SELECTIVE
-</span>
-
-<h3>🏅 Certifications</h3>
-
-<p>
-Roughly 2–3 meaningful certifications over university,
-unless a specific opportunity justifies another.
-</p>
+<div class="card">
+<h3>🧠 Personal</h3>
+<textarea placeholder="Am I learning effectively? Am I burning out?"></textarea>
+</div>
 
 </div>
 
-
+<div class="section-title">
+<h2>Decision</h2>
 </div>
 
-
-<div class="callout">
-
-<strong>The real objective</strong>
-
-Become an engineer who can identify problems,
-build solutions, sell them, learn from failure,
-and eventually recognize opportunities large enough
-to support a much bigger company.
-
+<div class="grid">
+<div class="card">
+<h3>DOUBLE DOWN</h3>
+<p>What is clearly working?</p>
+<textarea></textarea>
 </div>
 
+<div class="card">
+<h3>STOP</h3>
+<p>What is wasting time?</p>
+<textarea></textarea>
+</div>
 
-<div class="callout warning">
-
-<strong>The university advantage</strong>
-
-University gives you a relatively controlled environment
-to experiment. You can attempt businesses, fail, restart,
-learn technical skills and build a network while your
-primary responsibility remains your education.
-
+<div class="card">
+<h3>START</h3>
+<p>What evidence suggests a new experiment?</p>
+<textarea></textarea>
+</div>
 </div>
 
 </section>
 
 
+<!-- THEMES -->
 
-<!-- =======================================================
-     BUSINESS
-======================================================= -->
-
-<section id="business">
+<section id="themes" class="page">
 
 <div class="hero">
-
-<h2>🚀 Active Business — Founder Laboratory</h2>
-
-<p>
-This is the only business track receiving serious execution
-priority right now. The goal is not to predict your billion-dollar
-company. The goal is to accumulate founder reps.
-</p>
-
+    <span class="tag">PERSONALIZATION</span>
+    <h1>20 Themes</h1>
+    <p>
+        Change the visual environment without changing the strategy.
+    </p>
 </div>
 
-
-<div class="callout warning">
-
-<strong>Current hypothesis</strong>
-
-Trades / industrial businesses with operational problems
-that can initially be solved manually and later productized.
-
-This is a hypothesis — not a permanent commitment.
-
-</div>
-
-
-<h2>Stage 1 — Customer Discovery</h2>
-
-
-<div class="grid">
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-20
-</div>
-
-<h3>Customer Conversations</h3>
-
-<p>
-Your first major gate.
-Do not build the full product first.
-</p>
-
-</div>
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-1
-</div>
-
-<h3>Market</h3>
-
-<p>
-Focus enough to understand the workflow,
-economics and pain.
-</p>
-
-</div>
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-1
-</div>
-
-<h3>Core Problem</h3>
-
-<p>
-Find a recurring problem that actually matters.
-</p>
-
-</div>
-
-</div>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Define target customer
-</li>
-
-<li>
-<input type="checkbox">
-Build a list of 30–50 potential businesses
-</li>
-
-<li>
-<input type="checkbox">
-Contact first 10 businesses
-</li>
-
-<li>
-<input type="checkbox">
-Complete 20 customer conversations
-</li>
-
-<li>
-<input type="checkbox">
-Document current workflow
-</li>
-
-<li>
-<input type="checkbox">
-Document existing solutions
-</li>
-
-<li>
-<input type="checkbox">
-Identify what customers currently spend
-</li>
-
-<li>
-<input type="checkbox">
-Identify repeated pain
-</li>
-
-<li>
-<input type="checkbox">
-Rank problems by severity
-</li>
-
-</ul>
-
-
-<h2 style="margin-top:40px;">
-Stage 2 — Offer
-</h2>
-
-
-<div class="timeline">
-
-
-<div class="timeline-item">
-
-<h3>Problem confirmed</h3>
-
-<p>
-Multiple customers independently describe a similar
-painful problem.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>Create one offer</h3>
-
-<p>
-Define who it is for, what you do, and the measurable
-outcome you provide.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>Sell before building</h3>
-
-<p>
-Try to get someone to commit to paying before spending
-months developing software.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>Deliver manually</h3>
-
-<p>
-Use spreadsheets, scripts, AI tools, forms or simple
-software. Learn the workflow firsthand.
-</p>
-
-</div>
-
-</div>
-
-
-<h2>
-Stage 3 — Productize
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-First paying customer
-</li>
-
-<li>
-<input type="checkbox">
-Successfully deliver result
-</li>
-
-<li>
-<input type="checkbox">
-Identify repeated manual work
-</li>
-
-<li>
-<input type="checkbox">
-Automate repeated work
-</li>
-
-<li>
-<input type="checkbox">
-Reach 3 paying customers
-</li>
-
-<li>
-<input type="checkbox">
-Reach 5 paying customers
-</li>
-
-<li>
-<input type="checkbox">
-Measure retention
-</li>
-
-<li>
-<input type="checkbox">
-Determine whether process is repeatable
-</li>
-
-</ul>
-
-
-<div class="callout danger-box">
-
-<strong>Kill / Pivot Rule</strong>
-
-If customers do not care, do not add more technology
-to a weak problem.
-
-Change the problem, customer, offer or market.
-
-</div>
-
-
-<h2>
-Founder Cycle
-</h2>
-
-
-<div class="table-wrapper">
-
-<table>
-
-<tr>
-<th>Stage</th>
-<th>Goal</th>
-<th>Evidence</th>
-</tr>
-
-<tr>
-<td>Discovery</td>
-<td>Understand problem</td>
-<td>20+ conversations</td>
-</tr>
-
-<tr>
-<td>Offer</td>
-<td>Test willingness to pay</td>
-<td>Real commitments</td>
-</tr>
-
-<tr>
-<td>Manual delivery</td>
-<td>Prove value</td>
-<td>Paying customers</td>
-</tr>
-
-<tr>
-<td>Productization</td>
-<td>Reduce manual work</td>
-<td>Repeatable process</td>
-</tr>
-
-<tr>
-<td>Growth</td>
-<td>Increase customers</td>
-<td>Revenue + retention</td>
-</tr>
-
-<tr>
-<td>Pivot / Kill</td>
-<td>Learn</td>
-<td>Better judgment</td>
-</tr>
-
-</table>
-
+<div class="theme-panel">
+<div class="theme" onclick="changeTheme('midnight')">🌑 Midnight</div>
+<div class="theme" onclick="changeTheme('light')">☀️ Light</div>
+<div class="theme" onclick="changeTheme('ocean')">🌊 Ocean</div>
+<div class="theme" onclick="changeTheme('forest')">🌲 Forest</div>
+<div class="theme" onclick="changeTheme('sunset')">🌅 Sunset</div>
+<div class="theme" onclick="changeTheme('cyber')">⚡ Cyber</div>
+<div class="theme" onclick="changeTheme('terminal')">💻 Terminal</div>
+<div class="theme" onclick="changeTheme('mono')">◼ Mono</div>
+<div class="theme" onclick="changeTheme('purple')">🔮 Purple</div>
+<div class="theme" onclick="changeTheme('red')">🔥 Red</div>
+<div class="theme" onclick="changeTheme('gold')">🏆 Gold</div>
+<div class="theme" onclick="changeTheme('ice')">❄️ Ice</div>
+<div class="theme" onclick="changeTheme('rose')">🌹 Rose</div>
+<div class="theme" onclick="changeTheme('lime')">🍋 Lime</div>
+<div class="theme" onclick="changeTheme('coffee')">☕ Coffee</div>
+<div class="theme" onclick="changeTheme('slate')">🪨 Slate</div>
+<div class="theme" onclick="changeTheme('matrix')">🟢 Matrix</div>
+<div class="theme" onclick="changeTheme('space')">🚀 Space</div>
+<div class="theme" onclick="changeTheme('minimal')">▫️ Minimal</div>
+<div class="theme" onclick="changeTheme('highcontrast')">◐ High Contrast</div>
 </div>
 
 </section>
-
-
-
-<!-- =======================================================
-     ENGINEERING
-======================================================= -->
-
-<section id="engineering">
-
-<div class="hero">
-
-<h2>🎓 Engineering Foundation</h2>
-
-<p>
-Engineering is the primary long-term investment.
-The business must fit around your education,
-not destroy it.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Programming</h3>
-
-<ul>
-
-<li>Python</li>
-<li>C / C++ fundamentals</li>
-<li>Git</li>
-<li>Data structures</li>
-<li>Algorithms</li>
-<li>Debugging</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Systems</h3>
-
-<ul>
-
-<li>Linux</li>
-<li>Command line</li>
-<li>Processes</li>
-<li>Memory</li>
-<li>Operating systems</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Engineering Fundamentals</h3>
-
-<ul>
-
-<li>Calculus</li>
-<li>Linear algebra</li>
-<li>Physics</li>
-<li>Circuits</li>
-<li>Digital logic</li>
-<li>Computer architecture</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-
-<h2>
-Project Progression
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Small Python projects
-</li>
-
-<li>
-<input type="checkbox">
-Automation scripts
-</li>
-
-<li>
-<input type="checkbox">
-Git/GitHub projects
-</li>
-
-<li>
-<input type="checkbox">
-Linux-based project
-</li>
-
-<li>
-<input type="checkbox">
-Networking/system project
-</li>
-
-<li>
-<input type="checkbox">
-Engineering course projects
-</li>
-
-<li>
-<input type="checkbox">
-Larger integrated engineering project
-</li>
-
-</ul>
-
-
-<div class="callout">
-
-<strong>Academic priority rule</strong>
-
-During exams and heavy academic periods,
-business and optional learning can shrink.
-
-Your engineering foundation cannot.
-
-</div>
-
-</section>
-
-
-
-<!-- =======================================================
-     CYBERSECURITY
-======================================================= -->
-
-<section id="cyber">
-
-<div class="hero">
-
-<h2>🔐 Cybersecurity — Technical Optionality</h2>
-
-<p>
-Cybersecurity is a serious technical interest, but it is
-not your active university business right now.
-The objective is to build capability gradually.
-</p>
-
-</div>
-
-
-<div class="callout warning">
-
-<strong>Time budget</strong>
-
-Approximately 3–6 hours per week during a normal semester.
-
-Reduce or pause this during exams.
-
-</div>
-
-
-<h2>
-Learning Sequence
-</h2>
-
-
-<div class="timeline">
-
-
-<div class="timeline-item">
-
-<h3>1. Linux</h3>
-
-<p>
-Operating systems, command line, permissions,
-processes, files and administration.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>2. Networking</h3>
-
-<p>
-TCP/IP, DNS, HTTP/S, routing, ports and protocols.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>3. Security Fundamentals</h3>
-
-<p>
-Authentication, authorization, cryptography,
-vulnerabilities, threat models and security controls.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>4. Practical Security</h3>
-
-<p>
-Labs, CTFs, system hardening, logs,
-vulnerability analysis and small projects.
-</p>
-
-</div>
-
-
-<div class="timeline-item">
-
-<h3>5. Specialization Later</h3>
-
-<p>
-Only after exposure should you decide between
-offensive security, defensive security, cloud security,
-application security or another specialty.
-</p>
-
-</div>
-
-</div>
-
-
-<h2>
-Project Ideas
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Linux hardening project
-</li>
-
-<li>
-<input type="checkbox">
-Network monitoring project
-</li>
-
-<li>
-<input type="checkbox">
-Authentication/security project
-</li>
-
-<li>
-<input type="checkbox">
-Log analysis project
-</li>
-
-<li>
-<input type="checkbox">
-Vulnerability lab
-</li>
-
-<li>
-<input type="checkbox">
-Security automation script
-</li>
-
-<li>
-<input type="checkbox">
-Small defensive security tool
-</li>
-
-</ul>
-
-
-<div class="callout">
-
-<strong>Important distinction</strong>
-
-Learning cybersecurity does not automatically mean
-you should build a cybersecurity company.
-
-The business opportunity must independently survive
-customer discovery.
-
-</div>
-
-</section>
-
-
-
-<!-- =======================================================
-     AI LEVERAGE
-======================================================= -->
-
-<section id="ai">
-
-<div class="hero ai-roadmap">
-
-<h2>🤖 AI Leverage — Learning to Win in an AI-Driven World</h2>
-
-<p>
-AI is not another career track in this roadmap.
-It is a force multiplier for your engineering, business,
-research and cybersecurity work.
-</p>
-
-</div>
-
-
-<div class="quote">
-
-Don't compete with AI.
-Learn how to become the person who can direct,
-integrate and build with it.
-
-</div>
-
-
-<div class="callout">
-
-<strong>The objective</strong>
-
-You do NOT need to become an AI researcher.
-
-You want to become an engineer/founder who can:
-
-build with AI → automate with AI → reason with AI →
-integrate AI → create products using AI.
-
-</div>
-
-
-<h2>
-AI Skill Ladder
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card ai-stage">
-
-<span class="ai-level">LEVEL 1</span>
-
-<h3>AI Fundamentals</h3>
-
-<ul>
-
-<li>Understand LLMs conceptually</li>
-<li>Prompting</li>
-<li>Context management</li>
-<li>Model limitations</li>
-<li>Hallucinations</li>
-<li>Verification</li>
-
-</ul>
-
-</div>
-
-
-<div class="card ai-stage">
-
-<span class="ai-level">LEVEL 2</span>
-
-<h3>AI-Assisted Coding</h3>
-
-<ul>
-
-<li>AI coding assistants</li>
-<li>Generate → inspect → test</li>
-<li>Debugging with AI</li>
-<li>Refactoring</li>
-<li>Documentation</li>
-<li>Code review</li>
-
-</ul>
-
-</div>
-
-
-<div class="card ai-stage">
-
-<span class="ai-level">LEVEL 3</span>
-
-<h3>AI + Automation</h3>
-
-<ul>
-
-<li>Workflow automation</li>
-<li>APIs</li>
-<li>Webhooks</li>
-<li>Data movement</li>
-<li>Scheduled workflows</li>
-<li>Tools such as n8n</li>
-
-</ul>
-
-</div>
-
-
-<div class="card ai-stage">
-
-<span class="ai-level">LEVEL 4</span>
-
-<h3>AI Agents</h3>
-
-<ul>
-
-<li>Tool calling</li>
-<li>Structured outputs</li>
-<li>Agent workflows</li>
-<li>Human approval loops</li>
-<li>Memory/context</li>
-<li>Evaluation</li>
-
-</ul>
-
-</div>
-
-
-<div class="card ai-stage">
-
-<span class="ai-level">LEVEL 5</span>
-
-<h3>AI + Products</h3>
-
-<ul>
-
-<li>AI APIs</li>
-<li>Embeddings</li>
-<li>RAG concepts</li>
-<li>AI-powered features</li>
-<li>Cost control</li>
-<li>Reliability</li>
-
-</ul>
-
-</div>
-
-
-<div class="card ai-stage">
-
-<span class="ai-level">LEVEL 6</span>
-
-<h3>AI Strategy</h3>
-
-<ul>
-
-<li>Find repetitive work</li>
-<li>Identify automation opportunities</li>
-<li>Evaluate build vs buy</li>
-<li>Measure ROI</li>
-<li>Design human + AI workflows</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<h2>
-What You Should Actually Learn
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Learn how to use an AI coding environment effectively
-</li>
-
-<li>
-<input type="checkbox">
-Learn Git + AI-assisted development together
-</li>
-
-<li>
-<input type="checkbox">
-Learn how to verify AI-generated code
-</li>
-
-<li>
-<input type="checkbox">
-Learn APIs
-</li>
-
-<li>
-<input type="checkbox">
-Learn webhooks
-</li>
-
-<li>
-<input type="checkbox">
-Build an automated workflow
-</li>
-
-<li>
-<input type="checkbox">
-Experiment with n8n or an equivalent automation platform
-</li>
-
-<li>
-<input type="checkbox">
-Connect multiple services through an API
-</li>
-
-<li>
-<input type="checkbox">
-Build a simple AI-powered tool
-</li>
-
-<li>
-<input type="checkbox">
-Build an agent that uses tools
-</li>
-
-<li>
-<input type="checkbox">
-Learn basic RAG concepts
-</li>
-
-<li>
-<input type="checkbox">
-Learn AI evaluation / testing
-</li>
-
-<li>
-<input type="checkbox">
-Learn AI security basics
-</li>
-
-<li>
-<input type="checkbox">
-Learn how to estimate AI API costs
-</li>
-
-</ul>
-
-
-<h2>
-AI Projects
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Project 1 — Personal AI Assistant</h3>
-
-<p>
-Create a workflow that handles a repetitive personal
-or school task.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Project 2 — Engineering Automation</h3>
-
-<p>
-Use AI + scripting to automate a repetitive engineering
-workflow.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Project 3 — Research Agent</h3>
-
-<p>
-Build a workflow that collects information,
-summarizes it and produces structured output.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Project 4 — Business Automation</h3>
-
-<p>
-Automate part of the active business workflow.
-This is where AI learning should begin directly
-compounding with entrepreneurship.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Project 5 — AI Product</h3>
-
-<p>
-Build a small application where AI is actually
-part of the product rather than simply the coding assistant.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Project 6 — AI + Cybersecurity</h3>
-
-<p>
-Experiment with defensive automation, log analysis,
-alert triage or security research.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="callout warning">
-
-<strong>AI Anti-Distraction Rule</strong>
-
-Do not spend six months learning every new AI tool.
-
-Tools will change.
-
-Learn the underlying capabilities:
-
-<strong>
-models → APIs → automation → agents → evaluation → product integration
-</strong>
-
-</div>
-
-
-<h2>
-AI Weekly Practice
-</h2>
-
-
-<div class="table-wrapper">
-
-<table>
-
-<tr>
-<th>Activity</th>
-<th>Target</th>
-</tr>
-
-<tr>
-<td>AI-assisted engineering</td>
-<td>Use it naturally during projects</td>
-</tr>
-
-<tr>
-<td>Automation</td>
-<td>1 workflow / month</td>
-</tr>
-
-<tr>
-<td>AI experimentation</td>
-<td>1 meaningful experiment / month</td>
-</tr>
-
-<tr>
-<td>AI product building</td>
-<td>1 small project / semester</td>
-</tr>
-
-<tr>
-<td>AI research</td>
-<td>Learn only when relevant</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<div class="callout">
-
-<strong>The long-term goal</strong>
-
-By graduation, you should not merely know how to
-"prompt ChatGPT."
-
-You should be able to look at an engineering or business
-workflow and ask:
-
-<em>
-"What parts should humans do, what parts should software do,
-and what parts can AI do?"
-</em>
-
-Then build the system.
-
-</div>
-
-</section>
-
-
-
-<!-- =======================================================
-     SEMICONDUCTORS
-======================================================= -->
-
-<section id="semiconductor">
-
-<div class="hero">
-
-<h2>🧠 Semiconductors — Parked Deep-Tech Track</h2>
-
-<p>
-This remains a long-term ambition.
-It is deliberately not a full active curriculum right now.
-</p>
-
-</div>
-
-
-<div class="callout warning">
-
-<strong>Status: PARKED</strong>
-
-Explore when bandwidth permits.
-Do not allow this track to compete with engineering,
-customer conversations or the active business.
-
-</div>
-
-
-<h2>
-Long-Term Sequence
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-<h3>Stage 1</h3>
-<p>Circuits + digital logic</p>
-</div>
-
-
-<div class="card">
-<h3>Stage 2</h3>
-<p>Computer architecture</p>
-</div>
-
-
-<div class="card">
-<h3>Stage 3</h3>
-<p>Verilog / SystemVerilog</p>
-</div>
-
-
-<div class="card">
-<h3>Stage 4</h3>
-<p>FPGA development</p>
-</div>
-
-
-<div class="card">
-<h3>Stage 5</h3>
-<p>RTL design + verification</p>
-</div>
-
-
-<div class="card">
-<h3>Stage 6</h3>
-<p>ASIC / physical design</p>
-</div>
-
-
-<div class="card">
-<h3>Stage 7</h3>
-<p>Advanced hardware / semiconductor specialization</p>
-</div>
-
-</div>
-
-
-<div class="callout danger-box">
-
-<strong>Do not run five careers simultaneously.</strong>
-
-You do not need to become an ASIC designer,
-cybersecurity expert, AI engineer and founder
-during your first year.
-
-</div>
-
-</section>
-
-
-
-<!-- =======================================================
-     CERTIFICATIONS
-======================================================= -->
-
-<section id="certs">
-
-<div class="hero">
-
-<h2>🏅 Certification Strategy</h2>
-
-<p>
-Certifications are supporting tools.
-They are not the scoreboard.
-</p>
-
-</div>
-
-
-<div class="quote">
-
-Never pursue a certification simply because you can.
-Pursue it because it creates a specific advantage.
-
-</div>
-
-
-<div class="table-wrapper">
-
-<table>
-
-<tr>
-<th>Certification</th>
-<th>Priority</th>
-<th>Timing</th>
-<th>Reason</th>
-</tr>
-
-
-<tr>
-<td>CompTIA Security+</td>
-<td>HIGH</td>
-<td>Year 1–2</td>
-<td>Strong cybersecurity foundation and useful credential.</td>
-</tr>
-
-
-<tr>
-<td>Cisco CCST Networking</td>
-<td>OPTIONAL</td>
-<td>Year 1</td>
-<td>Useful if you need structured networking fundamentals.</td>
-</tr>
-
-
-<tr>
-<td>AWS Solutions Architect Associate</td>
-<td>CONDITIONAL</td>
-<td>Year 2+</td>
-<td>Only if cloud becomes relevant.</td>
-</tr>
-
-
-<tr>
-<td>CySA+ / Security Specialty</td>
-<td>CONDITIONAL</td>
-<td>Year 3+</td>
-<td>Only after practical experience.</td>
-</tr>
-
-
-<tr>
-<td>OSCP</td>
-<td>SPECIALIZATION</td>
-<td>Year 3–4+</td>
-<td>Only if offensive security becomes a serious direction.</td>
-</tr>
-
-
-<tr>
-<td>CISSP</td>
-<td>LONG TERM</td>
-<td>Post-graduation</td>
-<td>Professional experience makes this more appropriate later.</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<div class="callout">
-
-<strong>Target</strong>
-
-Roughly 2–3 meaningful certifications over university
-is enough. There is no requirement to fill every year
-with certificates.
-
-</div>
-
-
-<h2>
-Certification Gate
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Does this help obtain a specific opportunity?
-</li>
-
-<li>
-<input type="checkbox">
-Does it teach knowledge I genuinely need?
-</li>
-
-<li>
-<input type="checkbox">
-Is the credential recognized by the employers I care about?
-</li>
-
-<li>
-<input type="checkbox">
-Could I learn the material without taking the exam?
-</li>
-
-<li>
-<input type="checkbox">
-Will it take time away from a higher-value project?
-</li>
-
-</ul>
-
-</section>
-
-
-
-<!-- =======================================================
-     YEARS 1-4
-======================================================= -->
-
-<section id="years">
-
-<div class="hero">
-
-<h2>📅 Four-Year Strategy</h2>
-
-<p>
-The years are directional.
-Evidence and opportunities should modify the plan.
-</p>
-
-</div>
-
-
-<h2>
-Year 1 — Foundation + First Founder Reps
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Engineering</h3>
-
-<ul>
-
-<li>Master first-year courses</li>
-<li>Python</li>
-<li>Git</li>
-<li>Linux fundamentals</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Business</h3>
-
-<ul>
-
-<li>20 customer conversations</li>
-<li>Identify painful problem</li>
-<li>Test offer</li>
-<li>Attempt first sale</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Cybersecurity</h3>
-
-<ul>
-
-<li>Linux</li>
-<li>Networking</li>
-<li>Security fundamentals</li>
-<li>Security+ if justified</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>AI</h3>
-
-<ul>
-
-<li>AI-assisted coding</li>
-<li>APIs</li>
-<li>Automation</li>
-<li>First AI workflow</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<div class="callout">
-
-<strong>Year 1 success</strong>
-
-You don't need a successful company.
-You need founder reps, technical foundations,
-AI leverage and real customer evidence.
-
-</div>
-
-
-
-<h2 style="margin-top:45px;">
-Year 2 — Productization + Technical Growth
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Engineering</h3>
-
-<ul>
-
-<li>C/C++</li>
-<li>Data structures</li>
-<li>Systems</li>
-<li>Engineering projects</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Business</h3>
-
-<ul>
-
-<li>Manual delivery</li>
-<li>3–5 paying customers</li>
-<li>Productize repeated work</li>
-<li>Measure retention</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Cybersecurity</h3>
-
-<ul>
-
-<li>Practical labs</li>
-<li>Security projects</li>
-<li>Cloud fundamentals if useful</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>AI</h3>
-
-<ul>
-
-<li>Workflow automation</li>
-<li>Agents</li>
-<li>AI APIs</li>
-<li>AI-powered product feature</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<h2 style="margin-top:45px;">
-Year 3 — Specialization + Bigger Reps
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Engineering</h3>
-
-<ul>
-
-<li>Advanced courses</li>
-<li>Internship</li>
-<li>Systems projects</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Business</h3>
-
-<ul>
-
-<li>Scale if evidence supports it</li>
-<li>Or deliberately kill/pivot</li>
-<li>Test another validated opportunity</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Cybersecurity</h3>
-
-<ul>
-
-<li>Choose specialization</li>
-<li>Offensive / defensive / cloud / application security</li>
-<li>Specialized certification only if justified</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>AI</h3>
-
-<ul>
-
-<li>Agents</li>
-<li>RAG concepts</li>
-<li>Evaluation</li>
-<li>AI + cybersecurity / engineering</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<h2 style="margin-top:45px;">
-Year 4 — Leverage + Direction
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>Engineering</h3>
-
-<ul>
-
-<li>Advanced coursework</li>
-<li>Strong portfolio</li>
-<li>High-quality internship</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Business</h3>
-
-<ul>
-
-<li>Scale strongest business</li>
-<li>Or launch next validated opportunity</li>
-<li>Use accumulated founder judgment</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>Deep Tech</h3>
-
-<ul>
-
-<li>Begin deeper semiconductor work</li>
-<li>FPGA / HDL</li>
-<li>Hardware security possibilities</li>
-
-</ul>
-
-</div>
-
-
-<div class="card">
-
-<h3>AI</h3>
-
-<ul>
-
-<li>AI-native workflows</li>
-<li>Build AI products</li>
-<li>Automate business operations</li>
-<li>Integrate AI into engineering</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =======================================================
-     SCOREBOARD
-======================================================= -->
-
-<section id="scoreboard">
-
-<div class="hero">
-
-<h2>📊 Founder Scoreboard</h2>
-
-<p>
-Measure evidence and execution rather than how impressive
-your roadmap looks.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-20
-</div>
-
-<p>Initial customer conversations</p>
-
-</div>
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-$1
-</div>
-
-<p>First revenue</p>
-
-</div>
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-5
-</div>
-
-<p>Meaningful customer milestone</p>
-
-</div>
-
-
-<div class="card center">
-
-<div style="font-size:2.6rem;font-weight:bold;">
-1
-</div>
-
-<p>Business worth continuing</p>
-
-</div>
-
-
-</div>
-
-
-<h2>
-Weekly Metrics
-</h2>
-
-
-<div class="table-wrapper">
-
-<table>
-
-<tr>
-<th>Metric</th>
-<th>Target</th>
-<th>Why</th>
-</tr>
-
-
-<tr>
-<td>Customer conversations</td>
-<td>2–5</td>
-<td>Maintain market contact.</td>
-</tr>
-
-
-<tr>
-<td>Sales attempts</td>
-<td>As appropriate</td>
-<td>Learn whether people actually pay.</td>
-</tr>
-
-
-<tr>
-<td>Business building</td>
-<td>2–6 hrs</td>
-<td>Turn validated problems into solutions.</td>
-</tr>
-
-
-<tr>
-<td>Cybersecurity</td>
-<td>3–6 hrs</td>
-<td>Technical optionality.</td>
-</tr>
-
-
-<tr>
-<td>AI experimentation</td>
-<td>1 meaningful experiment/month</td>
-<td>Increase leverage.</td>
-</tr>
-
-
-<tr>
-<td>Engineering projects</td>
-<td>Course-dependent</td>
-<td>Build technical depth.</td>
-</tr>
-
-</table>
-
-</div>
-
-
-<div class="callout warning">
-
-<strong>Exam-period rule</strong>
-
-When academics become intense, reduce founder,
-AI and cybersecurity hours.
-
-Do not sacrifice your degree to maintain arbitrary streaks.
-
-</div>
-
-
-<h2>
-Quarterly Gate
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Did I talk to enough customers?
-</li>
-
-<li>
-<input type="checkbox">
-Did I test an actual offer?
-</li>
-
-<li>
-<input type="checkbox">
-Did anyone pay?
-</li>
-
-<li>
-<input type="checkbox">
-What did customers repeatedly complain about?
-</li>
-
-<li>
-<input type="checkbox">
-What should I stop doing?
-</li>
-
-<li>
-<input type="checkbox">
-What should I double down on?
-</li>
-
-<li>
-<input type="checkbox">
-Am I building something customers actually want?
-</li>
-
-<li>
-<input type="checkbox">
-Is the business taking too much from engineering?
-</li>
-
-<li>
-<input type="checkbox">
-Is AI actually saving me time or am I just experimenting?
-</li>
-
-</ul>
-
-</section>
-
-
-
-<!-- =======================================================
-     RULES
-======================================================= -->
-
-<section id="rules">
-
-<div class="hero">
-
-<h2>🚨 Anti-Distraction Rules</h2>
-
-<p>
-These rules exist specifically to prevent ambition from
-turning into uncontrolled scope.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<span class="priority danger">RULE 01</span>
-
-<h3>One Active Business</h3>
-
-<p>
-You can have ideas.
-You cannot actively build five businesses simultaneously.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 02</span>
-
-<h3>Sell Before Building</h3>
-
-<p>
-Don't spend months coding a solution before confirming
-the problem.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 03</span>
-
-<h3>Customer Evidence Beats Opinions</h3>
-
-<p>
-Your assumptions are hypotheses.
-Customer behavior is evidence.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 04</span>
-
-<h3>Certifications Are Not Progress</h3>
-
-<p>
-A certificate matters only when it creates knowledge,
-credibility or access that you actually need.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 05</span>
-
-<h3>No Parallel Careers</h3>
-
-<p>
-You are not simultaneously becoming a cybersecurity expert,
-ASIC designer, AI researcher and founder.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 06</span>
-
-<h3>Engineering Comes First</h3>
-
-<p>
-The degree remains the foundation.
-The business fits around it.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 07</span>
-
-<h3>Ideas Go in the Parking Lot</h3>
-
-<p>
-Record new ideas instead of immediately switching directions.
-Review them quarterly.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 08</span>
-
-<h3>AI Is a Tool</h3>
-
-<p>
-Do not chase every new AI tool.
-Learn transferable capabilities.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 09</span>
-
-<h3>Don't Optimize Forever</h3>
-
-<p>
-Once the roadmap is good enough, execution becomes
-more valuable than another redesign.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<span class="priority danger">RULE 10</span>
-
-<h3>Evidence Can Change the Plan</h3>
-
-<p>
-This roadmap is a system, not a contract.
-Real-world evidence can change your priorities.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="quote">
-
-The roadmap is finished when it is good enough to tell you
-what to do next.
-
-After that:
-
-<strong>Go do it.</strong>
-
-</div>
-
-
-<h2>
-Anti-Distraction List
-</h2>
-
-
-<ul class="checklist">
-
-<li>
-<input type="checkbox">
-Rebuilding the roadmap again
-</li>
-
-<li>
-<input type="checkbox">
-Adding certifications because they look impressive
-</li>
-
-<li>
-<input type="checkbox">
-Starting another startup before testing the current one
-</li>
-
-<li>
-<input type="checkbox">
-Building an MVP before customer discovery
-</li>
-
-<li>
-<input type="checkbox">
-Learning another framework without a project requiring it
-</li>
-
-<li>
-<input type="checkbox">
-Starting advanced semiconductor topics prematurely
-</li>
-
-<li>
-<input type="checkbox">
-Treating AI as another separate career
-</li>
-
-<li>
-<input type="checkbox">
-Chasing every new AI tool
-</li>
-
-<li>
-<input type="checkbox">
-Confusing research with customer validation
-</li>
-
-<li>
-<input type="checkbox">
-Using learning as an excuse to avoid selling
-</li>
-
-</ul>
-
-</section>
-
 
 </main>
 
-
-<!-- =======================================================
-     THEME SELECTOR
-======================================================= -->
-
-<div class="theme-panel">
-
-<button
-class="theme-toggle"
-onclick="toggleThemeMenu()"
-title="Change theme">
-🎨
-</button>
-
-
-<div
-class="theme-menu"
-id="themeMenu">
-
-<h3>Choose a Theme</h3>
-
-<div class="theme-buttons">
-
-<button class="theme-button t1" onclick="setTheme(1)"></button>
-<button class="theme-button t2" onclick="setTheme(2)"></button>
-<button class="theme-button t3" onclick="setTheme(3)"></button>
-<button class="theme-button t4" onclick="setTheme(4)"></button>
-
-<button class="theme-button t5" onclick="setTheme(5)"></button>
-<button class="theme-button t6" onclick="setTheme(6)"></button>
-<button class="theme-button t7" onclick="setTheme(7)"></button>
-<button class="theme-button t8" onclick="setTheme(8)"></button>
-
-<button class="theme-button t9" onclick="setTheme(9)"></button>
-<button class="theme-button t10" onclick="setTheme(10)"></button>
-<button class="theme-button t11" onclick="setTheme(11)"></button>
-<button class="theme-button t12" onclick="setTheme(12)"></button>
-
-<button class="theme-button t13" onclick="setTheme(13)"></button>
-<button class="theme-button t14" onclick="setTheme(14)"></button>
-<button class="theme-button t15" onclick="setTheme(15)"></button>
-<button class="theme-button t16" onclick="setTheme(16)"></button>
-
-<button class="theme-button t17" onclick="setTheme(17)"></button>
-<button class="theme-button t18" onclick="setTheme(18)"></button>
-<button class="theme-button t19" onclick="setTheme(19)"></button>
-<button class="theme-button t20" onclick="setTheme(20)"></button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
-
 <footer>
-
-Engineering + Founder Roadmap
-
-<br>
-
-Build skills. Talk to customers. Ship. Automate. Learn. Repeat.
-
+    Engineering × Founder Roadmap · Build → Test → Learn → Repeat
 </footer>
-
-
 
 <script>
 
-/* =========================================================
-   TAB SYSTEM
-========================================================= */
+/* =========================
+   PAGE NAVIGATION
+========================= */
 
-function showSection(id, button) {
+function showPage(id,button){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
 
-    document.querySelectorAll("section")
-        .forEach(section => {
-            section.classList.remove("active");
-        });
+    document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
 
-    const target = document.getElementById(id);
+    if(button) button.classList.add('active');
 
-    if (target) {
-        target.classList.add("active");
-    }
+    window.scrollTo({top:0,behavior:'smooth'});
+}
 
-    document.querySelectorAll("nav button")
-        .forEach(btn => {
-            btn.classList.remove("active");
-        });
 
-    button.classList.add("active");
+/* =========================
+   LOCAL STORAGE
+========================= */
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+const data = JSON.parse(localStorage.getItem("engineeringRoadmap") || "{}");
+
+function save(){
+    localStorage.setItem("engineeringRoadmap",JSON.stringify(data));
+}
+
+function increment(key){
+    data[key]=(data[key]||0)+1;
+    save();
+    renderStats();
+}
+
+function renderStats(){
+    ["interviews","offers","customers","experimentsCount"].forEach(key=>{
+        const el=document.getElementById(key);
+        if(el) el.textContent=data[key]||0;
     });
 }
 
-
-/* =========================================================
-   THEME SYSTEM
-========================================================= */
-
-function setTheme(number) {
-
-    document.body.className =
-        "theme-" + number;
-
-    localStorage.setItem(
-        "roadmap-theme",
-        number
-    );
-
-    document
-        .getElementById("themeMenu")
-        .classList.remove("open");
-}
-
-
-function toggleThemeMenu() {
-
-    document
-        .getElementById("themeMenu")
-        .classList.toggle("open");
-
-}
-
-
-/* =========================================================
-   RESTORE THEME
-========================================================= */
-
-const savedTheme =
-    localStorage.getItem("roadmap-theme");
-
-if (savedTheme) {
-
-    document.body.className =
-        "theme-" + savedTheme;
-
-}
-
-
-/* =========================================================
-   CHECKLIST PERSISTENCE
-========================================================= */
-
-const checkboxes =
-    document.querySelectorAll(
-        '.checklist input[type="checkbox"]'
-    );
-
-
-checkboxes.forEach((checkbox, index) => {
-
-    const saved =
-        localStorage.getItem(
-            "roadmap-check-" + index
-        );
-
-    if (saved === "true") {
-
-        checkbox.checked = true;
-
+function resetData(){
+    if(confirm("Reset all saved roadmap data?")){
+        localStorage.removeItem("engineeringRoadmap");
+        location.reload();
     }
+}
 
 
-    checkbox.addEventListener(
-        "change",
-        () => {
+/* =========================
+   WEEKLY INPUTS
+========================= */
 
-            localStorage.setItem(
-                "roadmap-check-" + index,
-                checkbox.checked
-            );
+[
+    "weeklyEngineering",
+    "weeklyBusiness",
+    "weeklyTechnical",
+    "weeklyBrave",
+    "bestProof"
+].forEach(id=>{
+    const el=document.getElementById(id);
 
-        }
-    );
+    if(data[id]) el.value=data[id];
 
+    el.addEventListener("input",()=>{
+        data[id]=el.value;
+        save();
+    });
 });
 
 
-/* =========================================================
-   CLICK OUTSIDE THEME MENU
-========================================================= */
+/* =========================
+   EXPERIMENT
+========================= */
 
-document.addEventListener(
-    "click",
-    function(event) {
+function saveExperiment(){
 
-        const panel =
-            document.querySelector(".theme-panel");
+    data.experiment={
+        hypothesis:document.getElementById("hypothesis").value,
+        test:document.getElementById("test").value,
+        result:document.getElementById("result").value,
+        decision:document.getElementById("decision").value
+    };
 
-        if (!panel.contains(event.target)) {
+    save();
 
-            document
-                .getElementById("themeMenu")
-                .classList.remove("open");
+    alert("Experiment saved.");
+}
 
-        }
+if(data.experiment){
+    document.getElementById("hypothesis").value=data.experiment.hypothesis||"";
+    document.getElementById("test").value=data.experiment.test||"";
+    document.getElementById("result").value=data.experiment.result||"";
+    document.getElementById("decision").value=data.experiment.decision||"";
+}
 
-    }
-);
+
+/* =========================
+   CHECKBOX PERSISTENCE
+========================= */
+
+document.querySelectorAll('input[type="checkbox"]').forEach((box,index)=>{
+
+    const key="check_"+index;
+
+    box.checked=localStorage.getItem(key)==="true";
+
+    box.addEventListener("change",()=>{
+        localStorage.setItem(key,box.checked);
+        box.parentElement.classList.toggle("done",box.checked);
+    });
+
+    box.parentElement.classList.toggle("done",box.checked);
+});
 
 
-/* =========================================================
-   CARD ANIMATION ON LOAD
-========================================================= */
+/* =========================
+   THEMES
+========================= */
 
-window.addEventListener(
-    "load",
-    () => {
+const themes={
 
-        document
-            .querySelectorAll(".card")
-            .forEach((card, index) => {
+midnight:{
+bg:"#0b1020",
+panel:"#121a2e",
+panel2:"#18233d",
+text:"#eef3ff",
+muted:"#9eabc7",
+accent:"#6ea8fe",
+accent2:"#7ef0c2"
+},
 
-                card.style.animationDelay =
-                    (index * 35) + "ms";
+light:{
+bg:"#f3f6fb",
+panel:"#ffffff",
+panel2:"#eef3fa",
+text:"#172033",
+muted:"#59657c",
+accent:"#3268d4",
+accent2:"#18966d"
+},
 
-                card.classList.add("animate");
+ocean:{
+bg:"#061923",
+panel:"#0b2735",
+panel2:"#103747",
+text:"#e8fbff",
+muted:"#91b8c5",
+accent:"#36c5f0",
+accent2:"#58e0b2"
+},
 
-            });
+forest:{
+bg:"#071710",
+panel:"#0e2419",
+panel2:"#153524",
+text:"#ecfff2",
+muted:"#9bb9a4",
+accent:"#65d88b",
+accent2:"#b9ef77"
+},
 
-    }
-);
+sunset:{
+bg:"#1c0e16",
+panel:"#2a1420",
+panel2:"#3b1b2b",
+text:"#fff0f3",
+muted:"#c9a1ad",
+accent:"#ff8a65",
+accent2:"#ffd166"
+},
+
+cyber:{
+bg:"#070711",
+panel:"#111126",
+panel2:"#18183a",
+text:"#f5f5ff",
+muted:"#a8a8d4",
+accent:"#b46cff",
+accent2:"#00f5d4"
+},
+
+terminal:{
+bg:"#020802",
+panel:"#061106",
+panel2:"#0a180a",
+text:"#baffba",
+muted:"#6f9c6f",
+accent:"#39ff14",
+accent2:"#b6ff00"
+},
+
+mono:{
+bg:"#101010",
+panel:"#181818",
+panel2:"#222222",
+text:"#f5f5f5",
+muted:"#aaa",
+accent:"#fff",
+accent2:"#bbb"
+},
+
+purple:{
+bg:"#11091d",
+panel:"#1d1030",
+panel2:"#291743",
+text:"#f8edff",
+muted:"#bca8ca",
+accent:"#c084fc",
+accent2:"#f0abfc"
+},
+
+red:{
+bg:"#190808",
+panel:"#281010",
+panel2:"#3b1515",
+text:"#fff1f1",
+muted:"#c9a3a3",
+accent:"#ff5d73",
+accent2:"#ff9f43"
+},
+
+gold:{
+bg:"#171207",
+panel:"#241d0d",
+panel2:"#352b12",
+text:"#fff8df",
+muted:"#c5b88c",
+accent:"#ffd166",
+accent2:"#ffe29a"
+},
+
+ice:{
+bg:"#07141c",
+panel:"#0c222f",
+panel2:"#123142",
+text:"#effbff",
+muted:"#9dbbc7",
+accent:"#8be9fd",
+accent2:"#a7f3d0"
+},
+
+rose:{
+bg:"#190c13",
+panel:"#29121c",
+panel2:"#391a28",
+text:"#fff1f5",
+muted:"#c6a0af",
+accent:"#fb7185",
+accent2:"#fda4af"
+},
+
+lime:{
+bg:"#0e1405",
+panel:"#171f09",
+panel2:"#222d0d",
+text:"#f3ffe2",
+muted:"#aab98d",
+accent:"#a3e635",
+accent2:"#d9f99d"
+},
+
+coffee:{
+bg:"#160f0a",
+panel:"#24170f",
+panel2:"#332117",
+text:"#fff3e7",
+muted:"#bea99a",
+accent:"#d6a067",
+accent2:"#f3c892"
+},
+
+slate:{
+bg:"#10151c",
+panel:"#171e27",
+panel2:"#222c37",
+text:"#edf3f8",
+muted:"#9daab7",
+accent:"#94a3b8",
+accent2:"#cbd5e1"
+},
+
+matrix:{
+bg:"#000800",
+panel:"#031203",
+panel2:"#062006",
+text:"#d5ffd5",
+muted:"#69a869",
+accent:"#00ff41",
+accent2:"#7cffcb"
+},
+
+space:{
+bg:"#060716",
+panel:"#0d1028",
+panel2:"#151a3d",
+text:"#f2f3ff",
+muted:"#9ea5d0",
+accent:"#8b9cff",
+accent2:"#c084fc"
+},
+
+minimal:{
+bg:"#eeeeee",
+panel:"#ffffff",
+panel2:"#e4e4e4",
+text:"#111111",
+muted:"#666666",
+accent:"#111111",
+accent2:"#555555"
+},
+
+highcontrast:{
+bg:"#000000",
+panel:"#080808",
+panel2:"#151515",
+text:"#ffffff",
+muted:"#eeeeee",
+accent:"#ffff00",
+accent2:"#00ffff"
+}
+
+};
+
+function changeTheme(name){
+
+    const t=themes[name];
+
+    if(!t)return;
+
+    const root=document.documentElement;
+
+    Object.entries(t).forEach(([key,value])=>{
+        root.style.setProperty("--"+key,value);
+    });
+
+    document.body.classList.toggle("light",name==="light"||name==="minimal");
+
+    localStorage.setItem("roadmapTheme",name);
+
+    const select=document.getElementById("themeSelect");
+    if(select) select.value=name;
+}
+
+
+/* =========================
+   INIT
+========================= */
+
+renderStats();
+
+const savedTheme=localStorage.getItem("roadmapTheme")||"midnight";
+changeTheme(savedTheme);
 
 </script>
 
